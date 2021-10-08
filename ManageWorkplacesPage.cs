@@ -58,7 +58,13 @@ namespace ScantelRoofingPrototype
             {
                 if (employeetoworkplacelink[i].WorkplaceID == WorkplaceDataTable.SelectedCells[0].RowIndex)
                 {
-
+                    for (int x = 0; x < employees.Count; x++)
+                    {
+                        if (employeetoworkplacelink[i].EmployeeID == employees[x].ID)
+                        {
+                            employeesSetToWorkplace.Add(employees[x]);
+                        }
+                    }
                 }
             }
         }
