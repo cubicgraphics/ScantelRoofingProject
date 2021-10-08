@@ -171,6 +171,7 @@ namespace ScantelRoofingPrototype
             this.AddEmployeeToWorkplaceButton.TabIndex = 12;
             this.AddEmployeeToWorkplaceButton.Text = "<";
             this.AddEmployeeToWorkplaceButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeToWorkplaceButton.Click += new System.EventHandler(this.AddEmployeeToWorkplaceButton_Click);
             // 
             // RemoveEmployeeFromWorkplaceButton
             // 
@@ -180,6 +181,7 @@ namespace ScantelRoofingPrototype
             this.RemoveEmployeeFromWorkplaceButton.TabIndex = 13;
             this.RemoveEmployeeFromWorkplaceButton.Text = ">";
             this.RemoveEmployeeFromWorkplaceButton.UseVisualStyleBackColor = true;
+            this.RemoveEmployeeFromWorkplaceButton.Click += new System.EventHandler(this.RemoveEmployeeFromWorkplaceButton_Click);
             // 
             // RemoveRoofFromWorkplaceButton
             // 
@@ -334,6 +336,7 @@ namespace ScantelRoofingPrototype
             this.WorkplaceDataTable.RowTemplate.Height = 25;
             this.WorkplaceDataTable.Size = new System.Drawing.Size(561, 319);
             this.WorkplaceDataTable.TabIndex = 31;
+            this.WorkplaceDataTable.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
             // 
             // ManageWorkplacesPage
             // 

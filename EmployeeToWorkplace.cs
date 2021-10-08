@@ -18,5 +18,17 @@ namespace ScantelRoofingPrototype
             EmployeeID = employeeid;
             WorkplaceID = workplaceid;
         }
+        public static int GetHighestID(List<EmployeeToWorkplace> employeeToWorkplaces)
+        {
+            int highest = 0;
+            for (int i = 0; i < employeeToWorkplaces.Count; i++)
+            {
+                if (employeeToWorkplaces[i].ID > highest)
+                {
+                    highest = employeeToWorkplaces[i].ID;
+                }
+            }
+            return highest;
+        }
     }
 }
