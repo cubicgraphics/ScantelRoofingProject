@@ -377,6 +377,7 @@ namespace ScantelRoofingPrototype
             this.Name = "ManageWorkplacesPage";
             this.Text = "ManageWorkplacesPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageWorkplacesPage_FormClosing);
+            this.VisibleChanged += new System.EventHandler(this.ManageWorkplacesPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

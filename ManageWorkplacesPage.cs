@@ -35,11 +35,6 @@ namespace ScantelRoofingPrototype
             WorkplaceDataTable.MultiSelect = false;
 
 
-
-            UpdateWorkplaceAndRefreshTable();
-
-            UpdateEmployeeAtWorksiteList();
-
         }
 
         private void RefeshDataTable()
@@ -56,7 +51,7 @@ namespace ScantelRoofingPrototype
             RefeshDataTable();
         }
 
-        private void UpdateEmployeeAtWorksiteList()
+        private void UpdateEmployeeAndEmployeeAtWorksiteList()
         {
             UpdateEmployeeList();
             try
@@ -126,7 +121,7 @@ namespace ScantelRoofingPrototype
 
         private void WorkplaceDataTable_Click(object sender, EventArgs e)
         {
-            UpdateEmployeeAtWorksiteList();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
         }
 
         private void RemoveEmployeeFromWorkplaceButton_Click(object sender, EventArgs e)
@@ -141,7 +136,7 @@ namespace ScantelRoofingPrototype
             }
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
 
-            UpdateEmployeeAtWorksiteList();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
         }
 
         private void AddEmployeeToWorkplaceButton_Click(object sender, EventArgs e)
@@ -150,7 +145,13 @@ namespace ScantelRoofingPrototype
             employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
 
-            UpdateEmployeeAtWorksiteList();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
+        }
+
+        private void ManageWorkplacesPage_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateWorkplaceAndRefreshTable();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
         }
     }
 }
