@@ -94,6 +94,15 @@ namespace ScantelRoofingPrototype
             EmployeesListBox.DisplayMember = "Name";
             EmployeesListBox.ValueMember = "ID";
         }
+        private void UpdateWorkplaceText()
+        {
+            int index = WorkplaceDataTable.SelectedCells[0].RowIndex;
+            WorkplaceNameBox.Text = workplaces[index].PlaceName;
+            StartDateTimePicker.Value = workplaces[index].StartDate;
+            PredictedEndDateTimePicker.Value = workplaces[index].PredictedEndDate;
+            EndDateTimePicker.Value = workplaces[index].RealEndDate;
+            WorkplaceAddressBox.Text = workplaces[index].Address;
+        }
 
 
         private void ManageWorkplacesPage_FormClosing(object sender, FormClosingEventArgs e)
@@ -102,26 +111,23 @@ namespace ScantelRoofingPrototype
             PrevInterface.Show();
             e.Cancel = true;
         }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             PrevInterface.Show();
         }
-
         private void NewWorkplaceButton_Click(object sender, EventArgs e)
         {
             createNewWorkplacePage.Show();
         }
-
         private void CreateRoofButton_Click(object sender, EventArgs e)
         {
             simpleRoofEditingPage.Show();
         }
-
         private void WorkplaceDataTable_Click(object sender, EventArgs e)
         {
             UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateWorkplaceText();
         }
 
         private void RemoveEmployeeFromWorkplaceButton_Click(object sender, EventArgs e)
@@ -135,7 +141,6 @@ namespace ScantelRoofingPrototype
                 }
             }
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
-
             UpdateEmployeeAndEmployeeAtWorksiteList();
         }
 
@@ -144,7 +149,6 @@ namespace ScantelRoofingPrototype
             List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
             employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
-
             UpdateEmployeeAndEmployeeAtWorksiteList();
         }
 
@@ -152,6 +156,12 @@ namespace ScantelRoofingPrototype
         {
             UpdateWorkplaceAndRefreshTable();
             UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateWorkplaceText();
+        }
+
+        private void SaveWorkplaceChangesButton_Click(object sender, EventArgs e)
+        {
+            //working heree
         }
     }
 }

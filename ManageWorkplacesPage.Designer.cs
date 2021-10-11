@@ -56,10 +56,11 @@ namespace ScantelRoofingPrototype
             this.WorkplaceNameBox = new System.Windows.Forms.TextBox();
             this.WorkplaceAddressBox = new System.Windows.Forms.TextBox();
             this.EndDateLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.PredictedEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.WorkplaceDataTable = new System.Windows.Forms.DataGridView();
+            this.SaveWorkplaceChangesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -306,26 +307,26 @@ namespace ScantelRoofingPrototype
             this.EndDateLabel.TabIndex = 27;
             this.EndDateLabel.Text = "End date";
             // 
-            // dateTimePicker1
+            // StartDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(933, 229);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 23);
-            this.dateTimePicker1.TabIndex = 28;
+            this.StartDateTimePicker.Location = new System.Drawing.Point(933, 229);
+            this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.Size = new System.Drawing.Size(161, 23);
+            this.StartDateTimePicker.TabIndex = 28;
             // 
-            // dateTimePicker2
+            // PredictedEndDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(933, 258);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(161, 23);
-            this.dateTimePicker2.TabIndex = 29;
+            this.PredictedEndDateTimePicker.Location = new System.Drawing.Point(933, 258);
+            this.PredictedEndDateTimePicker.Name = "PredictedEndDateTimePicker";
+            this.PredictedEndDateTimePicker.Size = new System.Drawing.Size(161, 23);
+            this.PredictedEndDateTimePicker.TabIndex = 29;
             // 
-            // dateTimePicker3
+            // EndDateTimePicker
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(933, 286);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(161, 23);
-            this.dateTimePicker3.TabIndex = 30;
+            this.EndDateTimePicker.Location = new System.Drawing.Point(933, 286);
+            this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.Size = new System.Drawing.Size(161, 23);
+            this.EndDateTimePicker.TabIndex = 30;
             // 
             // WorkplaceDataTable
             // 
@@ -338,15 +339,26 @@ namespace ScantelRoofingPrototype
             this.WorkplaceDataTable.TabIndex = 31;
             this.WorkplaceDataTable.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
             // 
+            // SaveWorkplaceChangesButton
+            // 
+            this.SaveWorkplaceChangesButton.Location = new System.Drawing.Point(839, 344);
+            this.SaveWorkplaceChangesButton.Name = "SaveWorkplaceChangesButton";
+            this.SaveWorkplaceChangesButton.Size = new System.Drawing.Size(257, 24);
+            this.SaveWorkplaceChangesButton.TabIndex = 32;
+            this.SaveWorkplaceChangesButton.Text = "Save changes";
+            this.SaveWorkplaceChangesButton.UseVisualStyleBackColor = true;
+            this.SaveWorkplaceChangesButton.Click += new System.EventHandler(this.SaveWorkplaceChangesButton_Click);
+            // 
             // ManageWorkplacesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 450);
+            this.Controls.Add(this.SaveWorkplaceChangesButton);
             this.Controls.Add(this.WorkplaceDataTable);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.EndDateTimePicker);
+            this.Controls.Add(this.PredictedEndDateTimePicker);
+            this.Controls.Add(this.StartDateTimePicker);
             this.Controls.Add(this.EndDateLabel);
             this.Controls.Add(this.WorkplaceAddressBox);
             this.Controls.Add(this.WorkplaceNameBox);
@@ -413,9 +425,10 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox WorkplaceNameBox;
         private System.Windows.Forms.TextBox WorkplaceAddressBox;
         private System.Windows.Forms.Label EndDateLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker StartDateTimePicker;
+        private System.Windows.Forms.DateTimePicker PredictedEndDateTimePicker;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
         private System.Windows.Forms.DataGridView WorkplaceDataTable;
+        private System.Windows.Forms.Button SaveWorkplaceChangesButton;
     }
 }
