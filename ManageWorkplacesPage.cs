@@ -34,9 +34,11 @@ namespace ScantelRoofingPrototype
             WorkplaceDataTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             WorkplaceDataTable.MultiSelect = false;
 
+
+
             UpdateWorkplaceAndRefreshTable();
 
-            UpdateAndRefreshEmployeeListBox();
+            UpdateEmployeeAtWorksiteList();
 
         }
 
@@ -54,42 +56,50 @@ namespace ScantelRoofingPrototype
             RefeshDataTable();
         }
 
-        private void UpdateAndRefreshEmployeeListBox()
+        private void UpdateEmployeeAtWorksiteList()
         {
+            UpdateEmployeeList();
             try
             {
-                employees = EmployeePeople.CombineEmployeePeopleList(FileReader.ReadFromEmployeeFile(), FileReader.ReadFromPeopleFile());
-
                 List<EmployeeToWorkplace> employeetoworkplacelink = FileReader.ReadFromEmployeeToWorkplaceFile();
 
+                employeesSetToWorkplace.Clear();
                 for (int i = 0; i < employeetoworkplacelink.Count; i++)
                 {
                     if (employeetoworkplacelink[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID)
                     {
-                        MessageBox.Show("Found a link");
                         for (int x = 0; x < employees.Count; x++)
                         {
                             if (employeetoworkplacelink[i].EmployeeID == employees[x].ID)
                             {
                                 employeesSetToWorkplace.Add(employees[x]);
+                                //add validation to fix duplicate employees in the list
+                            
                             }
                         }
                     }
                 }
-                EmployeesListBox.DataSource = employees;
+
+
+                //also populate the roof lists in another function
+                EmployeesAtWorksitelistBox.DataSource = null;
                 EmployeesAtWorksitelistBox.DataSource = employeesSetToWorkplace;
-                EmployeesListBox.DisplayMember = "Name";
                 EmployeesAtWorksitelistBox.DisplayMember = "Name";
-
-                //also populate the roof lists
-
-
+                EmployeesAtWorksitelistBox.ValueMember = "ID";
             }
             catch
             {
-
             }
         }
+        private void UpdateEmployeeList()
+        {
+            employees = EmployeePeople.CombineEmployeePeopleList(FileReader.ReadFromEmployeeFile(), FileReader.ReadFromPeopleFile());
+            EmployeesListBox.DataSource = null;
+            EmployeesListBox.DataSource = employees;
+            EmployeesListBox.DisplayMember = "Name";
+            EmployeesListBox.ValueMember = "ID";
+        }
+
 
         private void ManageWorkplacesPage_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -116,7 +126,7 @@ namespace ScantelRoofingPrototype
 
         private void WorkplaceDataTable_Click(object sender, EventArgs e)
         {
-            UpdateAndRefreshEmployeeListBox();
+            UpdateEmployeeAtWorksiteList();
         }
 
         private void RemoveEmployeeFromWorkplaceButton_Click(object sender, EventArgs e)
@@ -131,7 +141,7 @@ namespace ScantelRoofingPrototype
             }
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
 
-            UpdateAndRefreshEmployeeListBox();
+            UpdateEmployeeAtWorksiteList();
         }
 
         private void AddEmployeeToWorkplaceButton_Click(object sender, EventArgs e)
@@ -140,7 +150,7 @@ namespace ScantelRoofingPrototype
             employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
 
-            UpdateAndRefreshEmployeeListBox();
+            UpdateEmployeeAtWorksiteList();
         }
     }
 }
