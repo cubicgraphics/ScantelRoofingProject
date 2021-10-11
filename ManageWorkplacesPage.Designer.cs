@@ -61,6 +61,7 @@ namespace ScantelRoofingPrototype
             this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.WorkplaceDataTable = new System.Windows.Forms.DataGridView();
             this.SaveWorkplaceChangesButton = new System.Windows.Forms.Button();
+            this.BeingWorkedAtCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@ namespace ScantelRoofingPrototype
             // 
             this.EmployeesAtWorksitelistBox.FormattingEnabled = true;
             this.EmployeesAtWorksitelistBox.ItemHeight = 15;
-            this.EmployeesAtWorksitelistBox.Location = new System.Drawing.Point(580, 111);
+            this.EmployeesAtWorksitelistBox.Location = new System.Drawing.Point(580, 98);
             this.EmployeesAtWorksitelistBox.Name = "EmployeesAtWorksitelistBox";
             this.EmployeesAtWorksitelistBox.Size = new System.Drawing.Size(108, 139);
             this.EmployeesAtWorksitelistBox.TabIndex = 5;
@@ -112,7 +113,7 @@ namespace ScantelRoofingPrototype
             // 
             this.EmployeesListBox.FormattingEnabled = true;
             this.EmployeesListBox.ItemHeight = 15;
-            this.EmployeesListBox.Location = new System.Drawing.Point(723, 111);
+            this.EmployeesListBox.Location = new System.Drawing.Point(723, 98);
             this.EmployeesListBox.Name = "EmployeesListBox";
             this.EmployeesListBox.Size = new System.Drawing.Size(108, 139);
             this.EmployeesListBox.TabIndex = 6;
@@ -166,7 +167,7 @@ namespace ScantelRoofingPrototype
             // 
             // AddEmployeeToWorkplaceButton
             // 
-            this.AddEmployeeToWorkplaceButton.Location = new System.Drawing.Point(694, 141);
+            this.AddEmployeeToWorkplaceButton.Location = new System.Drawing.Point(694, 128);
             this.AddEmployeeToWorkplaceButton.Name = "AddEmployeeToWorkplaceButton";
             this.AddEmployeeToWorkplaceButton.Size = new System.Drawing.Size(23, 24);
             this.AddEmployeeToWorkplaceButton.TabIndex = 12;
@@ -176,7 +177,7 @@ namespace ScantelRoofingPrototype
             // 
             // RemoveEmployeeFromWorkplaceButton
             // 
-            this.RemoveEmployeeFromWorkplaceButton.Location = new System.Drawing.Point(694, 196);
+            this.RemoveEmployeeFromWorkplaceButton.Location = new System.Drawing.Point(694, 183);
             this.RemoveEmployeeFromWorkplaceButton.Name = "RemoveEmployeeFromWorkplaceButton";
             this.RemoveEmployeeFromWorkplaceButton.Size = new System.Drawing.Size(23, 24);
             this.RemoveEmployeeFromWorkplaceButton.TabIndex = 13;
@@ -223,7 +224,7 @@ namespace ScantelRoofingPrototype
             // EmployeesAtWorkplaceLabel
             // 
             this.EmployeesAtWorkplaceLabel.AutoSize = true;
-            this.EmployeesAtWorkplaceLabel.Location = new System.Drawing.Point(580, 86);
+            this.EmployeesAtWorkplaceLabel.Location = new System.Drawing.Point(580, 73);
             this.EmployeesAtWorkplaceLabel.Name = "EmployeesAtWorkplaceLabel";
             this.EmployeesAtWorkplaceLabel.Size = new System.Drawing.Size(134, 15);
             this.EmployeesAtWorkplaceLabel.TabIndex = 18;
@@ -232,7 +233,7 @@ namespace ScantelRoofingPrototype
             // EmployeesListLabel
             // 
             this.EmployeesListLabel.AutoSize = true;
-            this.EmployeesListLabel.Location = new System.Drawing.Point(723, 87);
+            this.EmployeesListLabel.Location = new System.Drawing.Point(723, 74);
             this.EmployeesListLabel.Name = "EmployeesListLabel";
             this.EmployeesListLabel.Size = new System.Drawing.Size(82, 15);
             this.EmployeesListLabel.TabIndex = 19;
@@ -241,7 +242,7 @@ namespace ScantelRoofingPrototype
             // WorkplaceNameLabel
             // 
             this.WorkplaceNameLabel.AutoSize = true;
-            this.WorkplaceNameLabel.Location = new System.Drawing.Point(850, 196);
+            this.WorkplaceNameLabel.Location = new System.Drawing.Point(850, 182);
             this.WorkplaceNameLabel.Name = "WorkplaceNameLabel";
             this.WorkplaceNameLabel.Size = new System.Drawing.Size(37, 15);
             this.WorkplaceNameLabel.TabIndex = 20;
@@ -250,7 +251,7 @@ namespace ScantelRoofingPrototype
             // StartDateLabel
             // 
             this.StartDateLabel.AutoSize = true;
-            this.StartDateLabel.Location = new System.Drawing.Point(850, 235);
+            this.StartDateLabel.Location = new System.Drawing.Point(850, 214);
             this.StartDateLabel.Name = "StartDateLabel";
             this.StartDateLabel.Size = new System.Drawing.Size(57, 15);
             this.StartDateLabel.TabIndex = 21;
@@ -259,7 +260,7 @@ namespace ScantelRoofingPrototype
             // PredictedEndDateLabel
             // 
             this.PredictedEndDateLabel.AutoSize = true;
-            this.PredictedEndDateLabel.Location = new System.Drawing.Point(826, 263);
+            this.PredictedEndDateLabel.Location = new System.Drawing.Point(826, 242);
             this.PredictedEndDateLabel.Name = "PredictedEndDateLabel";
             this.PredictedEndDateLabel.Size = new System.Drawing.Size(106, 15);
             this.PredictedEndDateLabel.TabIndex = 22;
@@ -268,7 +269,7 @@ namespace ScantelRoofingPrototype
             // AddressLabel
             // 
             this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(850, 323);
+            this.AddressLabel.Location = new System.Drawing.Point(850, 302);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(49, 15);
             this.AddressLabel.TabIndex = 23;
@@ -286,14 +287,14 @@ namespace ScantelRoofingPrototype
             // 
             // WorkplaceNameBox
             // 
-            this.WorkplaceNameBox.Location = new System.Drawing.Point(933, 193);
+            this.WorkplaceNameBox.Location = new System.Drawing.Point(933, 179);
             this.WorkplaceNameBox.Name = "WorkplaceNameBox";
             this.WorkplaceNameBox.Size = new System.Drawing.Size(161, 23);
             this.WorkplaceNameBox.TabIndex = 25;
             // 
             // WorkplaceAddressBox
             // 
-            this.WorkplaceAddressBox.Location = new System.Drawing.Point(933, 315);
+            this.WorkplaceAddressBox.Location = new System.Drawing.Point(933, 294);
             this.WorkplaceAddressBox.Name = "WorkplaceAddressBox";
             this.WorkplaceAddressBox.Size = new System.Drawing.Size(161, 23);
             this.WorkplaceAddressBox.TabIndex = 26;
@@ -301,7 +302,7 @@ namespace ScantelRoofingPrototype
             // EndDateLabel
             // 
             this.EndDateLabel.AutoSize = true;
-            this.EndDateLabel.Location = new System.Drawing.Point(850, 291);
+            this.EndDateLabel.Location = new System.Drawing.Point(850, 270);
             this.EndDateLabel.Name = "EndDateLabel";
             this.EndDateLabel.Size = new System.Drawing.Size(53, 15);
             this.EndDateLabel.TabIndex = 27;
@@ -309,21 +310,21 @@ namespace ScantelRoofingPrototype
             // 
             // StartDateTimePicker
             // 
-            this.StartDateTimePicker.Location = new System.Drawing.Point(933, 229);
+            this.StartDateTimePicker.Location = new System.Drawing.Point(933, 208);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.Size = new System.Drawing.Size(161, 23);
             this.StartDateTimePicker.TabIndex = 28;
             // 
             // PredictedEndDateTimePicker
             // 
-            this.PredictedEndDateTimePicker.Location = new System.Drawing.Point(933, 258);
+            this.PredictedEndDateTimePicker.Location = new System.Drawing.Point(933, 237);
             this.PredictedEndDateTimePicker.Name = "PredictedEndDateTimePicker";
             this.PredictedEndDateTimePicker.Size = new System.Drawing.Size(161, 23);
             this.PredictedEndDateTimePicker.TabIndex = 29;
             // 
             // EndDateTimePicker
             // 
-            this.EndDateTimePicker.Location = new System.Drawing.Point(933, 286);
+            this.EndDateTimePicker.Location = new System.Drawing.Point(933, 265);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
             this.EndDateTimePicker.Size = new System.Drawing.Size(161, 23);
             this.EndDateTimePicker.TabIndex = 30;
@@ -341,7 +342,7 @@ namespace ScantelRoofingPrototype
             // 
             // SaveWorkplaceChangesButton
             // 
-            this.SaveWorkplaceChangesButton.Location = new System.Drawing.Point(839, 344);
+            this.SaveWorkplaceChangesButton.Location = new System.Drawing.Point(839, 345);
             this.SaveWorkplaceChangesButton.Name = "SaveWorkplaceChangesButton";
             this.SaveWorkplaceChangesButton.Size = new System.Drawing.Size(257, 24);
             this.SaveWorkplaceChangesButton.TabIndex = 32;
@@ -349,11 +350,23 @@ namespace ScantelRoofingPrototype
             this.SaveWorkplaceChangesButton.UseVisualStyleBackColor = true;
             this.SaveWorkplaceChangesButton.Click += new System.EventHandler(this.SaveWorkplaceChangesButton_Click);
             // 
+            // BeingWorkedAtCheckBox
+            // 
+            this.BeingWorkedAtCheckBox.AutoSize = true;
+            this.BeingWorkedAtCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BeingWorkedAtCheckBox.Location = new System.Drawing.Point(849, 323);
+            this.BeingWorkedAtCheckBox.Name = "BeingWorkedAtCheckBox";
+            this.BeingWorkedAtCheckBox.Size = new System.Drawing.Size(166, 19);
+            this.BeingWorkedAtCheckBox.TabIndex = 33;
+            this.BeingWorkedAtCheckBox.Text = "worksite currently working";
+            this.BeingWorkedAtCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ManageWorkplacesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 450);
+            this.Controls.Add(this.BeingWorkedAtCheckBox);
             this.Controls.Add(this.SaveWorkplaceChangesButton);
             this.Controls.Add(this.WorkplaceDataTable);
             this.Controls.Add(this.EndDateTimePicker);
@@ -430,5 +443,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.DateTimePicker EndDateTimePicker;
         private System.Windows.Forms.DataGridView WorkplaceDataTable;
         private System.Windows.Forms.Button SaveWorkplaceChangesButton;
+        private System.Windows.Forms.CheckBox BeingWorkedAtCheckBox;
     }
 }

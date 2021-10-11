@@ -102,6 +102,7 @@ namespace ScantelRoofingPrototype
             PredictedEndDateTimePicker.Value = workplaces[index].PredictedEndDate;
             EndDateTimePicker.Value = workplaces[index].RealEndDate;
             WorkplaceAddressBox.Text = workplaces[index].Address;
+            BeingWorkedAtCheckBox.Checked = workplaces[index].BeingWorkedAt;
         }
 
 
@@ -161,7 +162,10 @@ namespace ScantelRoofingPrototype
 
         private void SaveWorkplaceChangesButton_Click(object sender, EventArgs e)
         {
-            //working heree
+
+            workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex] = new Workplaces(workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID, WorkplaceNameBox.Text, WorkplaceAddressBox.Text, BeingWorkedAtCheckBox.Checked, StartDateTimePicker.Value, PredictedEndDateTimePicker.Value, EndDateTimePicker.Value);
+            FileReader.WriteToWorkplaceFile(workplaces);
+            UpdateWorkplaceAndRefreshTable();
         }
     }
 }
