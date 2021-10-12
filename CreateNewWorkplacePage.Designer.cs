@@ -287,6 +287,7 @@ namespace ScantelRoofingPrototype
             this.Name = "CreateNewWorkplacePage";
             this.Text = "CreateNewWorkplacePage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateNewWorkplacePage_FormClosing);
+            this.VisibleChanged += new System.EventHandler(this.CreateNewWorkplacePage_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

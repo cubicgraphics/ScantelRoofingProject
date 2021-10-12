@@ -14,6 +14,7 @@ namespace ScantelRoofingPrototype
     {
         Form PrevInterface;
         NewCustomerPage newCustomerPage;
+        List<People> customers;
 
         public CreateNewWorkplacePage(Form Interface)
         {
@@ -28,12 +29,23 @@ namespace ScantelRoofingPrototype
             PrevInterface.Show();
             e.Cancel = true;
         }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             PrevInterface.Show();
         }
+
+        private void UpdateCustomerList()
+        {
+            customers = Customers.OnlyCustomers(FileReader.ReadFromPeopleFile(), FileReader.ReadFromCustomerFile());
+            CustomerListBox.DataSource = null;
+            CustomerListBox.DataSource = customers;
+            CustomerListBox.DisplayMember = "Name";
+            CustomerListBox.ValueMember = "ID";
+        }
+
+
+
 
         private void NewCustomerButton_Click(object sender, EventArgs e)
         {
@@ -44,6 +56,11 @@ namespace ScantelRoofingPrototype
         {
             this.Hide();
             PrevInterface.Show();
+        }
+
+        private void CreateNewWorkplacePage_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateCustomerList();
         }
     }
 }
