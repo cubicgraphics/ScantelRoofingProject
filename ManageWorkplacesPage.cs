@@ -150,7 +150,7 @@ namespace ScantelRoofingPrototype
             List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
             employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
-            UpdateEmployeeAndEmployeeAtWorksiteList();s
+            UpdateEmployeeAndEmployeeAtWorksiteList();
         }
 
         private void ManageWorkplacesPage_VisibleChanged(object sender, EventArgs e)
