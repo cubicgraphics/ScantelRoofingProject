@@ -34,10 +34,10 @@ namespace ScantelRoofingPrototype
             this.WorkplaceNameLabel = new System.Windows.Forms.Label();
             this.WorkplaceAddressLabel = new System.Windows.Forms.Label();
             this.WorkplaceCustomersLabel = new System.Windows.Forms.Label();
-            this.CustomersListBox = new System.Windows.Forms.ListBox();
+            this.CustomersToWorkplaceListBox = new System.Windows.Forms.ListBox();
             this.AddCustomerToWorkplaceButton = new System.Windows.Forms.Button();
             this.RemoveCustomerFromWorkplaceButton = new System.Windows.Forms.Button();
-            this.PeopleListBox = new System.Windows.Forms.ListBox();
+            this.CustomerListBox = new System.Windows.Forms.ListBox();
             this.NewCustomerButton = new System.Windows.Forms.Button();
             this.StartDateLabel = new System.Windows.Forms.Label();
             this.StartDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -100,14 +100,14 @@ namespace ScantelRoofingPrototype
             this.WorkplaceCustomersLabel.TabIndex = 4;
             this.WorkplaceCustomersLabel.Text = "Customers:";
             // 
-            // CustomersListBox
+            // CustomersToWorkplaceListBox
             // 
-            this.CustomersListBox.FormattingEnabled = true;
-            this.CustomersListBox.ItemHeight = 15;
-            this.CustomersListBox.Location = new System.Drawing.Point(85, 150);
-            this.CustomersListBox.Name = "CustomersListBox";
-            this.CustomersListBox.Size = new System.Drawing.Size(120, 64);
-            this.CustomersListBox.TabIndex = 5;
+            this.CustomersToWorkplaceListBox.FormattingEnabled = true;
+            this.CustomersToWorkplaceListBox.ItemHeight = 15;
+            this.CustomersToWorkplaceListBox.Location = new System.Drawing.Point(85, 150);
+            this.CustomersToWorkplaceListBox.Name = "CustomersToWorkplaceListBox";
+            this.CustomersToWorkplaceListBox.Size = new System.Drawing.Size(120, 64);
+            this.CustomersToWorkplaceListBox.TabIndex = 5;
             // 
             // AddCustomerToWorkplaceButton
             // 
@@ -127,14 +127,14 @@ namespace ScantelRoofingPrototype
             this.RemoveCustomerFromWorkplaceButton.Text = ">";
             this.RemoveCustomerFromWorkplaceButton.UseVisualStyleBackColor = true;
             // 
-            // PeopleListBox
+            // CustomerListBox
             // 
-            this.PeopleListBox.FormattingEnabled = true;
-            this.PeopleListBox.ItemHeight = 15;
-            this.PeopleListBox.Location = new System.Drawing.Point(269, 150);
-            this.PeopleListBox.Name = "PeopleListBox";
-            this.PeopleListBox.Size = new System.Drawing.Size(120, 64);
-            this.PeopleListBox.TabIndex = 8;
+            this.CustomerListBox.FormattingEnabled = true;
+            this.CustomerListBox.ItemHeight = 15;
+            this.CustomerListBox.Location = new System.Drawing.Point(269, 150);
+            this.CustomerListBox.Name = "CustomerListBox";
+            this.CustomerListBox.Size = new System.Drawing.Size(120, 64);
+            this.CustomerListBox.TabIndex = 8;
             // 
             // NewCustomerButton
             // 
@@ -275,10 +275,10 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.StartDatePicker);
             this.Controls.Add(this.StartDateLabel);
             this.Controls.Add(this.NewCustomerButton);
-            this.Controls.Add(this.PeopleListBox);
+            this.Controls.Add(this.CustomerListBox);
             this.Controls.Add(this.RemoveCustomerFromWorkplaceButton);
             this.Controls.Add(this.AddCustomerToWorkplaceButton);
-            this.Controls.Add(this.CustomersListBox);
+            this.Controls.Add(this.CustomersToWorkplaceListBox);
             this.Controls.Add(this.WorkplaceCustomersLabel);
             this.Controls.Add(this.WorkplaceAddressLabel);
             this.Controls.Add(this.WorkplaceNameLabel);
@@ -299,10 +299,10 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label WorkplaceNameLabel;
         private System.Windows.Forms.Label WorkplaceAddressLabel;
         private System.Windows.Forms.Label WorkplaceCustomersLabel;
-        private System.Windows.Forms.ListBox CustomersListBox;
+        private System.Windows.Forms.ListBox CustomersToWorkplaceListBox;
         private System.Windows.Forms.Button AddCustomerToWorkplaceButton;
         private System.Windows.Forms.Button RemoveCustomerFromWorkplaceButton;
-        private System.Windows.Forms.ListBox PeopleListBox;
+        private System.Windows.Forms.ListBox CustomerListBox;
         private System.Windows.Forms.Button NewCustomerButton;
         private System.Windows.Forms.Label StartDateLabel;
         private System.Windows.Forms.DateTimePicker StartDatePicker;

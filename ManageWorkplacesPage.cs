@@ -20,6 +20,8 @@ namespace ScantelRoofingPrototype
 
         List<EmployeePeople> employees;
         List<EmployeePeople> employeesSetToWorkplace;
+        List<People> customers;
+        List<People> CustomersSetToWorkplace;
         List<Roof> roofs;
         List<Roof> roofsSetToWorkplace;
 
@@ -28,6 +30,7 @@ namespace ScantelRoofingPrototype
             createNewWorkplacePage = new CreateNewWorkplacePage(this);
             simpleRoofEditingPage = new SimpleRoofEditingPage(this);
             employeesSetToWorkplace = new List<EmployeePeople>();
+            CustomersSetToWorkplace = new List<People>();
             PrevInterface = Interface;
             InitializeComponent();
 
@@ -45,7 +48,7 @@ namespace ScantelRoofingPrototype
         {
             workplaces = FileReader.ReadFromWorkplacesFile();
         }
-        public void UpdateWorkplaceAndRefreshTable()
+        public  void UpdateWorkplaceAndRefreshTable()
         {
             UpdateWorkplaceList();
             RefeshDataTable();
@@ -86,6 +89,39 @@ namespace ScantelRoofingPrototype
             {
             }
         }
+        private void UpdateCustomersAndCustomersAtWorksiteList()
+        {
+            UpdateCustomerList();
+            try
+            {
+                List<CustomerToWorkplace> customerToWorkplaceslink = FileReader.ReadFromCustomerToWorkplaceFile();
+
+                CustomersSetToWorkplace.Clear();
+                for (int i = 0; i < customerToWorkplaceslink.Count; i++)
+                {
+                    if (customerToWorkplaceslink[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID)
+                    {
+                        for (int x = 0; x < customers.Count; x++)
+                        {
+                            if (customerToWorkplaceslink[i].CustomerID == customers[x].ID)
+                            {
+                                CustomersSetToWorkplace.Add(customers[x]);
+                                //add validation to fix duplicate customers in the list from being created
+
+                            }
+                        }
+                    }
+                }
+                CustomerAtWorkplaceListBox.DataSource = null;
+                CustomerAtWorkplaceListBox.DataSource = CustomersSetToWorkplace;
+                CustomerAtWorkplaceListBox.DisplayMember = "Name";
+                CustomerAtWorkplaceListBox.ValueMember = "ID";
+            }
+            catch
+            {
+            }
+        }
+
         private void UpdateEmployeeList()
         {
             employees = EmployeePeople.CombineEmployeePeopleList(FileReader.ReadFromEmployeeFile(), FileReader.ReadFromPeopleFile());
@@ -105,6 +141,14 @@ namespace ScantelRoofingPrototype
             BeingWorkedAtCheckBox.Checked = workplaces[index].BeingWorkedAt;
         }
 
+        private void UpdateCustomerList()
+        {
+            customers = Customers.OnlyCustomers(FileReader.ReadFromPeopleFile(), FileReader.ReadFromCustomerFile());
+            CustomerListBox.DataSource = null;
+            CustomerListBox.DataSource = customers;
+            CustomerListBox.DisplayMember = "Name";
+            CustomerListBox.ValueMember = "ID";
+        }
 
         private void ManageWorkplacesPage_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -128,8 +172,10 @@ namespace ScantelRoofingPrototype
         private void WorkplaceDataTable_Click(object sender, EventArgs e)
         {
             UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateCustomersAndCustomersAtWorksiteList();
             UpdateWorkplaceText();
         }
+
 
         private void RemoveEmployeeFromWorkplaceButton_Click(object sender, EventArgs e)
         {
@@ -144,7 +190,6 @@ namespace ScantelRoofingPrototype
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
             UpdateEmployeeAndEmployeeAtWorksiteList();
         }
-
         private void AddEmployeeToWorkplaceButton_Click(object sender, EventArgs e)
         {
             List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
@@ -152,11 +197,32 @@ namespace ScantelRoofingPrototype
             FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
             UpdateEmployeeAndEmployeeAtWorksiteList();
         }
+        private void AddCustomerToWorkplace_Click(object sender, EventArgs e)
+        {
+            List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
+            customerToWorkplaces.Add(new CustomerToWorkplace(CustomerToWorkplace.GetHighestID(customerToWorkplaces) + 1, customers[CustomerListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
+            FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
+            UpdateCustomersAndCustomersAtWorksiteList();
+        }
+        private void RemoveCustomerFromWorkplace_Click(object sender, EventArgs e)
+        {
+            List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
+            for (int i = 0; i < customerToWorkplaces.Count; i++)
+            {
+                if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))  //wierd errors happening
+                {
+                    customerToWorkplaces.RemoveAt(i);
+                }
+            }
+            FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
+            UpdateCustomersAndCustomersAtWorksiteList();
+        }
 
         private void ManageWorkplacesPage_VisibleChanged(object sender, EventArgs e)
         {
             UpdateWorkplaceAndRefreshTable();
             UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateCustomersAndCustomersAtWorksiteList();
             UpdateWorkplaceText();
         }
 
@@ -167,5 +233,7 @@ namespace ScantelRoofingPrototype
             FileReader.WriteToWorkplaceFile(workplaces);
             UpdateWorkplaceAndRefreshTable();
         }
+
+
     }
 }

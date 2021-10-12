@@ -62,6 +62,13 @@ namespace ScantelRoofingPrototype
             this.WorkplaceDataTable = new System.Windows.Forms.DataGridView();
             this.SaveWorkplaceChangesButton = new System.Windows.Forms.Button();
             this.BeingWorkedAtCheckBox = new System.Windows.Forms.CheckBox();
+            this.CustomerList = new System.Windows.Forms.Label();
+            this.CustomersAtWorkplaceLabel = new System.Windows.Forms.Label();
+            this.RemoveCustomerFromWorkplace = new System.Windows.Forms.Button();
+            this.AddCustomerToWorkplace = new System.Windows.Forms.Button();
+            this.CustomerListBox = new System.Windows.Forms.ListBox();
+            this.CustomerAtWorkplaceListBox = new System.Windows.Forms.ListBox();
+            this.CustomerListSearchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,18 +111,18 @@ namespace ScantelRoofingPrototype
             // 
             this.EmployeesAtWorksitelistBox.FormattingEnabled = true;
             this.EmployeesAtWorksitelistBox.ItemHeight = 15;
-            this.EmployeesAtWorksitelistBox.Location = new System.Drawing.Point(580, 98);
+            this.EmployeesAtWorksitelistBox.Location = new System.Drawing.Point(579, 86);
             this.EmployeesAtWorksitelistBox.Name = "EmployeesAtWorksitelistBox";
-            this.EmployeesAtWorksitelistBox.Size = new System.Drawing.Size(108, 139);
+            this.EmployeesAtWorksitelistBox.Size = new System.Drawing.Size(108, 79);
             this.EmployeesAtWorksitelistBox.TabIndex = 5;
             // 
             // EmployeesListBox
             // 
             this.EmployeesListBox.FormattingEnabled = true;
             this.EmployeesListBox.ItemHeight = 15;
-            this.EmployeesListBox.Location = new System.Drawing.Point(723, 98);
+            this.EmployeesListBox.Location = new System.Drawing.Point(722, 86);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(108, 139);
+            this.EmployeesListBox.Size = new System.Drawing.Size(108, 79);
             this.EmployeesListBox.TabIndex = 6;
             // 
             // RoofsAtWorksiteListBox
@@ -167,7 +174,7 @@ namespace ScantelRoofingPrototype
             // 
             // AddEmployeeToWorkplaceButton
             // 
-            this.AddEmployeeToWorkplaceButton.Location = new System.Drawing.Point(694, 128);
+            this.AddEmployeeToWorkplaceButton.Location = new System.Drawing.Point(693, 92);
             this.AddEmployeeToWorkplaceButton.Name = "AddEmployeeToWorkplaceButton";
             this.AddEmployeeToWorkplaceButton.Size = new System.Drawing.Size(23, 24);
             this.AddEmployeeToWorkplaceButton.TabIndex = 12;
@@ -177,7 +184,7 @@ namespace ScantelRoofingPrototype
             // 
             // RemoveEmployeeFromWorkplaceButton
             // 
-            this.RemoveEmployeeFromWorkplaceButton.Location = new System.Drawing.Point(694, 183);
+            this.RemoveEmployeeFromWorkplaceButton.Location = new System.Drawing.Point(693, 131);
             this.RemoveEmployeeFromWorkplaceButton.Name = "RemoveEmployeeFromWorkplaceButton";
             this.RemoveEmployeeFromWorkplaceButton.Size = new System.Drawing.Size(23, 24);
             this.RemoveEmployeeFromWorkplaceButton.TabIndex = 13;
@@ -224,7 +231,7 @@ namespace ScantelRoofingPrototype
             // EmployeesAtWorkplaceLabel
             // 
             this.EmployeesAtWorkplaceLabel.AutoSize = true;
-            this.EmployeesAtWorkplaceLabel.Location = new System.Drawing.Point(580, 73);
+            this.EmployeesAtWorkplaceLabel.Location = new System.Drawing.Point(579, 61);
             this.EmployeesAtWorkplaceLabel.Name = "EmployeesAtWorkplaceLabel";
             this.EmployeesAtWorkplaceLabel.Size = new System.Drawing.Size(134, 15);
             this.EmployeesAtWorkplaceLabel.TabIndex = 18;
@@ -233,7 +240,7 @@ namespace ScantelRoofingPrototype
             // EmployeesListLabel
             // 
             this.EmployeesListLabel.AutoSize = true;
-            this.EmployeesListLabel.Location = new System.Drawing.Point(723, 74);
+            this.EmployeesListLabel.Location = new System.Drawing.Point(722, 62);
             this.EmployeesListLabel.Name = "EmployeesListLabel";
             this.EmployeesListLabel.Size = new System.Drawing.Size(82, 15);
             this.EmployeesListLabel.TabIndex = 19;
@@ -361,11 +368,81 @@ namespace ScantelRoofingPrototype
             this.BeingWorkedAtCheckBox.Text = "worksite currently working";
             this.BeingWorkedAtCheckBox.UseVisualStyleBackColor = true;
             // 
+            // CustomerList
+            // 
+            this.CustomerList.AutoSize = true;
+            this.CustomerList.Location = new System.Drawing.Point(723, 167);
+            this.CustomerList.Name = "CustomerList";
+            this.CustomerList.Size = new System.Drawing.Size(82, 15);
+            this.CustomerList.TabIndex = 39;
+            this.CustomerList.Text = "Customers list";
+            // 
+            // CustomersAtWorkplaceLabel
+            // 
+            this.CustomersAtWorkplaceLabel.AutoSize = true;
+            this.CustomersAtWorkplaceLabel.Location = new System.Drawing.Point(580, 173);
+            this.CustomersAtWorkplaceLabel.Name = "CustomersAtWorkplaceLabel";
+            this.CustomersAtWorkplaceLabel.Size = new System.Drawing.Size(64, 15);
+            this.CustomersAtWorkplaceLabel.TabIndex = 38;
+            this.CustomersAtWorkplaceLabel.Text = "Customers";
+            // 
+            // RemoveCustomerFromWorkplace
+            // 
+            this.RemoveCustomerFromWorkplace.Location = new System.Drawing.Point(694, 242);
+            this.RemoveCustomerFromWorkplace.Name = "RemoveCustomerFromWorkplace";
+            this.RemoveCustomerFromWorkplace.Size = new System.Drawing.Size(23, 24);
+            this.RemoveCustomerFromWorkplace.TabIndex = 37;
+            this.RemoveCustomerFromWorkplace.Text = ">";
+            this.RemoveCustomerFromWorkplace.UseVisualStyleBackColor = true;
+            this.RemoveCustomerFromWorkplace.Click += new System.EventHandler(this.RemoveCustomerFromWorkplace_Click);
+            // 
+            // AddCustomerToWorkplace
+            // 
+            this.AddCustomerToWorkplace.Location = new System.Drawing.Point(694, 205);
+            this.AddCustomerToWorkplace.Name = "AddCustomerToWorkplace";
+            this.AddCustomerToWorkplace.Size = new System.Drawing.Size(23, 24);
+            this.AddCustomerToWorkplace.TabIndex = 36;
+            this.AddCustomerToWorkplace.Text = "<";
+            this.AddCustomerToWorkplace.UseVisualStyleBackColor = true;
+            this.AddCustomerToWorkplace.Click += new System.EventHandler(this.AddCustomerToWorkplace_Click);
+            // 
+            // CustomerListBox
+            // 
+            this.CustomerListBox.FormattingEnabled = true;
+            this.CustomerListBox.ItemHeight = 15;
+            this.CustomerListBox.Location = new System.Drawing.Point(723, 206);
+            this.CustomerListBox.Name = "CustomerListBox";
+            this.CustomerListBox.Size = new System.Drawing.Size(108, 64);
+            this.CustomerListBox.TabIndex = 35;
+            // 
+            // CustomerAtWorkplaceListBox
+            // 
+            this.CustomerAtWorkplaceListBox.FormattingEnabled = true;
+            this.CustomerAtWorkplaceListBox.ItemHeight = 15;
+            this.CustomerAtWorkplaceListBox.Location = new System.Drawing.Point(580, 191);
+            this.CustomerAtWorkplaceListBox.Name = "CustomerAtWorkplaceListBox";
+            this.CustomerAtWorkplaceListBox.Size = new System.Drawing.Size(108, 79);
+            this.CustomerAtWorkplaceListBox.TabIndex = 34;
+            // 
+            // CustomerListSearchBox
+            // 
+            this.CustomerListSearchBox.Location = new System.Drawing.Point(723, 182);
+            this.CustomerListSearchBox.Name = "CustomerListSearchBox";
+            this.CustomerListSearchBox.Size = new System.Drawing.Size(108, 23);
+            this.CustomerListSearchBox.TabIndex = 40;
+            // 
             // ManageWorkplacesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 450);
+            this.Controls.Add(this.CustomerListSearchBox);
+            this.Controls.Add(this.CustomerList);
+            this.Controls.Add(this.CustomersAtWorkplaceLabel);
+            this.Controls.Add(this.RemoveCustomerFromWorkplace);
+            this.Controls.Add(this.AddCustomerToWorkplace);
+            this.Controls.Add(this.CustomerListBox);
+            this.Controls.Add(this.CustomerAtWorkplaceListBox);
             this.Controls.Add(this.BeingWorkedAtCheckBox);
             this.Controls.Add(this.SaveWorkplaceChangesButton);
             this.Controls.Add(this.WorkplaceDataTable);
@@ -444,5 +521,12 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.DataGridView WorkplaceDataTable;
         private System.Windows.Forms.Button SaveWorkplaceChangesButton;
         private System.Windows.Forms.CheckBox BeingWorkedAtCheckBox;
+        private System.Windows.Forms.Label CustomerList;
+        private System.Windows.Forms.Label CustomersAtWorkplaceLabel;
+        private System.Windows.Forms.Button RemoveCustomerFromWorkplace;
+        private System.Windows.Forms.Button AddCustomerToWorkplace;
+        private System.Windows.Forms.ListBox CustomerListBox;
+        private System.Windows.Forms.ListBox CustomerAtWorkplaceListBox;
+        private System.Windows.Forms.TextBox CustomerListSearchBox;
     }
 }
