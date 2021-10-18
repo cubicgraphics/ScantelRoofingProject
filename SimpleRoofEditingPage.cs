@@ -24,7 +24,7 @@ namespace ScantelRoofingPrototype
             PrevInterface = Interface;
             InitializeComponent();
             WoodStocks = new List<Stocks>();
-            TileStocks = new List<Stocks>();s
+            TileStocks = new List<Stocks>();
             RoofsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             RoofsDataGridView.MultiSelect = false;
             UpdateAndRefreshRoofListAndTable();
