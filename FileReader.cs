@@ -238,5 +238,29 @@ namespace ScantelRoofingPrototype
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\WorkplaceToRoof.txt", texttowrite);
         }
+
+
+
+        public static List<RoofElevation> ReadFromRoofFile()
+        {
+            string[][] Data = ReadFileToArray(Directory.GetCurrentDirectory() + @"\Data\Roofs.txt");
+            List<RoofElevation> Roofs = new List<RoofElevation>();
+            for (int i = 0; i < Data.Length; i++)
+            {
+                Roofs.Add(new RoofElevation(int.Parse(Data[i][0]), Data[i][1], float.Parse(Data[i][2]), float.Parse(Data[i][3]), float.Parse(Data[i][4]), int.Parse(Data[i][5]), int.Parse(Data[i][6])));
+            }
+            return Roofs;
+        }
+
+        public static void WriteToRoofFile(List<RoofElevation> Roofs)
+        {
+            string[] texttowrite = new string[Roofs.Count()];
+            for (int i = 0; i < Roofs.Count; i++)
+            {
+                texttowrite[i] = Roofs[i].ID.ToString() + "," + Roofs[i].Name + "," + Roofs[i].Length.ToString() + "," + Roofs[i].Width.ToString() + "," + Roofs[i].SlantAngle.ToString() + "," + Roofs[i].TileMaterialID.ToString() + "," + Roofs[i].WoodMaterialID.ToString();
+            }
+
+            File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Roofs.txt", texttowrite);
+        }
     }
 }

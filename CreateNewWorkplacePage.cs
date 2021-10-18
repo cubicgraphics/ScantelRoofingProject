@@ -16,8 +16,8 @@ namespace ScantelRoofingPrototype
         NewCustomerPage newCustomerPage;
         List<People> customers;
         List<People> customerstoworkplace;
-        List<Roof> SelectedRoofs;
-        List<Roof> Roofs;
+        List<RoofElevation> SelectedRoofs;
+        List<RoofElevation> Roofs;
 
         public CreateNewWorkplacePage(Form Interface)
         {

@@ -22,8 +22,8 @@ namespace ScantelRoofingPrototype
         List<EmployeePeople> employeesSetToWorkplace;
         List<People> customers;
         List<People> CustomersSetToWorkplace;
-        List<Roof> roofs;
-        List<Roof> roofsSetToWorkplace;
+        List<RoofElevation> roofs;
+        List<RoofElevation> roofsSetToWorkplace;
 
         public ManageWorkplacesPage(Form Interface)
         {

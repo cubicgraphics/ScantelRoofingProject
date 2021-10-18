@@ -6,12 +6,40 @@ using System.Threading.Tasks;
 
 namespace ScantelRoofingPrototype
 {
-    class Roof
+    class RoofElevation
     {
         public int ID { get; }
-        public int Name { get; }
+        public string Name { get; }
         public float Length { get; }
         public float Width { get; }
         public float SlantAngle { get; }
+        public int TileMaterialID { get; }
+        public int WoodMaterialID { get; }
+
+
+        public RoofElevation(int id, string name, float length, float width, float slantangle, int tilematerialid, int woodmaterialid)
+        {
+            ID = id;
+            Name = name;
+            Length = length;
+            Width = width;
+            SlantAngle = slantangle;
+            TileMaterialID = tilematerialid;
+            WoodMaterialID = woodmaterialid;
+        }
+
+        public static int GetHighestID(List<RoofElevation> Roofs)
+        {
+            int highest = 0;
+            for (int i = 0; i < Roofs.Count; i++)
+            {
+                if (Roofs[i].ID > highest)
+                {
+                    highest = Roofs[i].ID;
+                }
+            }
+            return highest;
+        }
     }
+
 }
