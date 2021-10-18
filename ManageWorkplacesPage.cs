@@ -83,7 +83,6 @@ namespace ScantelRoofingPrototype
                 EmployeesAtWorksitelistBox.DataSource = null;
                 EmployeesAtWorksitelistBox.DataSource = employeesSetToWorkplace;
                 EmployeesAtWorksitelistBox.DisplayMember = "Name";
-                EmployeesAtWorksitelistBox.ValueMember = "ID";
             }
             catch
             {
@@ -115,7 +114,6 @@ namespace ScantelRoofingPrototype
                 CustomerAtWorkplaceListBox.DataSource = null;
                 CustomerAtWorkplaceListBox.DataSource = CustomersSetToWorkplace;
                 CustomerAtWorkplaceListBox.DisplayMember = "Name";
-                CustomerAtWorkplaceListBox.ValueMember = "ID";
             }
             catch
             {
@@ -128,7 +126,6 @@ namespace ScantelRoofingPrototype
             EmployeesListBox.DataSource = null;
             EmployeesListBox.DataSource = employees;
             EmployeesListBox.DisplayMember = "Name";
-            EmployeesListBox.ValueMember = "ID";
         }
         private void UpdateWorkplaceText()
         {
@@ -147,7 +144,6 @@ namespace ScantelRoofingPrototype
             CustomerListBox.DataSource = null;
             CustomerListBox.DataSource = customers;
             CustomerListBox.DisplayMember = "Name";
-            CustomerListBox.ValueMember = "ID";
         }
 
         private void ManageWorkplacesPage_FormClosing(object sender, FormClosingEventArgs e)
@@ -164,6 +160,7 @@ namespace ScantelRoofingPrototype
         private void NewWorkplaceButton_Click(object sender, EventArgs e)
         {
             createNewWorkplacePage.Show();
+            this.Hide();
         }
         private void CreateRoofButton_Click(object sender, EventArgs e)
         {

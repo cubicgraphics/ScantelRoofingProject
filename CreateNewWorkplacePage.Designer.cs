@@ -117,6 +117,7 @@ namespace ScantelRoofingPrototype
             this.AddCustomerToWorkplaceButton.TabIndex = 6;
             this.AddCustomerToWorkplaceButton.Text = "<";
             this.AddCustomerToWorkplaceButton.UseVisualStyleBackColor = true;
+            this.AddCustomerToWorkplaceButton.Click += new System.EventHandler(this.AddCustomerToWorkplaceButton_Click);
             // 
             // RemoveCustomerFromWorkplaceButton
             // 
@@ -126,6 +127,8 @@ namespace ScantelRoofingPrototype
             this.RemoveCustomerFromWorkplaceButton.TabIndex = 7;
             this.RemoveCustomerFromWorkplaceButton.Text = ">";
             this.RemoveCustomerFromWorkplaceButton.UseVisualStyleBackColor = true;
+            this.RemoveCustomerFromWorkplaceButton.VisibleChanged += new System.EventHandler(this.RemoveCustomerFromWorkplaceButton_VisibleChanged);
+            this.RemoveCustomerFromWorkplaceButton.Click += new System.EventHandler(this.RemoveCustomerFromWorkplaceButton_Click);
             // 
             // CustomerListBox
             // 
@@ -195,6 +198,7 @@ namespace ScantelRoofingPrototype
             this.RemoveRoofButton.TabIndex = 17;
             this.RemoveRoofButton.Text = ">";
             this.RemoveRoofButton.UseVisualStyleBackColor = true;
+            this.RemoveRoofButton.Click += new System.EventHandler(this.RemoveRoofButton_Click);
             // 
             // AddRoofButton
             // 
@@ -204,6 +208,7 @@ namespace ScantelRoofingPrototype
             this.AddRoofButton.TabIndex = 16;
             this.AddRoofButton.Text = "<";
             this.AddRoofButton.UseVisualStyleBackColor = true;
+            this.AddRoofButton.Click += new System.EventHandler(this.AddRoofButton_Click);
             // 
             // SelectedRoofsListBox
             // 

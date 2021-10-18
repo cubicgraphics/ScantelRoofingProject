@@ -33,6 +33,7 @@ namespace ScantelRoofingPrototype
             people.Add(new People(People.GetHighestID(people)+1, CustomerNameInputBox.Text, CustomerPhoneInputBox.Text, CustomerEmailInputBox.Text, CustomerAddressInputBox.Text));
             FileReader.WriteToCustomerFile(customers);
             FileReader.WriteToPeopleFile(people);
+            PrevPage.Hide();
             PrevPage.Show();
             this.Hide();
             MessageBox.Show("Created new customer:  Name: " + CustomerNameInputBox.Text + " Phone: " + CustomerPhoneInputBox.Text + " Email: " + CustomerEmailInputBox.Text + " Address: " + CustomerAddressInputBox.Text);

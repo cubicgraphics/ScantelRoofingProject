@@ -15,11 +15,15 @@ namespace ScantelRoofingPrototype
         Form PrevInterface;
         NewCustomerPage newCustomerPage;
         List<People> customers;
+        List<People> customerstoworkplace;
+        List<Roof> SelectedRoofs;
+        List<Roof> Roofs;
 
         public CreateNewWorkplacePage(Form Interface)
         {
             PrevInterface = Interface;
             newCustomerPage = new NewCustomerPage(this);
+            customerstoworkplace = new List<People>();
             InitializeComponent();
         }
 
@@ -35,15 +39,29 @@ namespace ScantelRoofingPrototype
             PrevInterface.Show();
         }
 
-        private void UpdateCustomerList()
+        public void UpdateCustomerLists()
         {
             customers = Customers.OnlyCustomers(FileReader.ReadFromPeopleFile(), FileReader.ReadFromCustomerFile());
             CustomerListBox.DataSource = null;
             CustomerListBox.DataSource = customers;
             CustomerListBox.DisplayMember = "Name";
-            CustomerListBox.ValueMember = "ID";
+
+            CustomersToWorkplaceListBox.DataSource = null;
+            CustomersToWorkplaceListBox.DataSource = customerstoworkplace;
+            CustomersToWorkplaceListBox.DisplayMember = "Name";
         }
 
+        public void UpdateRoofsList()
+        {
+            //Read from roofs file// Roofs = FileReader.readfromroofing  
+            RoofListBox.DataSource = null;
+            RoofListBox.DataSource = Roofs;
+            RoofListBox.DisplayMember = "Name";
+
+            SelectedRoofsListBox.DataSource = null;
+            SelectedRoofsListBox.DataSource = SelectedRoofs;
+            SelectedRoofsListBox.DisplayMember = "Name";
+        }
 
 
 
@@ -54,13 +72,54 @@ namespace ScantelRoofingPrototype
 
         private void CreateWorkplaceButton_Click(object sender, EventArgs e)
         {
+
+
+
+
+
             this.Hide();
             PrevInterface.Show();
         }
 
         private void CreateNewWorkplacePage_VisibleChanged(object sender, EventArgs e)
         {
-            UpdateCustomerList();
+            UpdateCustomerLists();
+        }
+
+        private void AddCustomerToWorkplaceButton_Click(object sender, EventArgs e)
+        {
+            customerstoworkplace.Add(customers[CustomerListBox.SelectedIndex]);
+            UpdateCustomerLists();
+        }
+
+        private void RemoveCustomerFromWorkplaceButton_Click(object sender, EventArgs e)
+        {
+            if (CustomersToWorkplaceListBox.SelectedIndex >= 0)
+            {
+                customerstoworkplace.RemoveAt(CustomersToWorkplaceListBox.SelectedIndex);     //could loop to delete the selected customer ID instead of the customers place in the list - use if sorting by ID instead of list order.
+                UpdateCustomerLists();
+            }
+        }
+
+        private void RemoveCustomerFromWorkplaceButton_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateCustomerLists();
+        }
+
+        private void AddRoofButton_Click(object sender, EventArgs e)
+        {
+            SelectedRoofs.Add(Roofs[RoofListBox.SelectedIndex]);    //       Also add a check to make sure something is selected so no crash
+            UpdateRoofsList();
+
+        }
+
+        private void RemoveRoofButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedRoofsListBox.SelectedIndex >= 0)
+            {
+                SelectedRoofs.RemoveAt(SelectedRoofsListBox.SelectedIndex);   //could loop to delete the selected customer ID instead of the customers place in the list - use if sorting by ID instead of list order.
+            }
+            UpdateRoofsList();
         }
     }
 }
