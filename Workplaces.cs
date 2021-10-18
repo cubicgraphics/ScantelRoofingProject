@@ -26,6 +26,18 @@ namespace ScantelRoofingPrototype
             PredictedEndDate = predictedenddate;
             RealEndDate = realenddate;
         }
+        public static int GetHighestID(List<Workplaces> workplaces)
+        {
+            int highest = 0;
+            for (int i = 0; i < workplaces.Count; i++)
+            {
+                if (workplaces[i].ID > highest)
+                {
+                    highest = workplaces[i].ID;
+                }
+            }
+            return highest;
+        }
 
     }
 }

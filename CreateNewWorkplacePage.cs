@@ -72,10 +72,24 @@ namespace ScantelRoofingPrototype
 
         private void CreateWorkplaceButton_Click(object sender, EventArgs e)
         {
+            List<Workplaces> workplaces = FileReader.ReadFromWorkplacesFile();
+            List<CustomerToWorkplace> CustomersToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
+            bool beingworkedat = false;
+            if (StartDatePicker.Value <= DateTime.Now)
+            {
+                beingworkedat = true;
+            }
+            int newworkplaceID = Workplaces.GetHighestID(workplaces);
+            workplaces.Add(new Workplaces(newworkplaceID + 1, WorkplaceNameInputBox.Text, AddressInputBox.Text, beingworkedat, StartDatePicker.Value, PredictedEndDatePicker.Value, PredictedEndDatePicker.Value));
+            for (int i = 0; i < customerstoworkplace.Count; i++)
+            {
+                CustomersToWorkplaces.Add(new CustomerToWorkplace(CustomerToWorkplace.GetHighestID(CustomersToWorkplaces) + 1, customerstoworkplace[i].ID, newworkplaceID));
+            }
+            FileReader.WriteToCustomerToWorkplaceFile(CustomersToWorkplaces);
+            FileReader.WriteToWorkplaceFile(workplaces);
 
-
-
-
+            WorkplaceNameInputBox.Text = "";
+            AddressInputBox.Text = "";
 
             this.Hide();
             PrevInterface.Show();

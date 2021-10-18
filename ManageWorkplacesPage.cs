@@ -231,6 +231,20 @@ namespace ScantelRoofingPrototype
             UpdateWorkplaceAndRefreshTable();
         }
 
-
+        private void DeleteSelectedWorkplaceButton_Click(object sender, EventArgs e)
+        {
+            int selectedworkplaceID = workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID;
+            int removeat = -1;
+            for (int i = 0; i < workplaces.Count; i++)
+            {
+                if (selectedworkplaceID == workplaces[i].ID)
+                {
+                    removeat = i;
+                }
+            }
+            workplaces.RemoveAt(removeat);
+            FileReader.WriteToWorkplaceFile(workplaces);
+            UpdateWorkplaceAndRefreshTable();
+        }
     }
 }
