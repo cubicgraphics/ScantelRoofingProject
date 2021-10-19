@@ -60,13 +60,15 @@ namespace ScantelRoofingPrototype
             NewTileMaterialListBox.DisplayMember = "Name";
 
             NewWoodMaterialListBox.DataSource = null;
-            NewWoodMaterialListBox.DataSource = TileStocks;
+            NewWoodMaterialListBox.DataSource = WoodStocks;
             NewWoodMaterialListBox.DisplayMember = "Name";
         }
 
         private void UpdateMaterialLists()
         {
             stocks = FileReader.ReadFromStocksFile();
+            WoodStocks = new List<Stocks>();
+            TileStocks = new List<Stocks>();
             for (int i = 0; i < stocks.Count; i++)
             {
                 if (stocks[i].IsATypeOfSlate == true)
@@ -75,7 +77,7 @@ namespace ScantelRoofingPrototype
                 }
                 else if (stocks[i].IsATypeOfWood == true)
                 {
-                    WoodStocks.Add(stocks[i]);       //this no work for some reason
+                    WoodStocks.Add(stocks[i]);       
                 }
             }
         }
@@ -111,8 +113,12 @@ namespace ScantelRoofingPrototype
         {
 
             int TileID = TileStocks[NewTileMaterialListBox.SelectedIndex].ID;
-            int WoodID = TileStocks[NewWoodMaterialListBox.SelectedIndex].ID;
-            Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameBox.Text, float.Parse(NewElevationLengthBox.Text), float.Parse(NewElevationLengthBox.Text), float.Parse(NewElevationSlantHeightBox.Text), TileID, WoodID));
+            int WoodID = WoodStocks[NewWoodMaterialListBox.SelectedIndex].ID;
+            Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameBox.Text, float.Parse(NewElevationLengthBox.Text), float.Parse(ElevationWidthBox.Text), float.Parse(NewElevationSlantHeightBox.Text), TileID, WoodID));
+            FileReader.WriteToRoofFile(Roofs);
+
+            UpdateAndRefreshRoofListAndTable();
+            UpdateChangesTextBoxes();
         }
 
         private void WoodMaterialListBox_VisibleChanged(object sender, EventArgs e)
@@ -124,6 +130,25 @@ namespace ScantelRoofingPrototype
 
         private void RoofsDataGridView_Click(object sender, EventArgs e)
         {
+            UpdateChangesTextBoxes();
+        }
+
+        private void SaveChangesButton_Click(object sender, EventArgs e)
+        {
+            int TileID = TileStocks[TileMaterialListBox.SelectedIndex].ID;
+            int WoodID = WoodStocks[WoodMaterialListBox.SelectedIndex].ID;
+            Roofs[RoofsDataGridView.SelectedCells[0].RowIndex] = new RoofElevation(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex].ID, ElevationNameBox.Text, float.Parse(ElevationLengthBox.Text), float.Parse(ElevationWidthBox.Text), float.Parse(ElevationSlantHeightBox.Text), TileID, WoodID);
+            FileReader.WriteToRoofFile(Roofs);
+
+            UpdateAndRefreshRoofListAndTable();
+            UpdateChangesTextBoxes();
+        }
+
+        private void RemoveElevationButton_Click(object sender, EventArgs e)
+        {
+            Roofs.RemoveAt(RoofsDataGridView.SelectedCells[0].RowIndex);
+            FileReader.WriteToRoofFile(Roofs);
+            UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
         }
     }

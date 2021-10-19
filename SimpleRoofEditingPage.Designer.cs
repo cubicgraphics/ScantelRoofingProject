@@ -345,6 +345,7 @@ namespace ScantelRoofingPrototype
             this.SaveChangesButton.TabIndex = 21;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // EstimatedQuoteLabel
             // 
@@ -388,6 +389,7 @@ namespace ScantelRoofingPrototype
             this.RemoveElevationButton.TabIndex = 34;
             this.RemoveElevationButton.Text = "Remove selected elevation";
             this.RemoveElevationButton.UseVisualStyleBackColor = true;
+            this.RemoveElevationButton.Click += new System.EventHandler(this.RemoveElevationButton_Click);
             // 
             // SaveRealCostButton
             // 
