@@ -223,7 +223,7 @@ namespace ScantelRoofingPrototype
             List<WorkplaceToRoof> workplaceToRoof = new List<WorkplaceToRoof>();
             for (int i = 0; i < Data.Length; i++)
             {
-                workplaceToRoof.Add(new WorkplaceToRoof(int.Parse(Data[i][0]), Data[i][1], int.Parse(Data[i][2])));
+                workplaceToRoof.Add(new WorkplaceToRoof(int.Parse(Data[i][0]), int.Parse(Data[i][1]), int.Parse(Data[i][2])));
             }
             return workplaceToRoof;
         }
@@ -233,7 +233,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[workplacetoroofs.Count()];
             for (int i = 0; i < workplacetoroofs.Count; i++)
             {
-                texttowrite[i] = workplacetoroofs[i].ID.ToString() + "," + workplacetoroofs[i].RoofName + "," + workplacetoroofs[i].WorkplaceID.ToString();
+                texttowrite[i] = workplacetoroofs[i].ID.ToString() + "," + workplacetoroofs[i].RoofID.ToString() + "," + workplacetoroofs[i].WorkplaceID.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\WorkplaceToRoof.txt", texttowrite);

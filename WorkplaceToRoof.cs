@@ -9,14 +9,27 @@ namespace ScantelRoofingPrototype
     class WorkplaceToRoof
     {
         public int ID { get; }
-        public string RoofName { get; }
+        public int RoofID { get; }
         public int WorkplaceID { get; }
 
-        public WorkplaceToRoof(int id, string roofname, int workplaceid)
+        public WorkplaceToRoof(int id, int roofid, int workplaceid)
         {
             ID = id;
-            RoofName = roofname;
+            RoofID = roofid;
             WorkplaceID = workplaceid;
+        }
+
+        public static int GetHighestID(List<WorkplaceToRoof> workplaceToRoof)
+        {
+            int highest = 0;
+            for (int i = 0; i < workplaceToRoof.Count; i++)
+            {
+                if (workplaceToRoof[i].ID > highest)
+                {
+                    highest = workplaceToRoof[i].ID;
+                }
+            }
+            return highest;
         }
     }
 }

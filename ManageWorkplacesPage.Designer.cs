@@ -201,6 +201,7 @@ namespace ScantelRoofingPrototype
             this.RemoveRoofFromWorkplaceButton.TabIndex = 14;
             this.RemoveRoofFromWorkplaceButton.Text = ">";
             this.RemoveRoofFromWorkplaceButton.UseVisualStyleBackColor = true;
+            this.RemoveRoofFromWorkplaceButton.Click += new System.EventHandler(this.RemoveRoofFromWorkplaceButton_Click);
             // 
             // AddRoofToWorkplaceButton
             // 
@@ -210,6 +211,7 @@ namespace ScantelRoofingPrototype
             this.AddRoofToWorkplaceButton.TabIndex = 15;
             this.AddRoofToWorkplaceButton.Text = "<";
             this.AddRoofToWorkplaceButton.UseVisualStyleBackColor = true;
+            this.AddRoofToWorkplaceButton.Click += new System.EventHandler(this.AddRoofToWorkplaceButton_Click);
             // 
             // RoofsAtWorkplaceLabel
             // 

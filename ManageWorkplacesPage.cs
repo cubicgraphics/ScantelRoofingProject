@@ -31,6 +31,7 @@ namespace ScantelRoofingPrototype
             simpleRoofEditingPage = new SimpleRoofEditingPage(this);
             employeesSetToWorkplace = new List<EmployeePeople>();
             CustomersSetToWorkplace = new List<People>();
+            roofsSetToWorkplace = new List<RoofElevation>();
             PrevInterface = Interface;
             InitializeComponent();
 
@@ -120,6 +121,38 @@ namespace ScantelRoofingPrototype
             }
         }
 
+        private void UpdateRoofsAndRoofsAtWorksiteList()
+        {
+            UpdateRoofList();
+            try
+            {
+                List<WorkplaceToRoof> workplaceToRoofs = FileReader.ReadFromWorkplaceToRoofFile();
+
+                roofsSetToWorkplace.Clear();
+                for (int i = 0; i < workplaceToRoofs.Count; i++)
+                {
+                    if (workplaceToRoofs[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID)
+                    {
+                        for (int x = 0; x < roofs.Count; x++)
+                        {
+                            if (workplaceToRoofs[i].RoofID == roofs[x].ID)
+                            {
+                                roofsSetToWorkplace.Add(roofs[x]);
+                                //add validation to fix duplicate customers in the list from being created
+
+                            }
+                        }
+                    }
+                }
+                RoofsAtWorksiteListBox.DataSource = null;
+                RoofsAtWorksiteListBox.DataSource = roofsSetToWorkplace;
+                RoofsAtWorksiteListBox.DisplayMember = "Name";
+            }
+            catch
+            {
+            }
+        }
+
         private void UpdateEmployeeList()
         {
             employees = EmployeePeople.CombineEmployeePeopleList(FileReader.ReadFromEmployeeFile(), FileReader.ReadFromPeopleFile());
@@ -145,6 +178,14 @@ namespace ScantelRoofingPrototype
             CustomerListBox.DataSource = customers;
             CustomerListBox.DisplayMember = "Name";
         }
+        private void UpdateRoofList()
+        {
+            roofs = FileReader.ReadFromRoofFile();
+            RoofslistBox.DataSource = null;
+            RoofslistBox.DataSource = roofs;
+            RoofslistBox.DisplayMember = "Name";
+        }
+
 
         private void ManageWorkplacesPage_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -206,7 +247,7 @@ namespace ScantelRoofingPrototype
             List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
             for (int i = 0; i < customerToWorkplaces.Count; i++)
             {
-                if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))  //wierd errors happening
+                if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))
                 {
                     customerToWorkplaces.RemoveAt(i);
                 }
@@ -220,6 +261,7 @@ namespace ScantelRoofingPrototype
             UpdateWorkplaceAndRefreshTable();
             UpdateEmployeeAndEmployeeAtWorksiteList();
             UpdateCustomersAndCustomersAtWorksiteList();
+            UpdateRoofsAndRoofsAtWorksiteList();
             UpdateWorkplaceText();
         }
 
@@ -245,6 +287,31 @@ namespace ScantelRoofingPrototype
             workplaces.RemoveAt(removeat);
             FileReader.WriteToWorkplaceFile(workplaces);
             UpdateWorkplaceAndRefreshTable();
+        }
+
+        private void AddRoofToWorkplaceButton_Click(object sender, EventArgs e)
+        {
+            List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
+            workplacetoroof.Add(new WorkplaceToRoof(WorkplaceToRoof.GetHighestID(workplacetoroof) + 1, roofs[RoofslistBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
+            FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
+            UpdateRoofsAndRoofsAtWorksiteList();
+        }
+        private void RemoveRoofFromWorkplaceButton_Click(object sender, EventArgs e)
+        {
+            List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
+            for (int i = 0; i < workplacetoroof.Count; i++)
+            {
+                if (workplacetoroof.Count >= 1)
+                {
+                    if ((workplacetoroof[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (workplacetoroof[i].RoofID == roofs[RoofsAtWorksiteListBox.SelectedIndex].ID))
+                    {
+                        workplacetoroof.RemoveAt(i);
+                    }
+                }
+
+            }
+            FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
+            UpdateRoofsAndRoofsAtWorksiteList();
         }
     }
 }
