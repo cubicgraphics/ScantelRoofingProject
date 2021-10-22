@@ -55,6 +55,9 @@ namespace ScantelRoofingPrototype
         {
             UpdateWorkplaceList();
             RefeshDataTable();
+            UpdateRoofsAndRoofsAtWorksiteList();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateCustomersAndCustomersAtWorksiteList();
         }
 
         private void UpdateEmployeeAndEmployeeAtWorksiteList()
