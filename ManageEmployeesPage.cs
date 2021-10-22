@@ -50,6 +50,7 @@ namespace ScantelRoofingPrototype
             employeePeopleLinked = EmployeePeople.CombineEmployeePeopleList(employees, people);
             EmployeesDataBox.DataSource = employeePeopleLinked;
             RefreshEditPanel();
+            EmployeesDataBox.Columns.RemoveAt(5);
         }
 
 

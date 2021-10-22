@@ -44,6 +44,8 @@ namespace ScantelRoofingPrototype
         private void RefeshDataTable()
         {
             WorkplaceDataTable.DataSource = workplaces;
+            //table editing here
+
         }
         private void UpdateWorkplaceList()
         {
