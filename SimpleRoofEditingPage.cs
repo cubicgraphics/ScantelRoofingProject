@@ -151,5 +151,12 @@ namespace ScantelRoofingPrototype
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
         }
+
+
+
+
+
+
+        //When calculating needed materials for scantel roofs, calculate by diminishing courses - calculate by using small slates first then upwards to bigger ones and calculate how many batons are needed.
     }
 }
