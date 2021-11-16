@@ -114,7 +114,7 @@ namespace ScantelRoofingPrototype
 
             int TileID = TileStocks[NewTileMaterialListBox.SelectedIndex].ID;
             int WoodID = WoodStocks[NewWoodMaterialListBox.SelectedIndex].ID;
-            Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameBox.Text, float.Parse(NewElevationLengthBox.Text), float.Parse(ElevationWidthBox.Text), float.Parse(NewElevationSlantHeightBox.Text), TileID, WoodID));
+            Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameTextBox.Text, float.Parse(NewLengthTextBox.Text), float.Parse(NewWidthTextBox.Text), float.Parse(NewSlantAngleTextBox.Text), TileID, WoodID));
             FileReader.WriteToRoofFile(Roofs);
 
             UpdateAndRefreshRoofListAndTable();

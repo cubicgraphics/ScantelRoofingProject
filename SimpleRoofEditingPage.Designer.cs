@@ -36,18 +36,6 @@ namespace ScantelRoofingPrototype
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.CreateNewElevationButton = new System.Windows.Forms.Button();
-            this.NewElevationNameBox = new System.Windows.Forms.TextBox();
-            this.NewElevationWidthBox = new System.Windows.Forms.TextBox();
-            this.NewElevationLengthBox = new System.Windows.Forms.TextBox();
-            this.NewElevationSlantHeightBox = new System.Windows.Forms.TextBox();
-            this.NewTileMaterialListBox = new System.Windows.Forms.ListBox();
-            this.NewWoodMaterialListBox = new System.Windows.Forms.ListBox();
-            this.NewElevationNameLabel = new System.Windows.Forms.Label();
-            this.NewElevationWidthLabel = new System.Windows.Forms.Label();
-            this.NewElevationLengthLabel = new System.Windows.Forms.Label();
-            this.NewElevationSlantHeightLabel = new System.Windows.Forms.Label();
-            this.NewElevationTileMaterialLabel = new System.Windows.Forms.Label();
-            this.NewElevationWoodMaterialLabel = new System.Windows.Forms.Label();
             this.ElevationWoodMaterialLabel = new System.Windows.Forms.Label();
             this.ElevationTileMaterialLabel = new System.Windows.Forms.Label();
             this.ElevationSlantHeightLabel = new System.Windows.Forms.Label();
@@ -61,15 +49,28 @@ namespace ScantelRoofingPrototype
             this.ElevationWidthBox = new System.Windows.Forms.TextBox();
             this.ElevationNameBox = new System.Windows.Forms.TextBox();
             this.SaveChangesButton = new System.Windows.Forms.Button();
-            this.EstimatedQuoteLabel = new System.Windows.Forms.Label();
-            this.EstimatedQuoteOutputLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.RealCostLabel = new System.Windows.Forms.Label();
             this.RemoveElevationButton = new System.Windows.Forms.Button();
-            this.SaveRealCostButton = new System.Windows.Forms.Button();
             this.SearchByWorkplaceTextBox = new System.Windows.Forms.TextBox();
             this.SearchByWorkplaceLabel = new System.Windows.Forms.Label();
             this.RoofsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ScantleRoofCheckBox = new System.Windows.Forms.CheckBox();
+            this.NewScantleRoofCheckBoxLabel = new System.Windows.Forms.CheckBox();
+            this.NewWoodMaterialLabel = new System.Windows.Forms.Label();
+            this.NewTileMaterialLabel = new System.Windows.Forms.Label();
+            this.NewSlantAngleLabel = new System.Windows.Forms.Label();
+            this.NewLengthLabel = new System.Windows.Forms.Label();
+            this.NewWidthLabel = new System.Windows.Forms.Label();
+            this.NewElevationNameLabel = new System.Windows.Forms.Label();
+            this.NewWoodMaterialListBox = new System.Windows.Forms.ListBox();
+            this.NewTileMaterialListBox = new System.Windows.Forms.ListBox();
+            this.NewSlantAngleTextBox = new System.Windows.Forms.TextBox();
+            this.NewLengthTextBox = new System.Windows.Forms.TextBox();
+            this.NewWidthTextBox = new System.Windows.Forms.TextBox();
+            this.NewElevationNameTextBox = new System.Windows.Forms.TextBox();
+            this.RoofOutputMultiLineTextBox = new System.Windows.Forms.TextBox();
+            this.CalculateRoofButton = new System.Windows.Forms.Button();
+            this.SaveOutputButton = new System.Windows.Forms.Button();
+            this.OverallCostLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RoofsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,9 +94,9 @@ namespace ScantelRoofingPrototype
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(732, 9);
+            this.BackButton.Location = new System.Drawing.Point(670, 15);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(140, 40);
+            this.BackButton.Size = new System.Drawing.Size(155, 50);
             this.BackButton.TabIndex = 2;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@ namespace ScantelRoofingPrototype
             // RoofListLabel
             // 
             this.RoofListLabel.AutoSize = true;
-            this.RoofListLabel.Location = new System.Drawing.Point(12, 68);
+            this.RoofListLabel.Location = new System.Drawing.Point(12, 42);
             this.RoofListLabel.Name = "RoofListLabel";
             this.RoofListLabel.Size = new System.Drawing.Size(50, 15);
             this.RoofListLabel.TabIndex = 4;
@@ -112,7 +113,7 @@ namespace ScantelRoofingPrototype
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 91);
+            this.textBox1.Location = new System.Drawing.Point(60, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 23);
             this.textBox1.TabIndex = 5;
@@ -120,7 +121,7 @@ namespace ScantelRoofingPrototype
             // SearchLabel
             // 
             this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(12, 94);
+            this.SearchLabel.Location = new System.Drawing.Point(12, 68);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Size = new System.Drawing.Size(42, 15);
             this.SearchLabel.TabIndex = 6;
@@ -128,118 +129,18 @@ namespace ScantelRoofingPrototype
             // 
             // CreateNewElevationButton
             // 
-            this.CreateNewElevationButton.Location = new System.Drawing.Point(656, 353);
+            this.CreateNewElevationButton.Location = new System.Drawing.Point(831, 211);
             this.CreateNewElevationButton.Name = "CreateNewElevationButton";
-            this.CreateNewElevationButton.Size = new System.Drawing.Size(202, 40);
+            this.CreateNewElevationButton.Size = new System.Drawing.Size(211, 28);
             this.CreateNewElevationButton.TabIndex = 8;
             this.CreateNewElevationButton.Text = "Create new elevation";
             this.CreateNewElevationButton.UseVisualStyleBackColor = true;
             this.CreateNewElevationButton.Click += new System.EventHandler(this.CreateNewElevationButton_Click);
             // 
-            // NewElevationNameBox
-            // 
-            this.NewElevationNameBox.Location = new System.Drawing.Point(746, 187);
-            this.NewElevationNameBox.Name = "NewElevationNameBox";
-            this.NewElevationNameBox.Size = new System.Drawing.Size(112, 23);
-            this.NewElevationNameBox.TabIndex = 9;
-            // 
-            // NewElevationWidthBox
-            // 
-            this.NewElevationWidthBox.Location = new System.Drawing.Point(746, 216);
-            this.NewElevationWidthBox.Name = "NewElevationWidthBox";
-            this.NewElevationWidthBox.Size = new System.Drawing.Size(112, 23);
-            this.NewElevationWidthBox.TabIndex = 10;
-            // 
-            // NewElevationLengthBox
-            // 
-            this.NewElevationLengthBox.Location = new System.Drawing.Point(746, 245);
-            this.NewElevationLengthBox.Name = "NewElevationLengthBox";
-            this.NewElevationLengthBox.Size = new System.Drawing.Size(112, 23);
-            this.NewElevationLengthBox.TabIndex = 11;
-            // 
-            // NewElevationSlantHeightBox
-            // 
-            this.NewElevationSlantHeightBox.Location = new System.Drawing.Point(746, 274);
-            this.NewElevationSlantHeightBox.Name = "NewElevationSlantHeightBox";
-            this.NewElevationSlantHeightBox.Size = new System.Drawing.Size(112, 23);
-            this.NewElevationSlantHeightBox.TabIndex = 12;
-            // 
-            // NewTileMaterialListBox
-            // 
-            this.NewTileMaterialListBox.FormattingEnabled = true;
-            this.NewTileMaterialListBox.ItemHeight = 15;
-            this.NewTileMaterialListBox.Location = new System.Drawing.Point(746, 303);
-            this.NewTileMaterialListBox.Name = "NewTileMaterialListBox";
-            this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewTileMaterialListBox.TabIndex = 13;
-            // 
-            // NewWoodMaterialListBox
-            // 
-            this.NewWoodMaterialListBox.FormattingEnabled = true;
-            this.NewWoodMaterialListBox.ItemHeight = 15;
-            this.NewWoodMaterialListBox.Location = new System.Drawing.Point(746, 328);
-            this.NewWoodMaterialListBox.Name = "NewWoodMaterialListBox";
-            this.NewWoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewWoodMaterialListBox.TabIndex = 14;
-            // 
-            // NewElevationNameLabel
-            // 
-            this.NewElevationNameLabel.AutoSize = true;
-            this.NewElevationNameLabel.Location = new System.Drawing.Point(652, 190);
-            this.NewElevationNameLabel.Name = "NewElevationNameLabel";
-            this.NewElevationNameLabel.Size = new System.Drawing.Size(88, 15);
-            this.NewElevationNameLabel.TabIndex = 15;
-            this.NewElevationNameLabel.Text = "Elevation name";
-            // 
-            // NewElevationWidthLabel
-            // 
-            this.NewElevationWidthLabel.AutoSize = true;
-            this.NewElevationWidthLabel.Location = new System.Drawing.Point(677, 219);
-            this.NewElevationWidthLabel.Name = "NewElevationWidthLabel";
-            this.NewElevationWidthLabel.Size = new System.Drawing.Size(39, 15);
-            this.NewElevationWidthLabel.TabIndex = 16;
-            this.NewElevationWidthLabel.Text = "Width";
-            // 
-            // NewElevationLengthLabel
-            // 
-            this.NewElevationLengthLabel.AutoSize = true;
-            this.NewElevationLengthLabel.Location = new System.Drawing.Point(677, 248);
-            this.NewElevationLengthLabel.Name = "NewElevationLengthLabel";
-            this.NewElevationLengthLabel.Size = new System.Drawing.Size(44, 15);
-            this.NewElevationLengthLabel.TabIndex = 17;
-            this.NewElevationLengthLabel.Text = "Length";
-            // 
-            // NewElevationSlantHeightLabel
-            // 
-            this.NewElevationSlantHeightLabel.AutoSize = true;
-            this.NewElevationSlantHeightLabel.Location = new System.Drawing.Point(670, 277);
-            this.NewElevationSlantHeightLabel.Name = "NewElevationSlantHeightLabel";
-            this.NewElevationSlantHeightLabel.Size = new System.Drawing.Size(70, 15);
-            this.NewElevationSlantHeightLabel.TabIndex = 18;
-            this.NewElevationSlantHeightLabel.Text = "Slant height";
-            // 
-            // NewElevationTileMaterialLabel
-            // 
-            this.NewElevationTileMaterialLabel.AutoSize = true;
-            this.NewElevationTileMaterialLabel.Location = new System.Drawing.Point(670, 307);
-            this.NewElevationTileMaterialLabel.Name = "NewElevationTileMaterialLabel";
-            this.NewElevationTileMaterialLabel.Size = new System.Drawing.Size(71, 15);
-            this.NewElevationTileMaterialLabel.TabIndex = 19;
-            this.NewElevationTileMaterialLabel.Text = "Tile material";
-            // 
-            // NewElevationWoodMaterialLabel
-            // 
-            this.NewElevationWoodMaterialLabel.AutoSize = true;
-            this.NewElevationWoodMaterialLabel.Location = new System.Drawing.Point(656, 332);
-            this.NewElevationWoodMaterialLabel.Name = "NewElevationWoodMaterialLabel";
-            this.NewElevationWoodMaterialLabel.Size = new System.Drawing.Size(85, 15);
-            this.NewElevationWoodMaterialLabel.TabIndex = 20;
-            this.NewElevationWoodMaterialLabel.Text = "Wood material";
-            // 
             // ElevationWoodMaterialLabel
             // 
             this.ElevationWoodMaterialLabel.AutoSize = true;
-            this.ElevationWoodMaterialLabel.Location = new System.Drawing.Point(417, 378);
+            this.ElevationWoodMaterialLabel.Location = new System.Drawing.Point(426, 474);
             this.ElevationWoodMaterialLabel.Name = "ElevationWoodMaterialLabel";
             this.ElevationWoodMaterialLabel.Size = new System.Drawing.Size(85, 15);
             this.ElevationWoodMaterialLabel.TabIndex = 33;
@@ -248,7 +149,7 @@ namespace ScantelRoofingPrototype
             // ElevationTileMaterialLabel
             // 
             this.ElevationTileMaterialLabel.AutoSize = true;
-            this.ElevationTileMaterialLabel.Location = new System.Drawing.Point(431, 353);
+            this.ElevationTileMaterialLabel.Location = new System.Drawing.Point(440, 448);
             this.ElevationTileMaterialLabel.Name = "ElevationTileMaterialLabel";
             this.ElevationTileMaterialLabel.Size = new System.Drawing.Size(71, 15);
             this.ElevationTileMaterialLabel.TabIndex = 32;
@@ -257,7 +158,7 @@ namespace ScantelRoofingPrototype
             // ElevationSlantHeightLabel
             // 
             this.ElevationSlantHeightLabel.AutoSize = true;
-            this.ElevationSlantHeightLabel.Location = new System.Drawing.Point(431, 323);
+            this.ElevationSlantHeightLabel.Location = new System.Drawing.Point(440, 391);
             this.ElevationSlantHeightLabel.Name = "ElevationSlantHeightLabel";
             this.ElevationSlantHeightLabel.Size = new System.Drawing.Size(65, 15);
             this.ElevationSlantHeightLabel.TabIndex = 31;
@@ -266,7 +167,7 @@ namespace ScantelRoofingPrototype
             // ElevationLengthLabel
             // 
             this.ElevationLengthLabel.AutoSize = true;
-            this.ElevationLengthLabel.Location = new System.Drawing.Point(438, 294);
+            this.ElevationLengthLabel.Location = new System.Drawing.Point(461, 361);
             this.ElevationLengthLabel.Name = "ElevationLengthLabel";
             this.ElevationLengthLabel.Size = new System.Drawing.Size(44, 15);
             this.ElevationLengthLabel.TabIndex = 30;
@@ -275,7 +176,7 @@ namespace ScantelRoofingPrototype
             // ElevationWidthLabel
             // 
             this.ElevationWidthLabel.AutoSize = true;
-            this.ElevationWidthLabel.Location = new System.Drawing.Point(438, 265);
+            this.ElevationWidthLabel.Location = new System.Drawing.Point(466, 331);
             this.ElevationWidthLabel.Name = "ElevationWidthLabel";
             this.ElevationWidthLabel.Size = new System.Drawing.Size(39, 15);
             this.ElevationWidthLabel.TabIndex = 29;
@@ -284,7 +185,7 @@ namespace ScantelRoofingPrototype
             // ElevationNameLabel
             // 
             this.ElevationNameLabel.AutoSize = true;
-            this.ElevationNameLabel.Location = new System.Drawing.Point(413, 236);
+            this.ElevationNameLabel.Location = new System.Drawing.Point(417, 301);
             this.ElevationNameLabel.Name = "ElevationNameLabel";
             this.ElevationNameLabel.Size = new System.Drawing.Size(88, 15);
             this.ElevationNameLabel.TabIndex = 28;
@@ -294,7 +195,7 @@ namespace ScantelRoofingPrototype
             // 
             this.WoodMaterialListBox.FormattingEnabled = true;
             this.WoodMaterialListBox.ItemHeight = 15;
-            this.WoodMaterialListBox.Location = new System.Drawing.Point(507, 374);
+            this.WoodMaterialListBox.Location = new System.Drawing.Point(516, 470);
             this.WoodMaterialListBox.Name = "WoodMaterialListBox";
             this.WoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
             this.WoodMaterialListBox.TabIndex = 27;
@@ -304,105 +205,62 @@ namespace ScantelRoofingPrototype
             // 
             this.TileMaterialListBox.FormattingEnabled = true;
             this.TileMaterialListBox.ItemHeight = 15;
-            this.TileMaterialListBox.Location = new System.Drawing.Point(507, 349);
+            this.TileMaterialListBox.Location = new System.Drawing.Point(516, 444);
             this.TileMaterialListBox.Name = "TileMaterialListBox";
             this.TileMaterialListBox.Size = new System.Drawing.Size(112, 19);
             this.TileMaterialListBox.TabIndex = 26;
             // 
             // ElevationSlantHeightBox
             // 
-            this.ElevationSlantHeightBox.Location = new System.Drawing.Point(507, 320);
+            this.ElevationSlantHeightBox.Location = new System.Drawing.Point(516, 388);
             this.ElevationSlantHeightBox.Name = "ElevationSlantHeightBox";
             this.ElevationSlantHeightBox.Size = new System.Drawing.Size(112, 23);
             this.ElevationSlantHeightBox.TabIndex = 25;
             // 
             // ElevationLengthBox
             // 
-            this.ElevationLengthBox.Location = new System.Drawing.Point(507, 291);
+            this.ElevationLengthBox.Location = new System.Drawing.Point(516, 358);
             this.ElevationLengthBox.Name = "ElevationLengthBox";
             this.ElevationLengthBox.Size = new System.Drawing.Size(112, 23);
             this.ElevationLengthBox.TabIndex = 24;
             // 
             // ElevationWidthBox
             // 
-            this.ElevationWidthBox.Location = new System.Drawing.Point(507, 262);
+            this.ElevationWidthBox.Location = new System.Drawing.Point(516, 328);
             this.ElevationWidthBox.Name = "ElevationWidthBox";
             this.ElevationWidthBox.Size = new System.Drawing.Size(112, 23);
             this.ElevationWidthBox.TabIndex = 23;
             // 
             // ElevationNameBox
             // 
-            this.ElevationNameBox.Location = new System.Drawing.Point(507, 233);
+            this.ElevationNameBox.Location = new System.Drawing.Point(516, 298);
             this.ElevationNameBox.Name = "ElevationNameBox";
             this.ElevationNameBox.Size = new System.Drawing.Size(112, 23);
             this.ElevationNameBox.TabIndex = 22;
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(417, 399);
+            this.SaveChangesButton.Location = new System.Drawing.Point(426, 496);
             this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(202, 40);
+            this.SaveChangesButton.Size = new System.Drawing.Size(202, 28);
             this.SaveChangesButton.TabIndex = 21;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
-            // EstimatedQuoteLabel
-            // 
-            this.EstimatedQuoteLabel.AutoSize = true;
-            this.EstimatedQuoteLabel.Location = new System.Drawing.Point(448, 99);
-            this.EstimatedQuoteLabel.Name = "EstimatedQuoteLabel";
-            this.EstimatedQuoteLabel.Size = new System.Drawing.Size(96, 15);
-            this.EstimatedQuoteLabel.TabIndex = 39;
-            this.EstimatedQuoteLabel.Text = "Estimated quote:";
-            // 
-            // EstimatedQuoteOutputLabel
-            // 
-            this.EstimatedQuoteOutputLabel.AutoSize = true;
-            this.EstimatedQuoteOutputLabel.Location = new System.Drawing.Point(550, 99);
-            this.EstimatedQuoteOutputLabel.Name = "EstimatedQuoteOutputLabel";
-            this.EstimatedQuoteOutputLabel.Size = new System.Drawing.Size(55, 15);
-            this.EstimatedQuoteOutputLabel.TabIndex = 40;
-            this.EstimatedQuoteOutputLabel.Text = "NUMBER";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(511, 123);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 23);
-            this.textBox2.TabIndex = 41;
-            // 
-            // RealCostLabel
-            // 
-            this.RealCostLabel.AutoSize = true;
-            this.RealCostLabel.Location = new System.Drawing.Point(448, 126);
-            this.RealCostLabel.Name = "RealCostLabel";
-            this.RealCostLabel.Size = new System.Drawing.Size(57, 15);
-            this.RealCostLabel.TabIndex = 42;
-            this.RealCostLabel.Text = "Real cost:";
-            // 
             // RemoveElevationButton
             // 
-            this.RemoveElevationButton.Location = new System.Drawing.Point(656, 399);
+            this.RemoveElevationButton.Location = new System.Drawing.Point(831, 245);
             this.RemoveElevationButton.Name = "RemoveElevationButton";
-            this.RemoveElevationButton.Size = new System.Drawing.Size(202, 38);
+            this.RemoveElevationButton.Size = new System.Drawing.Size(211, 30);
             this.RemoveElevationButton.TabIndex = 34;
             this.RemoveElevationButton.Text = "Remove selected elevation";
             this.RemoveElevationButton.UseVisualStyleBackColor = true;
             this.RemoveElevationButton.Click += new System.EventHandler(this.RemoveElevationButton_Click);
             // 
-            // SaveRealCostButton
-            // 
-            this.SaveRealCostButton.Location = new System.Drawing.Point(448, 149);
-            this.SaveRealCostButton.Name = "SaveRealCostButton";
-            this.SaveRealCostButton.Size = new System.Drawing.Size(157, 27);
-            this.SaveRealCostButton.TabIndex = 43;
-            this.SaveRealCostButton.Text = "Save real cost";
-            this.SaveRealCostButton.UseVisualStyleBackColor = true;
-            // 
             // SearchByWorkplaceTextBox
             // 
-            this.SearchByWorkplaceTextBox.Location = new System.Drawing.Point(304, 91);
+            this.SearchByWorkplaceTextBox.Location = new System.Drawing.Point(304, 65);
             this.SearchByWorkplaceTextBox.Name = "SearchByWorkplaceTextBox";
             this.SearchByWorkplaceTextBox.Size = new System.Drawing.Size(103, 23);
             this.SearchByWorkplaceTextBox.TabIndex = 44;
@@ -410,7 +268,7 @@ namespace ScantelRoofingPrototype
             // SearchByWorkplaceLabel
             // 
             this.SearchByWorkplaceLabel.AutoSize = true;
-            this.SearchByWorkplaceLabel.Location = new System.Drawing.Point(183, 94);
+            this.SearchByWorkplaceLabel.Location = new System.Drawing.Point(183, 68);
             this.SearchByWorkplaceLabel.Name = "SearchByWorkplaceLabel";
             this.SearchByWorkplaceLabel.Size = new System.Drawing.Size(115, 15);
             this.SearchByWorkplaceLabel.TabIndex = 45;
@@ -419,27 +277,197 @@ namespace ScantelRoofingPrototype
             // RoofsDataGridView
             // 
             this.RoofsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RoofsDataGridView.Location = new System.Drawing.Point(12, 118);
+            this.RoofsDataGridView.Location = new System.Drawing.Point(12, 94);
             this.RoofsDataGridView.Name = "RoofsDataGridView";
             this.RoofsDataGridView.ReadOnly = true;
             this.RoofsDataGridView.RowTemplate.Height = 25;
-            this.RoofsDataGridView.Size = new System.Drawing.Size(395, 319);
+            this.RoofsDataGridView.Size = new System.Drawing.Size(395, 430);
             this.RoofsDataGridView.TabIndex = 46;
             this.RoofsDataGridView.Click += new System.EventHandler(this.RoofsDataGridView_Click);
+            // 
+            // ScantleRoofCheckBox
+            // 
+            this.ScantleRoofCheckBox.AutoSize = true;
+            this.ScantleRoofCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ScantleRoofCheckBox.Location = new System.Drawing.Point(539, 418);
+            this.ScantleRoofCheckBox.Name = "ScantleRoofCheckBox";
+            this.ScantleRoofCheckBox.Size = new System.Drawing.Size(89, 19);
+            this.ScantleRoofCheckBox.TabIndex = 47;
+            this.ScantleRoofCheckBox.Text = "Scantle roof";
+            this.ScantleRoofCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // NewScantleRoofCheckBoxLabel
+            // 
+            this.NewScantleRoofCheckBoxLabel.AutoSize = true;
+            this.NewScantleRoofCheckBoxLabel.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NewScantleRoofCheckBoxLabel.Location = new System.Drawing.Point(953, 132);
+            this.NewScantleRoofCheckBoxLabel.Name = "NewScantleRoofCheckBoxLabel";
+            this.NewScantleRoofCheckBoxLabel.Size = new System.Drawing.Size(89, 19);
+            this.NewScantleRoofCheckBoxLabel.TabIndex = 61;
+            this.NewScantleRoofCheckBoxLabel.Text = "Scantle roof";
+            this.NewScantleRoofCheckBoxLabel.UseVisualStyleBackColor = true;
+            // 
+            // NewWoodMaterialLabel
+            // 
+            this.NewWoodMaterialLabel.AutoSize = true;
+            this.NewWoodMaterialLabel.Location = new System.Drawing.Point(840, 188);
+            this.NewWoodMaterialLabel.Name = "NewWoodMaterialLabel";
+            this.NewWoodMaterialLabel.Size = new System.Drawing.Size(85, 15);
+            this.NewWoodMaterialLabel.TabIndex = 60;
+            this.NewWoodMaterialLabel.Text = "Wood material";
+            // 
+            // NewTileMaterialLabel
+            // 
+            this.NewTileMaterialLabel.AutoSize = true;
+            this.NewTileMaterialLabel.Location = new System.Drawing.Point(854, 162);
+            this.NewTileMaterialLabel.Name = "NewTileMaterialLabel";
+            this.NewTileMaterialLabel.Size = new System.Drawing.Size(71, 15);
+            this.NewTileMaterialLabel.TabIndex = 59;
+            this.NewTileMaterialLabel.Text = "Tile material";
+            // 
+            // NewSlantAngleLabel
+            // 
+            this.NewSlantAngleLabel.AutoSize = true;
+            this.NewSlantAngleLabel.Location = new System.Drawing.Point(854, 105);
+            this.NewSlantAngleLabel.Name = "NewSlantAngleLabel";
+            this.NewSlantAngleLabel.Size = new System.Drawing.Size(65, 15);
+            this.NewSlantAngleLabel.TabIndex = 58;
+            this.NewSlantAngleLabel.Text = "Slant angle";
+            // 
+            // NewLengthLabel
+            // 
+            this.NewLengthLabel.AutoSize = true;
+            this.NewLengthLabel.Location = new System.Drawing.Point(875, 75);
+            this.NewLengthLabel.Name = "NewLengthLabel";
+            this.NewLengthLabel.Size = new System.Drawing.Size(44, 15);
+            this.NewLengthLabel.TabIndex = 57;
+            this.NewLengthLabel.Text = "Length";
+            // 
+            // NewWidthLabel
+            // 
+            this.NewWidthLabel.AutoSize = true;
+            this.NewWidthLabel.Location = new System.Drawing.Point(880, 45);
+            this.NewWidthLabel.Name = "NewWidthLabel";
+            this.NewWidthLabel.Size = new System.Drawing.Size(39, 15);
+            this.NewWidthLabel.TabIndex = 56;
+            this.NewWidthLabel.Text = "Width";
+            // 
+            // NewElevationNameLabel
+            // 
+            this.NewElevationNameLabel.AutoSize = true;
+            this.NewElevationNameLabel.Location = new System.Drawing.Point(831, 15);
+            this.NewElevationNameLabel.Name = "NewElevationNameLabel";
+            this.NewElevationNameLabel.Size = new System.Drawing.Size(88, 15);
+            this.NewElevationNameLabel.TabIndex = 55;
+            this.NewElevationNameLabel.Text = "Elevation name";
+            // 
+            // NewWoodMaterialListBox
+            // 
+            this.NewWoodMaterialListBox.FormattingEnabled = true;
+            this.NewWoodMaterialListBox.ItemHeight = 15;
+            this.NewWoodMaterialListBox.Location = new System.Drawing.Point(930, 184);
+            this.NewWoodMaterialListBox.Name = "NewWoodMaterialListBox";
+            this.NewWoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
+            this.NewWoodMaterialListBox.TabIndex = 54;
+            // 
+            // NewTileMaterialListBox
+            // 
+            this.NewTileMaterialListBox.FormattingEnabled = true;
+            this.NewTileMaterialListBox.ItemHeight = 15;
+            this.NewTileMaterialListBox.Location = new System.Drawing.Point(930, 158);
+            this.NewTileMaterialListBox.Name = "NewTileMaterialListBox";
+            this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 19);
+            this.NewTileMaterialListBox.TabIndex = 53;
+            // 
+            // NewSlantAngleTextBox
+            // 
+            this.NewSlantAngleTextBox.Location = new System.Drawing.Point(930, 102);
+            this.NewSlantAngleTextBox.Name = "NewSlantAngleTextBox";
+            this.NewSlantAngleTextBox.Size = new System.Drawing.Size(112, 23);
+            this.NewSlantAngleTextBox.TabIndex = 52;
+            // 
+            // NewLengthTextBox
+            // 
+            this.NewLengthTextBox.Location = new System.Drawing.Point(930, 72);
+            this.NewLengthTextBox.Name = "NewLengthTextBox";
+            this.NewLengthTextBox.Size = new System.Drawing.Size(112, 23);
+            this.NewLengthTextBox.TabIndex = 51;
+            // 
+            // NewWidthTextBox
+            // 
+            this.NewWidthTextBox.Location = new System.Drawing.Point(930, 42);
+            this.NewWidthTextBox.Name = "NewWidthTextBox";
+            this.NewWidthTextBox.Size = new System.Drawing.Size(112, 23);
+            this.NewWidthTextBox.TabIndex = 50;
+            // 
+            // NewElevationNameTextBox
+            // 
+            this.NewElevationNameTextBox.Location = new System.Drawing.Point(930, 12);
+            this.NewElevationNameTextBox.Name = "NewElevationNameTextBox";
+            this.NewElevationNameTextBox.Size = new System.Drawing.Size(112, 23);
+            this.NewElevationNameTextBox.TabIndex = 49;
+            // 
+            // RoofOutputMultiLineTextBox
+            // 
+            this.RoofOutputMultiLineTextBox.Location = new System.Drawing.Point(417, 94);
+            this.RoofOutputMultiLineTextBox.Multiline = true;
+            this.RoofOutputMultiLineTextBox.Name = "RoofOutputMultiLineTextBox";
+            this.RoofOutputMultiLineTextBox.Size = new System.Drawing.Size(408, 198);
+            this.RoofOutputMultiLineTextBox.TabIndex = 62;
+            // 
+            // CalculateRoofButton
+            // 
+            this.CalculateRoofButton.Location = new System.Drawing.Point(634, 294);
+            this.CalculateRoofButton.Name = "CalculateRoofButton";
+            this.CalculateRoofButton.Size = new System.Drawing.Size(211, 28);
+            this.CalculateRoofButton.TabIndex = 63;
+            this.CalculateRoofButton.Text = "Calculate roof ";
+            this.CalculateRoofButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveOutputButton
+            // 
+            this.SaveOutputButton.Location = new System.Drawing.Point(634, 328);
+            this.SaveOutputButton.Name = "SaveOutputButton";
+            this.SaveOutputButton.Size = new System.Drawing.Size(211, 28);
+            this.SaveOutputButton.TabIndex = 64;
+            this.SaveOutputButton.Text = "Save output";
+            this.SaveOutputButton.UseVisualStyleBackColor = true;
+            // 
+            // OverallCostLabel
+            // 
+            this.OverallCostLabel.AutoSize = true;
+            this.OverallCostLabel.Location = new System.Drawing.Point(780, 366);
+            this.OverallCostLabel.Name = "OverallCostLabel";
+            this.OverallCostLabel.Size = new System.Drawing.Size(69, 15);
+            this.OverallCostLabel.TabIndex = 65;
+            this.OverallCostLabel.Text = "Overall cost";
             // 
             // SimpleRoofEditingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 536);
+            this.Controls.Add(this.OverallCostLabel);
+            this.Controls.Add(this.SaveOutputButton);
+            this.Controls.Add(this.CalculateRoofButton);
+            this.Controls.Add(this.RoofOutputMultiLineTextBox);
+            this.Controls.Add(this.NewScantleRoofCheckBoxLabel);
+            this.Controls.Add(this.NewWoodMaterialLabel);
+            this.Controls.Add(this.NewTileMaterialLabel);
+            this.Controls.Add(this.NewSlantAngleLabel);
+            this.Controls.Add(this.NewLengthLabel);
+            this.Controls.Add(this.NewWidthLabel);
+            this.Controls.Add(this.NewElevationNameLabel);
+            this.Controls.Add(this.NewWoodMaterialListBox);
+            this.Controls.Add(this.NewTileMaterialListBox);
+            this.Controls.Add(this.NewSlantAngleTextBox);
+            this.Controls.Add(this.NewLengthTextBox);
+            this.Controls.Add(this.NewWidthTextBox);
+            this.Controls.Add(this.NewElevationNameTextBox);
+            this.Controls.Add(this.ScantleRoofCheckBox);
             this.Controls.Add(this.RoofsDataGridView);
             this.Controls.Add(this.SearchByWorkplaceLabel);
             this.Controls.Add(this.SearchByWorkplaceTextBox);
-            this.Controls.Add(this.SaveRealCostButton);
-            this.Controls.Add(this.RealCostLabel);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.EstimatedQuoteOutputLabel);
-            this.Controls.Add(this.EstimatedQuoteLabel);
             this.Controls.Add(this.RemoveElevationButton);
             this.Controls.Add(this.ElevationWoodMaterialLabel);
             this.Controls.Add(this.ElevationTileMaterialLabel);
@@ -454,18 +482,6 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.ElevationWidthBox);
             this.Controls.Add(this.ElevationNameBox);
             this.Controls.Add(this.SaveChangesButton);
-            this.Controls.Add(this.NewElevationWoodMaterialLabel);
-            this.Controls.Add(this.NewElevationTileMaterialLabel);
-            this.Controls.Add(this.NewElevationSlantHeightLabel);
-            this.Controls.Add(this.NewElevationLengthLabel);
-            this.Controls.Add(this.NewElevationWidthLabel);
-            this.Controls.Add(this.NewElevationNameLabel);
-            this.Controls.Add(this.NewWoodMaterialListBox);
-            this.Controls.Add(this.NewTileMaterialListBox);
-            this.Controls.Add(this.NewElevationSlantHeightBox);
-            this.Controls.Add(this.NewElevationLengthBox);
-            this.Controls.Add(this.NewElevationWidthBox);
-            this.Controls.Add(this.NewElevationNameBox);
             this.Controls.Add(this.CreateNewElevationButton);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.textBox1);
@@ -491,18 +507,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Button CreateNewElevationButton;
-        private System.Windows.Forms.TextBox NewElevationNameBox;
-        private System.Windows.Forms.TextBox NewElevationWidthBox;
-        private System.Windows.Forms.TextBox NewElevationLengthBox;
-        private System.Windows.Forms.TextBox NewElevationSlantHeightBox;
-        private System.Windows.Forms.ListBox NewTileMaterialListBox;
-        private System.Windows.Forms.ListBox NewWoodMaterialListBox;
-        private System.Windows.Forms.Label NewElevationNameLabel;
-        private System.Windows.Forms.Label NewElevationWidthLabel;
-        private System.Windows.Forms.Label NewElevationLengthLabel;
-        private System.Windows.Forms.Label NewElevationSlantHeightLabel;
-        private System.Windows.Forms.Label NewElevationTileMaterialLabel;
-        private System.Windows.Forms.Label NewElevationWoodMaterialLabel;
         private System.Windows.Forms.Label ElevationWoodMaterialLabel;
         private System.Windows.Forms.Label ElevationTileMaterialLabel;
         private System.Windows.Forms.Label ElevationSlantHeightLabel;
@@ -516,14 +520,27 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox ElevationWidthBox;
         private System.Windows.Forms.TextBox ElevationNameBox;
         private System.Windows.Forms.Button SaveChangesButton;
-        private System.Windows.Forms.Label EstimatedQuoteLabel;
-        private System.Windows.Forms.Label EstimatedQuoteOutputLabel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label RealCostLabel;
         private System.Windows.Forms.Button RemoveElevationButton;
-        private System.Windows.Forms.Button SaveRealCostButton;
         private System.Windows.Forms.TextBox SearchByWorkplaceTextBox;
         private System.Windows.Forms.Label SearchByWorkplaceLabel;
         private System.Windows.Forms.DataGridView RoofsDataGridView;
+        private System.Windows.Forms.CheckBox ScantleRoofCheckBox;
+        private System.Windows.Forms.CheckBox NewScantleRoofCheckBoxLabel;
+        private System.Windows.Forms.Label NewWoodMaterialLabel;
+        private System.Windows.Forms.Label NewTileMaterialLabel;
+        private System.Windows.Forms.Label NewSlantAngleLabel;
+        private System.Windows.Forms.Label NewLengthLabel;
+        private System.Windows.Forms.Label NewWidthLabel;
+        private System.Windows.Forms.Label NewElevationNameLabel;
+        private System.Windows.Forms.ListBox NewWoodMaterialListBox;
+        private System.Windows.Forms.ListBox NewTileMaterialListBox;
+        private System.Windows.Forms.TextBox NewSlantAngleTextBox;
+        private System.Windows.Forms.TextBox NewLengthTextBox;
+        private System.Windows.Forms.TextBox NewWidthTextBox;
+        private System.Windows.Forms.TextBox NewElevationNameTextBox;
+        private System.Windows.Forms.TextBox RoofOutputMultiLineTextBox;
+        private System.Windows.Forms.Button CalculateRoofButton;
+        private System.Windows.Forms.Button SaveOutputButton;
+        private System.Windows.Forms.Label OverallCostLabel;
     }
 }
