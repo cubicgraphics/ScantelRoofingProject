@@ -103,7 +103,7 @@ namespace ScantelRoofingPrototype
 
         private void RefreshEditPanel()
         {
-            try
+            if (employees.Count != 0)
             {
                 int index = EmployeesDataBox.SelectedCells[0].RowIndex;
                 EmployeeNameBox.Text = employeePeopleLinked[index].Name;
@@ -114,10 +114,6 @@ namespace ScantelRoofingPrototype
                 EmployeeWagesBox.Text = employeePeopleLinked[index].Wages.ToString();
                 EmployeeUsernameTextBox.Text = employeePeopleLinked[index].Username;
                 EmployeeAccessCodeBox.Text = employeePeopleLinked[index].AccessCode;
-            }
-            catch
-            {
-
             }
         }
 

@@ -1,2 +1,1 @@
-﻿0,name,02948394,someone@gmail.com,25 new road
-1,aaron,983748,another@gmail.com,another place
+﻿

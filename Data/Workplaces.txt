@@ -1,1 +1,1 @@
-﻿0,PlaceName,Address,True,StartDateTime,PredictedEndDateTime,ReadEndDateTime
+﻿

@@ -83,17 +83,13 @@ namespace ScantelRoofingPrototype
         }
         private void UpdateChangesTextBoxes()
         {
-            try
+            if(Roofs.Count != 0)
             {
                 int index = RoofsDataGridView.SelectedCells[0].RowIndex;
                 ElevationNameBox.Text = Roofs[index].Name;
                 ElevationWidthBox.Text = Roofs[index].Width.ToString();
                 ElevationLengthBox.Text = Roofs[index].Length.ToString();
                 ElevationSlantHeightBox.Text = Roofs[index].SlantAngle.ToString();
-            }
-            catch
-            {
-
             }
         }
 

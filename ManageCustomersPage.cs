@@ -41,12 +41,14 @@ namespace ScantelRoofingPrototype
 
         private void refreshcustomerinfoboxes()
         {
-            int index = CustomerDataBox.SelectedCells[0].RowIndex;
-            CustomerNameInputBox.Text = customers[index].Name;
-            CustomerPhoneInputBox.Text = customers[index].PhoneNumber;
-            CustomerEmailInputBox.Text = customers[index].EmailAddress;
-            CustomerAddressInputBox.Text = customers[index].Address;
-
+            if (customers.Count != 0)
+            {
+                int index = CustomerDataBox.SelectedCells[0].RowIndex;
+                CustomerNameInputBox.Text = customers[index].Name;
+                CustomerPhoneInputBox.Text = customers[index].PhoneNumber;
+                CustomerEmailInputBox.Text = customers[index].EmailAddress;
+                CustomerAddressInputBox.Text = customers[index].Address;
+            }
         }
 
 

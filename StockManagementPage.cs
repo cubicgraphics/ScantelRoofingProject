@@ -44,7 +44,7 @@ namespace ScantelRoofingPrototype
         }
         private void RefreshStockSideInfo()
         {
-            try
+            if(stocks.Count != 0)
             {
                 int index = StocksDataGrid.SelectedCells[0].RowIndex;
                 AmountCurrentlyStockedTextBox.Text = stocks[index].CurrentAmount.ToString();
@@ -91,10 +91,6 @@ namespace ScantelRoofingPrototype
                     TileWidthInputBox.Text = "0";
                     TileLengthInputBox.Text = "0";
                 }
-
-            }
-            catch
-            {
 
             }
 

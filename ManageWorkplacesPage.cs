@@ -167,13 +167,16 @@ namespace ScantelRoofingPrototype
         }
         private void UpdateWorkplaceText()
         {
-            int index = WorkplaceDataTable.SelectedCells[0].RowIndex;
-            WorkplaceNameBox.Text = workplaces[index].PlaceName;
-            StartDateTimePicker.Value = workplaces[index].StartDate;
-            PredictedEndDateTimePicker.Value = workplaces[index].PredictedEndDate;
-            EndDateTimePicker.Value = workplaces[index].RealEndDate;
-            WorkplaceAddressBox.Text = workplaces[index].Address;
-            BeingWorkedAtCheckBox.Checked = workplaces[index].BeingWorkedAt;
+            if (workplaces.Count != 0)
+            {
+                int index = WorkplaceDataTable.SelectedCells[0].RowIndex;
+                WorkplaceNameBox.Text = workplaces[index].PlaceName;
+                StartDateTimePicker.Value = workplaces[index].StartDate;
+                PredictedEndDateTimePicker.Value = workplaces[index].PredictedEndDate;
+                EndDateTimePicker.Value = workplaces[index].RealEndDate;
+                WorkplaceAddressBox.Text = workplaces[index].Address;
+                BeingWorkedAtCheckBox.Checked = workplaces[index].BeingWorkedAt;
+            }
         }
 
         private void UpdateCustomerList()

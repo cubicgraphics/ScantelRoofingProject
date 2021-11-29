@@ -276,6 +276,8 @@ namespace ScantelRoofingPrototype
             // 
             // RoofsDataGridView
             // 
+            this.RoofsDataGridView.AllowUserToAddRows = false;
+            this.RoofsDataGridView.AllowUserToDeleteRows = false;
             this.RoofsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RoofsDataGridView.Location = new System.Drawing.Point(12, 94);
             this.RoofsDataGridView.Name = "RoofsDataGridView";
