@@ -104,7 +104,7 @@ namespace ScantelRoofingPrototype
             List<Stocks> stocks = new List<Stocks>();
             for (int i = 0; i < Data.Length; i++)
             {
-                stocks.Add(new Stocks(int.Parse(Data[i][0]), Data[i][1], int.Parse(Data[i][2]), float.Parse(Data[i][3]),float.Parse(Data[i][4]),float.Parse(Data[i][5]),bool.Parse(Data[i][6]),bool.Parse(Data[i][7]),float.Parse(Data[i][8]), float.Parse(Data[i][9])));
+                stocks.Add(new Stocks(int.Parse(Data[i][0]), Data[i][1], int.Parse(Data[i][2]), float.Parse(Data[i][3]),float.Parse(Data[i][4]),float.Parse(Data[i][5]),bool.Parse(Data[i][6]),bool.Parse(Data[i][7]),float.Parse(Data[i][8]), float.Parse(Data[i][9]),bool.Parse(Data[i][10])));
             }
             return stocks;
         }
@@ -114,7 +114,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[stocks.Count()];
             for (int i = 0; i < stocks.Count; i++)
             {
-                texttowrite[i] = stocks[i].ID.ToString() + Seperator + stocks[i].Name + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].ReservedForWorkplaces.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString();
+                texttowrite[i] = stocks[i].ID.ToString() + Seperator + stocks[i].Name + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].ReservedForWorkplaces.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle;
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Stocks.txt", texttowrite);
@@ -248,7 +248,7 @@ namespace ScantelRoofingPrototype
             List<RoofElevation> Roofs = new List<RoofElevation>();
             for (int i = 0; i < Data.Length; i++)
             {
-                Roofs.Add(new RoofElevation(int.Parse(Data[i][0]), Data[i][1], float.Parse(Data[i][2]), float.Parse(Data[i][3]), float.Parse(Data[i][4]), int.Parse(Data[i][5]), int.Parse(Data[i][6])));
+                Roofs.Add(new RoofElevation(int.Parse(Data[i][0]), Data[i][1], float.Parse(Data[i][2]), float.Parse(Data[i][3]), float.Parse(Data[i][4]), int.Parse(Data[i][5]), int.Parse(Data[i][6]),bool.Parse(Data[i][7])));
             }
             return Roofs;
         }
@@ -258,7 +258,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[Roofs.Count()];
             for (int i = 0; i < Roofs.Count; i++)
             {
-                texttowrite[i] = Roofs[i].ID.ToString() + Seperator + Roofs[i].Name + Seperator + Roofs[i].Length.ToString() + Seperator + Roofs[i].Width.ToString() + Seperator + Roofs[i].SlantAngle.ToString() + Seperator + Roofs[i].TileMaterialID.ToString() + Seperator + Roofs[i].WoodMaterialID.ToString();
+                texttowrite[i] = Roofs[i].ID.ToString() + Seperator + Roofs[i].Name + Seperator + Roofs[i].Length.ToString() + Seperator + Roofs[i].Width.ToString() + Seperator + Roofs[i].SlantAngle.ToString() + Seperator + Roofs[i].TileMaterialID.ToString() + Seperator + Roofs[i].WoodMaterialID.ToString() + Seperator + Roofs[i].Scantle.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Roofs.txt", texttowrite);

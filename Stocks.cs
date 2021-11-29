@@ -18,8 +18,9 @@ namespace ScantelRoofingPrototype
         public bool IsATypeOfWood { get; }
         public float LengthIfSlate { get; }
         public float WidthIfSlate { get; }
+        public bool UseableInScantle { get; }
 
-        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood)
+        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood, bool useableinscantle)
         {
             ID = id;
             Name = name;
@@ -31,10 +32,11 @@ namespace ScantelRoofingPrototype
             IsATypeOfWood = isatypeofwood;
             LengthIfSlate = 0;
             WidthIfSlate = 0;
+            UseableInScantle = useableinscantle;
         }
 
 
-        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood, float length, float width)
+        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood, float length, float width, bool useableinscantle)
         {
             ID = id;
             Name = name;
@@ -46,6 +48,7 @@ namespace ScantelRoofingPrototype
             IsATypeOfWood = isatypeofwood;
             LengthIfSlate = length;
             WidthIfSlate = width;
+            UseableInScantle = useableinscantle;
         }
 
 

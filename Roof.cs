@@ -15,9 +15,10 @@ namespace ScantelRoofingPrototype
         public float SlantAngle { get; }
         public int TileMaterialID { get; }
         public int WoodMaterialID { get; }
+        public bool Scantle { get; }
 
 
-        public RoofElevation(int id, string name, float length, float width, float slantangle, int tilematerialid, int woodmaterialid)
+        public RoofElevation(int id, string name, float length, float width, float slantangle, int tilematerialid, int woodmaterialid, bool scantle)
         {
             ID = id;
             Name = name;
@@ -26,6 +27,7 @@ namespace ScantelRoofingPrototype
             SlantAngle = slantangle;
             TileMaterialID = tilematerialid;
             WoodMaterialID = woodmaterialid;
+            Scantle = scantle;
         }
 
         public static int GetHighestID(List<RoofElevation> Roofs)

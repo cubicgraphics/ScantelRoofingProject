@@ -225,7 +225,7 @@ namespace ScantelRoofingPrototype
             {
                 tom = 2;
             }
-            stocks[index] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(AmountNeededForWorkplacesTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileWidthInputBox.Text), float.Parse(TileLengthInputBox.Text));
+            stocks[index] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(AmountNeededForWorkplacesTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileWidthInputBox.Text), float.Parse(TileLengthInputBox.Text), UseableInScantleCheckbox.Checked);
             FileReader.WriteToStockFile(stocks);
             UpdateStocksAndStocksDataGrid();
         }

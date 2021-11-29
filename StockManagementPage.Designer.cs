@@ -57,6 +57,7 @@ namespace ScantelRoofingPrototype
             this.DeleteSelectedMaterialButton = new System.Windows.Forms.Button();
             this.StocksDataGrid = new System.Windows.Forms.DataGridView();
             this.AmountToBuyAndCostLabelOutput = new System.Windows.Forms.Label();
+            this.UseableInScantleCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.StocksDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,7 +235,7 @@ namespace ScantelRoofingPrototype
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(1011, 403);
+            this.SaveChangesButton.Location = new System.Drawing.Point(1011, 430);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(230, 29);
             this.SaveChangesButton.TabIndex = 19;
@@ -310,7 +311,7 @@ namespace ScantelRoofingPrototype
             this.StocksDataGrid.Name = "StocksDataGrid";
             this.StocksDataGrid.ReadOnly = true;
             this.StocksDataGrid.RowTemplate.Height = 25;
-            this.StocksDataGrid.Size = new System.Drawing.Size(993, 348);
+            this.StocksDataGrid.Size = new System.Drawing.Size(993, 377);
             this.StocksDataGrid.TabIndex = 28;
             this.StocksDataGrid.VisibleChanged += new System.EventHandler(this.StocksDataGrid_VisibleChanged);
             this.StocksDataGrid.Click += new System.EventHandler(this.StocksDataGrid_Click);
@@ -324,11 +325,23 @@ namespace ScantelRoofingPrototype
             this.AmountToBuyAndCostLabelOutput.TabIndex = 29;
             this.AmountToBuyAndCostLabelOutput.Text = "AmountNeeded+Cost";
             // 
+            // UseableInScantleCheckbox
+            // 
+            this.UseableInScantleCheckbox.AutoSize = true;
+            this.UseableInScantleCheckbox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.UseableInScantleCheckbox.Location = new System.Drawing.Point(1121, 405);
+            this.UseableInScantleCheckbox.Name = "UseableInScantleCheckbox";
+            this.UseableInScantleCheckbox.Size = new System.Drawing.Size(120, 19);
+            this.UseableInScantleCheckbox.TabIndex = 30;
+            this.UseableInScantleCheckbox.Text = "Useable in scantle";
+            this.UseableInScantleCheckbox.UseVisualStyleBackColor = true;
+            // 
             // StockManagementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1417, 453);
+            this.ClientSize = new System.Drawing.Size(1417, 491);
+            this.Controls.Add(this.UseableInScantleCheckbox);
             this.Controls.Add(this.AmountToBuyAndCostLabelOutput);
             this.Controls.Add(this.StocksDataGrid);
             this.Controls.Add(this.DeleteSelectedMaterialButton);
@@ -396,5 +409,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Button DeleteSelectedMaterialButton;
         private System.Windows.Forms.DataGridView StocksDataGrid;
         private System.Windows.Forms.Label AmountToBuyAndCostLabelOutput;
+        private System.Windows.Forms.CheckBox UseableInScantleCheckbox;
     }
 }

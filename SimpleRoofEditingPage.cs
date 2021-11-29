@@ -90,6 +90,7 @@ namespace ScantelRoofingPrototype
                 ElevationWidthBox.Text = Roofs[index].Width.ToString();
                 ElevationLengthBox.Text = Roofs[index].Length.ToString();
                 ElevationSlantHeightBox.Text = Roofs[index].SlantAngle.ToString();
+                ScantleRoofCheckBox.Checked = Roofs[index].Scantle;
             }
         }
 
@@ -107,14 +108,15 @@ namespace ScantelRoofingPrototype
 
         private void CreateNewElevationButton_Click(object sender, EventArgs e)
         {
-
-            int TileID = TileStocks[NewTileMaterialListBox.SelectedIndex].ID;
-            int WoodID = WoodStocks[NewWoodMaterialListBox.SelectedIndex].ID;
-            Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameTextBox.Text, float.Parse(NewLengthTextBox.Text), float.Parse(NewWidthTextBox.Text), float.Parse(NewSlantAngleTextBox.Text), TileID, WoodID));
-            FileReader.WriteToRoofFile(Roofs);
-
-            UpdateAndRefreshRoofListAndTable();
-            UpdateChangesTextBoxes();
+            if ((TileStocks.Count != 0) || (WoodStocks.Count != 0))
+            {
+                int TileID = TileStocks[NewTileMaterialListBox.SelectedIndex].ID;
+                int WoodID = WoodStocks[NewWoodMaterialListBox.SelectedIndex].ID;
+                Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameTextBox.Text, float.Parse(NewLengthTextBox.Text), float.Parse(NewWidthTextBox.Text), float.Parse(NewSlantAngleTextBox.Text), TileID, WoodID, NewScantleRoofCheckBoxLabel.Checked));
+                FileReader.WriteToRoofFile(Roofs);
+                UpdateAndRefreshRoofListAndTable();
+                UpdateChangesTextBoxes();
+            }
         }
 
         private void WoodMaterialListBox_VisibleChanged(object sender, EventArgs e)
@@ -133,7 +135,6 @@ namespace ScantelRoofingPrototype
         {
             int TileID = TileStocks[TileMaterialListBox.SelectedIndex].ID;
             int WoodID = WoodStocks[WoodMaterialListBox.SelectedIndex].ID;
-            Roofs[RoofsDataGridView.SelectedCells[0].RowIndex] = new RoofElevation(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex].ID, ElevationNameBox.Text, float.Parse(ElevationLengthBox.Text), float.Parse(ElevationWidthBox.Text), float.Parse(ElevationSlantHeightBox.Text), TileID, WoodID);
             FileReader.WriteToRoofFile(Roofs);
 
             UpdateAndRefreshRoofListAndTable();

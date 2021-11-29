@@ -43,11 +43,12 @@ namespace ScantelRoofingPrototype
             this.MaterialPriceInputBox = new System.Windows.Forms.TextBox();
             this.MaterialNameLabel = new System.Windows.Forms.Label();
             this.MaterialNameInputBox = new System.Windows.Forms.TextBox();
+            this.UseableInScantleCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // CreateNewMaterialButton
             // 
-            this.CreateNewMaterialButton.Location = new System.Drawing.Point(12, 245);
+            this.CreateNewMaterialButton.Location = new System.Drawing.Point(12, 277);
             this.CreateNewMaterialButton.Name = "CreateNewMaterialButton";
             this.CreateNewMaterialButton.Size = new System.Drawing.Size(230, 29);
             this.CreateNewMaterialButton.TabIndex = 33;
@@ -179,11 +180,22 @@ namespace ScantelRoofingPrototype
             this.MaterialNameInputBox.Size = new System.Drawing.Size(131, 23);
             this.MaterialNameInputBox.TabIndex = 20;
             // 
+            // UseableInScantleCheckbox
+            // 
+            this.UseableInScantleCheckbox.AutoSize = true;
+            this.UseableInScantleCheckbox.Location = new System.Drawing.Point(12, 247);
+            this.UseableInScantleCheckbox.Name = "UseableInScantleCheckbox";
+            this.UseableInScantleCheckbox.Size = new System.Drawing.Size(120, 19);
+            this.UseableInScantleCheckbox.TabIndex = 34;
+            this.UseableInScantleCheckbox.Text = "Useable in scantle";
+            this.UseableInScantleCheckbox.UseVisualStyleBackColor = true;
+            // 
             // AddNewMaterialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 279);
+            this.ClientSize = new System.Drawing.Size(250, 318);
+            this.Controls.Add(this.UseableInScantleCheckbox);
             this.Controls.Add(this.CreateNewMaterialButton);
             this.Controls.Add(this.LengthIfRoofTIleLabel);
             this.Controls.Add(this.TileLengthInputBox);
@@ -223,5 +235,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox MaterialPriceInputBox;
         private System.Windows.Forms.Label MaterialNameLabel;
         private System.Windows.Forms.TextBox MaterialNameInputBox;
+        private System.Windows.Forms.CheckBox UseableInScantleCheckbox;
     }
 }
