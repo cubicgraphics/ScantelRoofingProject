@@ -8,8 +8,13 @@ using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
 {
+
+
     class FileReader
     {
+
+        public static string SafeToSave(string text) { return text.Replace(Seperator, "   "); }
+
         private const string Seperator = "\t";
 
         public static string[][] ReadFileToArray(string path)
@@ -42,7 +47,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[people.Count()];
             for (int i = 0; i < people.Count; i++)
             {
-                texttowrite[i] = people[i].ID.ToString() + Seperator + people[i].Name + Seperator + people[i].PhoneNumber.ToString() + Seperator + people[i].EmailAddress + Seperator + people[i].Address;
+                texttowrite[i] = people[i].ID.ToString() + Seperator + SafeToSave(people[i].Name) + Seperator + SafeToSave(people[i].PhoneNumber) + Seperator + SafeToSave(people[i].EmailAddress) + Seperator + SafeToSave(people[i].Address);
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\People.txt", texttowrite);
@@ -66,7 +71,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[employees.Count()];
             for (int i = 0; i < employees.Count; i++)
             {
-                texttowrite[i] = employees[i].ID.ToString() + Seperator + employees[i].PersonID.ToString() + Seperator + employees[i].AccessLevel.ToString() + Seperator + employees[i].Wages.ToString() + Seperator + employees[i].Username + Seperator + employees[i].Password + Seperator + employees[i].AccessCode;
+                texttowrite[i] = employees[i].ID.ToString() + Seperator + employees[i].PersonID.ToString() + Seperator + employees[i].AccessLevel.ToString() + Seperator + employees[i].Wages.ToString() + Seperator + SafeToSave(employees[i].Username) + Seperator + SafeToSave(employees[i].Password) + Seperator + SafeToSave(employees[i].AccessCode);
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Employees.txt", texttowrite);
@@ -114,7 +119,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[stocks.Count()];
             for (int i = 0; i < stocks.Count; i++)
             {
-                texttowrite[i] = stocks[i].ID.ToString() + Seperator + stocks[i].Name + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].ReservedForWorkplaces.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle;
+                texttowrite[i] = stocks[i].ID.ToString() + Seperator + SafeToSave(stocks[i].Name) + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].ReservedForWorkplaces.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Stocks.txt", texttowrite);
@@ -162,7 +167,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[workplaces.Count()];
             for (int i = 0; i < workplaces.Count; i++)
             {
-                texttowrite[i] = workplaces[i].ID.ToString() + Seperator + workplaces[i].PlaceName + Seperator + workplaces[i].Address + Seperator + workplaces[i].BeingWorkedAt.ToString() + Seperator + workplaces[i].StartDate.ToString() + Seperator + workplaces[i].PredictedEndDate.ToString() + Seperator + workplaces[i].RealEndDate.ToString(); 
+                texttowrite[i] = workplaces[i].ID.ToString() + Seperator + SafeToSave(workplaces[i].PlaceName) + Seperator + SafeToSave(workplaces[i].Address) + Seperator + workplaces[i].BeingWorkedAt.ToString() + Seperator + workplaces[i].StartDate.ToString() + Seperator + workplaces[i].PredictedEndDate.ToString() + Seperator + workplaces[i].RealEndDate.ToString(); 
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Workplaces.txt", texttowrite);
@@ -258,7 +263,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[Roofs.Count()];
             for (int i = 0; i < Roofs.Count; i++)
             {
-                texttowrite[i] = Roofs[i].ID.ToString() + Seperator + Roofs[i].Name + Seperator + Roofs[i].Length.ToString() + Seperator + Roofs[i].Width.ToString() + Seperator + Roofs[i].SlantAngle.ToString() + Seperator + Roofs[i].TileMaterialID.ToString() + Seperator + Roofs[i].WoodMaterialID.ToString() + Seperator + Roofs[i].Scantle.ToString();
+                texttowrite[i] = Roofs[i].ID.ToString() + Seperator + SafeToSave(Roofs[i].Name) + Seperator + Roofs[i].Length.ToString() + Seperator + Roofs[i].Width.ToString() + Seperator + Roofs[i].SlantAngle.ToString() + Seperator + Roofs[i].TileMaterialID.ToString() + Seperator + Roofs[i].WoodMaterialID.ToString() + Seperator + Roofs[i].Scantle.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Roofs.txt", texttowrite);

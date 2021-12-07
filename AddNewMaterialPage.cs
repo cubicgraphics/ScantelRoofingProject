@@ -33,7 +33,7 @@ namespace ScantelRoofingPrototype
             {
                 tom = 2;
             }
-            stock.Add(new Stocks(Stocks.GetHighestID(stock) + 1, MaterialNameInputBox.Text, tom, 0, 0, float.Parse(MaterialPriceInputBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked,float.Parse(WidthIfRoofTileWidthlabel.Text),float.Parse(LengthIfRoofTIleLabel.Text),UseableInScantleCheckbox.Checked));
+            stock.Add(new Stocks((Stocks.GetHighestID(stock) + 1), MaterialNameInputBox.Text, tom, 0, 0, float.Parse(MaterialPriceInputBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(WidthIfRoofTileWidthlabel.Text), float.Parse(LengthIfRoofTIleLabel.Text), UseableInScantleCheckbox.Checked)); //an error here for some reason
             FileReader.WriteToStockFile(stock);
         }
 

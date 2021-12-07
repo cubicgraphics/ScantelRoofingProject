@@ -225,43 +225,56 @@ namespace ScantelRoofingPrototype
 
         private void RemoveEmployeeFromWorkplaceButton_Click(object sender, EventArgs e)
         {
-            List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
-            for (int i = 0; i < employeeToWorkplace.Count; i++)
+            if (((employees != null) && (employees.Count >= 1)) && ((workplaces != null) && (workplaces.Count >= 1)))
             {
-                if ((employeeToWorkplace[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (employeeToWorkplace[i].EmployeeID == employeesSetToWorkplace[EmployeesAtWorksitelistBox.SelectedIndex].ID))
+                List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
+                for (int i = 0; i < employeeToWorkplace.Count; i++)
                 {
-                    employeeToWorkplace.RemoveAt(i);
+                    if ((employeeToWorkplace[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (employeeToWorkplace[i].EmployeeID == employeesSetToWorkplace[EmployeesAtWorksitelistBox.SelectedIndex].ID))
+                    {
+                        employeeToWorkplace.RemoveAt(i);
+                    }
                 }
+                FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
+                UpdateEmployeeAndEmployeeAtWorksiteList();
             }
-            FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
-            UpdateEmployeeAndEmployeeAtWorksiteList();
         }
         private void AddEmployeeToWorkplaceButton_Click(object sender, EventArgs e)
         {
-            List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
-            employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
-            FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
-            UpdateEmployeeAndEmployeeAtWorksiteList();
+            if (((employees != null) && (employees.Count >= 1)) && ((workplaces != null) && (workplaces.Count >= 1)))
+            {
+                List<EmployeeToWorkplace> employeeToWorkplace = FileReader.ReadFromEmployeeToWorkplaceFile();
+                employeeToWorkplace.Add(new EmployeeToWorkplace(EmployeeToWorkplace.GetHighestID(employeeToWorkplace) + 1, employees[EmployeesListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
+                FileReader.WriteToEmployeeToWorkplaceFile(employeeToWorkplace);
+                UpdateEmployeeAndEmployeeAtWorksiteList();
+            }
         }
         private void AddCustomerToWorkplace_Click(object sender, EventArgs e)
         {
-            List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
-            customerToWorkplaces.Add(new CustomerToWorkplace(CustomerToWorkplace.GetHighestID(customerToWorkplaces) + 1, customers[CustomerListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
-            FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
-            UpdateCustomersAndCustomersAtWorksiteList();
+            if (((customers != null) && (customers.Count >= 1)) && ((workplaces != null) && (workplaces.Count >= 1)))
+            {
+                List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
+                customerToWorkplaces.Add(new CustomerToWorkplace(CustomerToWorkplace.GetHighestID(customerToWorkplaces) + 1, customers[CustomerListBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
+                FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
+                UpdateCustomersAndCustomersAtWorksiteList();
+            }
+
         }
         private void RemoveCustomerFromWorkplace_Click(object sender, EventArgs e)
         {
-            List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
-            for (int i = 0; i < customerToWorkplaces.Count; i++)
+            if (((customers != null) && (customers.Count >= 1)) && ((workplaces != null) && (workplaces.Count >= 1)))
             {
-                if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))
+                List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
+                for (int i = 0; i < customerToWorkplaces.Count; i++)
                 {
-                    customerToWorkplaces.RemoveAt(i);
+                    if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))
+                    {
+                        customerToWorkplaces.RemoveAt(i);
+                    }
                 }
+                FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
+                UpdateCustomersAndCustomersAtWorksiteList();
             }
-            FileReader.WriteToCustomerToWorkplaceFile(customerToWorkplaces);
-            UpdateCustomersAndCustomersAtWorksiteList();
         }
 
         private void ManageWorkplacesPage_VisibleChanged(object sender, EventArgs e)
@@ -275,51 +288,68 @@ namespace ScantelRoofingPrototype
 
         private void SaveWorkplaceChangesButton_Click(object sender, EventArgs e)
         {
-
-            workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex] = new Workplaces(workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID, WorkplaceNameBox.Text, WorkplaceAddressBox.Text, BeingWorkedAtCheckBox.Checked, StartDateTimePicker.Value, PredictedEndDateTimePicker.Value, EndDateTimePicker.Value);
-            FileReader.WriteToWorkplaceFile(workplaces);
-            UpdateWorkplaceAndRefreshTable();
+                workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex] = new Workplaces(
+                    workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID,
+                    WorkplaceNameBox.Text,
+                    WorkplaceAddressBox.Text,
+                    BeingWorkedAtCheckBox.Checked,
+                    StartDateTimePicker.Value,
+                    PredictedEndDateTimePicker.Value,
+                    EndDateTimePicker.Value
+                );
+                FileReader.WriteToWorkplaceFile(workplaces);
+                UpdateWorkplaceAndRefreshTable();
         }
 
         private void DeleteSelectedWorkplaceButton_Click(object sender, EventArgs e)
         {
-            int selectedworkplaceID = workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID;
-            int removeat = -1;
-            for (int i = 0; i < workplaces.Count; i++)
+            if ((workplaces != null) && (workplaces.Count >= 1))
             {
-                if (selectedworkplaceID == workplaces[i].ID)
+                int selectedworkplaceID = workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID;
+                int removeat = -1;
+                for (int i = 0; i < workplaces.Count; i++)
                 {
-                    removeat = i;
+                    if (selectedworkplaceID == workplaces[i].ID)
+                    {
+                        removeat = i;
+                    }
                 }
+                workplaces.RemoveAt(removeat);
+                FileReader.WriteToWorkplaceFile(workplaces);
+                UpdateWorkplaceAndRefreshTable();
             }
-            workplaces.RemoveAt(removeat);
-            FileReader.WriteToWorkplaceFile(workplaces);
-            UpdateWorkplaceAndRefreshTable();
         }
 
         private void AddRoofToWorkplaceButton_Click(object sender, EventArgs e)
         {
-            List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
-            workplacetoroof.Add(new WorkplaceToRoof(WorkplaceToRoof.GetHighestID(workplacetoroof) + 1, roofs[RoofslistBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
-            FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
-            UpdateRoofsAndRoofsAtWorksiteList();
+            if (((roofs != null) && (roofs.Count >= 1))&&((workplaces != null)&&(workplaces.Count >= 1)))
+            {
+                List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
+                workplacetoroof.Add(new WorkplaceToRoof(WorkplaceToRoof.GetHighestID(workplacetoroof) + 1, roofs[RoofslistBox.SelectedIndex].ID, workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID));
+                FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
+                UpdateRoofsAndRoofsAtWorksiteList();
+            }
+
         }
         private void RemoveRoofFromWorkplaceButton_Click(object sender, EventArgs e)
         {
-            List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
-            for (int i = 0; i < workplacetoroof.Count; i++)
+            if ((workplaces != null) && (workplaces.Count >= 1))
             {
-                if (workplacetoroof.Count >= 1)
+                List<WorkplaceToRoof> workplacetoroof = FileReader.ReadFromWorkplaceToRoofFile();
+                for (int i = 0; i < workplacetoroof.Count; i++)
                 {
-                    if ((workplacetoroof[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (workplacetoroof[i].RoofID == roofs[RoofsAtWorksiteListBox.SelectedIndex].ID))
+                    if (workplacetoroof.Count >= 1)
                     {
-                        workplacetoroof.RemoveAt(i);
+                        if ((workplacetoroof[i].WorkplaceID == workplaces[WorkplaceDataTable.SelectedCells[0].RowIndex].ID) && (workplacetoroof[i].RoofID == roofs[RoofsAtWorksiteListBox.SelectedIndex].ID))
+                        {
+                            workplacetoroof.RemoveAt(i);
+                        }
                     }
-                }
 
+                }
+                FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
+                UpdateRoofsAndRoofsAtWorksiteList();
             }
-            FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
-            UpdateRoofsAndRoofsAtWorksiteList();
         }
     }
 }
