@@ -103,7 +103,7 @@ namespace ScantelRoofingPrototype
 
         private void RefreshEditPanel()
         {
-            if (employees.Count != 0)
+            if ((employees.Count != 0) && (EmployeesDataBox.SelectedCells.Count >= 1))
             {
                 int index = EmployeesDataBox.SelectedCells[0].RowIndex;
                 EmployeeNameBox.Text = employeePeopleLinked[index].Name;
@@ -119,10 +119,8 @@ namespace ScantelRoofingPrototype
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            if ((EmployeeAccessLevelBox.Text != "") && (EmployeeWagesBox.Text != "") && (EmployeeUsernameTextBox.Text != "") && (EmployeeAccessCodeBox.Text != ""))
+            if ((EmployeeAccessLevelBox.Text != "") && (EmployeeWagesBox.Text != "") && (EmployeeUsernameTextBox.Text != "") && (EmployeeAccessCodeBox.Text != "")&& (Utill.VerifyIntInput(EmployeePhoneBox.Text)) && (Utill.VerifyIntInput(EmployeeAccessLevelBox.Text)) && (Utill.VerifyIntInput(EmployeeWagesBox.Text)))
             {
-
-
                 int index = EmployeesDataBox.SelectedCells[0].RowIndex;
                 People editperson = new People(employeePeopleLinked[index].PersonID, EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text, EmployeeAddressBox.Text);
                 string newpassword = employeePeopleLinked[index].Password;
@@ -131,7 +129,11 @@ namespace ScantelRoofingPrototype
                     newpassword = EmployeeNewPasswordTextBox.Text;
                 }
                 Employees editemployee = new Employees(employeePeopleLinked[index].ID, employeePeopleLinked[index].PersonID, int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameTextBox.Text, newpassword, EmployeeAccessCodeBox.Text);
-                people[employeePeopleLinked[index].PersonID] = editperson;
+                for (int i = 0; i < people.Count; i++)
+                {
+                    if(people[i].ID == employeePeopleLinked[index].PersonID)
+                    people[i] = editperson;
+                }
                 employees[index] = editemployee;
 
                 FileReader.WriteToEmployeeFile(employees);
@@ -140,6 +142,10 @@ namespace ScantelRoofingPrototype
                 
                 refreshEmployeesPeopleList();
 
+            }
+            else
+            {
+                MessageBox.Show("you have entered incorrect data");
             }
         }
 

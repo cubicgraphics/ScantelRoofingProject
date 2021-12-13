@@ -82,7 +82,15 @@ namespace ScantelRoofingPrototype
                 beingworkedat = true;
             }
             int newworkplaceID = Workplaces.GetHighestID(workplaces);
-            workplaces.Add(new Workplaces(newworkplaceID + 1, WorkplaceNameInputBox.Text, AddressInputBox.Text, beingworkedat, StartDatePicker.Value, PredictedEndDatePicker.Value, PredictedEndDatePicker.Value));
+            workplaces.Add(new Workplaces(
+                newworkplaceID + 1, 
+                WorkplaceNameInputBox.Text, 
+                AddressInputBox.Text, 
+                beingworkedat, 
+                StartDatePicker.Value, 
+                PredictedEndDatePicker.Value, 
+                PredictedEndDatePicker.Value
+                ));
             for (int i = 0; i < customerstoworkplace.Count; i++)
             {
                 CustomersToWorkplaces.Add(new CustomerToWorkplace(CustomerToWorkplace.GetHighestID(CustomersToWorkplaces) + 1, customerstoworkplace[i].ID, newworkplaceID));
@@ -127,18 +135,23 @@ namespace ScantelRoofingPrototype
 
         private void AddRoofButton_Click(object sender, EventArgs e)
         {
-            SelectedRoofs.Add(Roofs[RoofListBox.SelectedIndex]);    //       Also add a check to make sure something is selected so no crash
-            UpdateRoofsList();
-
+            if ((Roofs != null) && (Roofs.Count >= 1))
+            {
+                SelectedRoofs.Add(Roofs[RoofListBox.SelectedIndex]);    //       Also add a check to make sure something is selected so no crash
+                UpdateRoofsList();
+            }
         }
 
         private void RemoveRoofButton_Click(object sender, EventArgs e)
         {
-            if (SelectedRoofsListBox.SelectedIndex >= 0)
+            if ((Roofs != null) && (Roofs.Count >= 1))
             {
-                SelectedRoofs.RemoveAt(SelectedRoofsListBox.SelectedIndex);   //could loop to delete the selected customer ID instead of the customers place in the list - use if sorting by ID instead of list order.
+                if (SelectedRoofsListBox.SelectedIndex >= 0)
+                {
+                    SelectedRoofs.RemoveAt(SelectedRoofsListBox.SelectedIndex);   //could loop to delete the selected customer ID instead of the customers place in the list - use if sorting by ID instead of list order.
+                }
+                UpdateRoofsList();
             }
-            UpdateRoofsList();
         }
     }
 }

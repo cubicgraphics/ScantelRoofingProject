@@ -21,20 +21,43 @@ namespace ScantelRoofingPrototype
 
         private void CreateNewMaterialButton_Click(object sender, EventArgs e)
         {
-            stockManagementPage.Show();
-            this.Hide();
-            List<Stocks> stock = FileReader.ReadFromStocksFile();
-            int tom = 0;
-            if (PricePerOneCheckBox.Checked == true)
+            if (Utill.VerifyIntInput(MaterialPriceInputBox.Text) && Utill.VerifyIntInput(WidthIfRoofTileWidthlabel.Text) && Utill.VerifyIntInput(LengthIfRoofTIleLabel.Text))
             {
-                tom = 1;
+
+
+
+                List<Stocks> stock = FileReader.ReadFromStocksFile();
+                int tom = 0;
+                if (PricePerOneCheckBox.Checked == true)
+                {
+                    tom = 1;
+                }
+                else if (PricePerMeterCheckBox.Checked == true)
+                {
+                    tom = 2;
+                }
+                stock.Add(new Stocks(
+                    (Stocks.GetHighestID(stock) + 1),
+                    MaterialNameInputBox.Text,
+                    tom,
+                    0,
+                    0,
+                    float.Parse(MaterialPriceInputBox.Text),
+                    IsTileMaterialCheckBox.Checked,
+                    IsWoodCheckBox.Checked,
+                    float.Parse(WidthIfRoofTileWidthlabel.Text),
+                    float.Parse(LengthIfRoofTIleLabel.Text),
+                    UseableInScantleCheckbox.Checked
+                    )); //an error here for some reason when there is no current stock materials
+                FileReader.WriteToStockFile(stock);
+
+                stockManagementPage.Show();
+                this.Hide();
             }
-            else if (PricePerMeterCheckBox.Checked == true)
+            else
             {
-                tom = 2;
+                MessageBox.Show("Cannot use letters in a number input");
             }
-            stock.Add(new Stocks((Stocks.GetHighestID(stock) + 1), MaterialNameInputBox.Text, tom, 0, 0, float.Parse(MaterialPriceInputBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(WidthIfRoofTileWidthlabel.Text), float.Parse(LengthIfRoofTIleLabel.Text), UseableInScantleCheckbox.Checked)); //an error here for some reason
-            FileReader.WriteToStockFile(stock);
         }
 
         private void AddNewMaterialPage_FormClosing(object sender, FormClosingEventArgs e)

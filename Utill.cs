@@ -8,6 +8,6 @@ namespace ScantelRoofingPrototype
 {
     class Utill
     {
-        public static bool VerifyIntInput(string text) { return text.All(char.IsNumber); }
+        public static bool VerifyIntInput(string text) { return text.All(char.IsDigit); }
     }
 }
