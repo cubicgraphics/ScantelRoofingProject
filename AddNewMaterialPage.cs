@@ -48,7 +48,7 @@ namespace ScantelRoofingPrototype
                     float.Parse(WidthIfRoofTileWidthlabel.Text),
                     float.Parse(LengthIfRoofTIleLabel.Text),
                     UseableInScantleCheckbox.Checked
-                    )); //an error here for some reason when there is no current stock materials
+                    ));             //an error here for some reason when there is no current stock materials
                 FileReader.WriteToStockFile(stock);
 
                 stockManagementPage.Show();
