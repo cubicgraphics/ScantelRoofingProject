@@ -55,6 +55,8 @@ namespace ScantelRoofingPrototype
             this.EmployeeNewPasswordLabel = new System.Windows.Forms.Label();
             this.EmployeeAccessCodeBox = new System.Windows.Forms.TextBox();
             this.AccessCodeLabel = new System.Windows.Forms.Label();
+            this.EmployeeOutputButton = new System.Windows.Forms.Button();
+            this.EmployeeWorkDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,11 +282,33 @@ namespace ScantelRoofingPrototype
             this.AccessCodeLabel.TabIndex = 46;
             this.AccessCodeLabel.Text = "Access code:";
             // 
+            // EmployeeOutputButton
+            // 
+            this.EmployeeOutputButton.Location = new System.Drawing.Point(634, 16);
+            this.EmployeeOutputButton.Name = "EmployeeOutputButton";
+            this.EmployeeOutputButton.Size = new System.Drawing.Size(140, 44);
+            this.EmployeeOutputButton.TabIndex = 47;
+            this.EmployeeOutputButton.Text = "Export Employee Pay";
+            this.EmployeeOutputButton.UseVisualStyleBackColor = true;
+            this.EmployeeOutputButton.Click += new System.EventHandler(this.EmployeeOutputButton_Click);
+            // 
+            // EmployeeWorkDateTimePicker
+            // 
+            this.EmployeeWorkDateTimePicker.CustomFormat = "MMMM yyyy";
+            this.EmployeeWorkDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.EmployeeWorkDateTimePicker.Location = new System.Drawing.Point(411, 25);
+            this.EmployeeWorkDateTimePicker.Name = "EmployeeWorkDateTimePicker";
+            this.EmployeeWorkDateTimePicker.ShowUpDown = true;
+            this.EmployeeWorkDateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.EmployeeWorkDateTimePicker.TabIndex = 48;
+            // 
             // ManageEmployeesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 445);
+            this.Controls.Add(this.EmployeeWorkDateTimePicker);
+            this.Controls.Add(this.EmployeeOutputButton);
             this.Controls.Add(this.AccessCodeLabel);
             this.Controls.Add(this.EmployeeAccessCodeBox);
             this.Controls.Add(this.EmployeeNewPasswordLabel);
@@ -349,5 +373,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label EmployeeNewPasswordLabel;
         private System.Windows.Forms.TextBox EmployeeAccessCodeBox;
         private System.Windows.Forms.Label AccessCodeLabel;
+        private System.Windows.Forms.Button EmployeeOutputButton;
+        private System.Windows.Forms.DateTimePicker EmployeeWorkDateTimePicker;
     }
 }

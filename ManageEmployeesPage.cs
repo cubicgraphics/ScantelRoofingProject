@@ -153,5 +153,10 @@ namespace ScantelRoofingPrototype
         {
             LoadAndRefreshEmployeesPeople();
         }
+
+        private void EmployeeOutputButton_Click(object sender, EventArgs e)
+        {
+            ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value); //should work
+        }
     }
 }

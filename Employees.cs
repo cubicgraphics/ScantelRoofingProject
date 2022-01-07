@@ -77,6 +77,18 @@ namespace ScantelRoofingPrototype
             }
             return name;
         }
+        public static int GetListIndexFromID(List<Employees> employees, int ID)
+        {
+            int Index = -1;
+            for (int i = 0; i < employees.Count; i++)
+            {
+                if (employees[i].ID == ID)
+                {
+                    Index = i;
+                }
+            }
+            return Index;
+        }
         public static bool IsEmployeeAccessLevel(List<Employees> employees, int AccessLevelToCheck, int EmployeeID)
         {
             bool A = false;
@@ -92,6 +104,10 @@ namespace ScantelRoofingPrototype
             }
             return A;
 
+        }
+        public static List<Employees> ReadFromFile()
+        {
+            return FileReader.ReadFromEmployeeFile();
         }
 
     }

@@ -36,5 +36,9 @@ namespace ScantelRoofingPrototype
             }
             return highest;
         }
+        public static List<People> ReadFromFile()
+        {
+            return FileReader.ReadFromPeopleFile();
+        }
     }
 }
