@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Export\EmployeeWages\" />
+    <Folder Include="Export\RoofExports\" />
+  </ItemGroup>
+
 </Project>

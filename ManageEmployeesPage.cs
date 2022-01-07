@@ -156,7 +156,7 @@ namespace ScantelRoofingPrototype
 
         private void EmployeeOutputButton_Click(object sender, EventArgs e)
         {
-            ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value); //should work
+            ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value,OpenFileCheckBox.Checked); //should work
         }
     }
 }

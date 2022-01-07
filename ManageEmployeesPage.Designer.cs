@@ -57,6 +57,7 @@ namespace ScantelRoofingPrototype
             this.AccessCodeLabel = new System.Windows.Forms.Label();
             this.EmployeeOutputButton = new System.Windows.Forms.Button();
             this.EmployeeWorkDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.OpenFileCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -302,11 +303,22 @@ namespace ScantelRoofingPrototype
             this.EmployeeWorkDateTimePicker.Size = new System.Drawing.Size(200, 23);
             this.EmployeeWorkDateTimePicker.TabIndex = 48;
             // 
+            // OpenFileCheckBox
+            // 
+            this.OpenFileCheckBox.AutoSize = true;
+            this.OpenFileCheckBox.Location = new System.Drawing.Point(780, 25);
+            this.OpenFileCheckBox.Name = "OpenFileCheckBox";
+            this.OpenFileCheckBox.Size = new System.Drawing.Size(128, 19);
+            this.OpenFileCheckBox.TabIndex = 49;
+            this.OpenFileCheckBox.Text = "Open file on export";
+            this.OpenFileCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ManageEmployeesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 445);
+            this.Controls.Add(this.OpenFileCheckBox);
             this.Controls.Add(this.EmployeeWorkDateTimePicker);
             this.Controls.Add(this.EmployeeOutputButton);
             this.Controls.Add(this.AccessCodeLabel);
@@ -375,5 +387,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label AccessCodeLabel;
         private System.Windows.Forms.Button EmployeeOutputButton;
         private System.Windows.Forms.DateTimePicker EmployeeWorkDateTimePicker;
+        private System.Windows.Forms.CheckBox OpenFileCheckBox;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace ScantelRoofingPrototype
 {
@@ -16,7 +17,7 @@ namespace ScantelRoofingPrototype
         private const string Seperator = "\t";
 
 
-        public static void OutputEmployeeWages(DateTime SelectedMonth)
+        public static void OutputEmployeeWages(DateTime SelectedMonth, bool OpenFile)
         {
             List<EmployeePeople> employeePeople = EmployeePeople.CombineEmployeePeopleList(Employees.ReadFromFile(), People.ReadFromFile());
             float[] HoursWorked = new float[employeePeople.Count];
@@ -34,9 +35,15 @@ namespace ScantelRoofingPrototype
             }
             for (int i = 0; i < employeePeople.Count; i++)
             {
-                Exportstrings[i] = employeePeople[i].Name + Seperator + HoursWorked[i] + Seperator + reclaimedSlates[i] + Seperator + employeePeople[i].Wages + (HoursWorked[i] * employeePeople[i].Wages);
+                Exportstrings[i] = employeePeople[i].Name + Seperator + HoursWorked[i] + Seperator + reclaimedSlates[i] + Seperator + employeePeople[i].Wages + Seperator + (HoursWorked[i] * employeePeople[i].Wages);
             }
-            File.WriteAllLines(EmployeeWagesPath, Exportstrings);
+            File.WriteAllLines(EmployeeWagesPath + @"\Wages" + SelectedMonth.Month.ToString() + "_" + SelectedMonth.Year.ToString() + ".txt", Exportstrings);
+            string openPath = EmployeeWagesPath;
+            if (OpenFile)
+            {
+                openPath = openPath + @"\Wages" + SelectedMonth.Month.ToString() + "_" + SelectedMonth.Year.ToString() + ".txt";
+            }
+            Process.Start("explorer.exe", openPath);
         }
     }
 }
