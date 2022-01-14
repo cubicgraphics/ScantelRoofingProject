@@ -21,7 +21,7 @@ namespace ScantelRoofingPrototype
 
         private void CreateNewMaterialButton_Click(object sender, EventArgs e)
         {
-            if (Utill.VerifyIntInput(MaterialPriceInputBox.Text) && Utill.VerifyIntInput(WidthIfRoofTileWidthlabel.Text) && Utill.VerifyIntInput(LengthIfRoofTIleLabel.Text))
+            if (Utill.VerifyIntInput(MaterialPriceInputBox.Text) && Utill.VerifyIntInput(TileWidthInputBox.Text) && Utill.VerifyIntInput(TileLengthInputBox.Text))
             {
 
 
@@ -45,10 +45,10 @@ namespace ScantelRoofingPrototype
                     float.Parse(MaterialPriceInputBox.Text),
                     IsTileMaterialCheckBox.Checked,
                     IsWoodCheckBox.Checked,
-                    float.Parse(WidthIfRoofTileWidthlabel.Text),
-                    float.Parse(LengthIfRoofTIleLabel.Text),
+                    float.Parse(TileWidthInputBox.Text),
+                    float.Parse(TileLengthInputBox.Text),
                     UseableInScantleCheckbox.Checked
-                    ));             //an error here for some reason when there is no current stock materials
+                    ));
                 FileReader.WriteToStockFile(stock);
 
                 stockManagementPage.Show();
