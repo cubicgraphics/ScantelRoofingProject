@@ -44,8 +44,8 @@ namespace ScantelRoofingPrototype
             this.NewCustomerButton = new System.Windows.Forms.Button();
             this.DeleteSelectedCustomerButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.CustomerDataBox = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBox)).BeginInit();
+            this.CustomerDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ScantelRoofingLabel
@@ -179,21 +179,21 @@ namespace ScantelRoofingPrototype
             // 
             // CustomerDataBox
             // 
-            this.CustomerDataBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomerDataBox.Location = new System.Drawing.Point(12, 93);
-            this.CustomerDataBox.Name = "CustomerDataBox";
-            this.CustomerDataBox.ReadOnly = true;
-            this.CustomerDataBox.RowTemplate.Height = 25;
-            this.CustomerDataBox.Size = new System.Drawing.Size(450, 293);
-            this.CustomerDataBox.TabIndex = 21;
-            this.CustomerDataBox.Click += new System.EventHandler(this.CustomerDataBox_Click);
+            this.CustomerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerDataGrid.Location = new System.Drawing.Point(12, 93);
+            this.CustomerDataGrid.Name = "CustomerDataBox";
+            this.CustomerDataGrid.ReadOnly = true;
+            this.CustomerDataGrid.RowTemplate.Height = 25;
+            this.CustomerDataGrid.Size = new System.Drawing.Size(450, 293);
+            this.CustomerDataGrid.TabIndex = 21;
+            this.CustomerDataGrid.Click += new System.EventHandler(this.CustomerDataBox_Click);
             // 
             // ManageCustomersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CustomerDataBox);
+            this.Controls.Add(this.CustomerDataGrid);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.DeleteSelectedCustomerButton);
             this.Controls.Add(this.NewCustomerButton);
@@ -213,7 +213,7 @@ namespace ScantelRoofingPrototype
             this.Text = "ManageCustomersPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageCustomersPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.ManageCustomersPage_VisibleChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +236,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Button NewCustomerButton;
         private System.Windows.Forms.Button DeleteSelectedCustomerButton;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.DataGridView CustomerDataBox;
+        private System.Windows.Forms.DataGridView CustomerDataGrid;
     }
 }

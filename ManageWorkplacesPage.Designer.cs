@@ -59,7 +59,7 @@ namespace ScantelRoofingPrototype
             this.StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PredictedEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.WorkplaceDataTable = new System.Windows.Forms.DataGridView();
+            this.WorkplaceDataGrid = new System.Windows.Forms.DataGridView();
             this.SaveWorkplaceChangesButton = new System.Windows.Forms.Button();
             this.BeingWorkedAtCheckBox = new System.Windows.Forms.CheckBox();
             this.CustomerList = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace ScantelRoofingPrototype
             this.CustomerListBox = new System.Windows.Forms.ListBox();
             this.CustomerAtWorkplaceListBox = new System.Windows.Forms.ListBox();
             this.CustomerListSearchBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // ScantleRoofingLabel
@@ -341,14 +341,14 @@ namespace ScantelRoofingPrototype
             // 
             // WorkplaceDataTable
             // 
-            this.WorkplaceDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WorkplaceDataTable.Location = new System.Drawing.Point(13, 111);
-            this.WorkplaceDataTable.Name = "WorkplaceDataTable";
-            this.WorkplaceDataTable.ReadOnly = true;
-            this.WorkplaceDataTable.RowTemplate.Height = 25;
-            this.WorkplaceDataTable.Size = new System.Drawing.Size(745, 319);
-            this.WorkplaceDataTable.TabIndex = 31;
-            this.WorkplaceDataTable.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
+            this.WorkplaceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WorkplaceDataGrid.Location = new System.Drawing.Point(13, 111);
+            this.WorkplaceDataGrid.Name = "WorkplaceDataTable";
+            this.WorkplaceDataGrid.ReadOnly = true;
+            this.WorkplaceDataGrid.RowTemplate.Height = 25;
+            this.WorkplaceDataGrid.Size = new System.Drawing.Size(745, 319);
+            this.WorkplaceDataGrid.TabIndex = 31;
+            this.WorkplaceDataGrid.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
             // 
             // SaveWorkplaceChangesButton
             // 
@@ -448,7 +448,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.CustomerAtWorkplaceListBox);
             this.Controls.Add(this.BeingWorkedAtCheckBox);
             this.Controls.Add(this.SaveWorkplaceChangesButton);
-            this.Controls.Add(this.WorkplaceDataTable);
+            this.Controls.Add(this.WorkplaceDataGrid);
             this.Controls.Add(this.EndDateTimePicker);
             this.Controls.Add(this.PredictedEndDateTimePicker);
             this.Controls.Add(this.StartDateTimePicker);
@@ -483,7 +483,7 @@ namespace ScantelRoofingPrototype
             this.Text = "ManageWorkplacesPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageWorkplacesPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.ManageWorkplacesPage_VisibleChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,7 +521,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.DateTimePicker StartDateTimePicker;
         private System.Windows.Forms.DateTimePicker PredictedEndDateTimePicker;
         private System.Windows.Forms.DateTimePicker EndDateTimePicker;
-        private System.Windows.Forms.DataGridView WorkplaceDataTable;
+        private System.Windows.Forms.DataGridView WorkplaceDataGrid;
         private System.Windows.Forms.Button SaveWorkplaceChangesButton;
         private System.Windows.Forms.CheckBox BeingWorkedAtCheckBox;
         private System.Windows.Forms.Label CustomerList;

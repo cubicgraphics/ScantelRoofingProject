@@ -24,8 +24,8 @@ namespace ScantelRoofingPrototype
             newCustomerPage = new NewCustomerPage(this);
             employeeInterface = Interface;
             InitializeComponent();
-            CustomerDataBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            CustomerDataBox.MultiSelect = false;
+            CustomerDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CustomerDataGrid.MultiSelect = false;
         }
 
 
@@ -36,14 +36,14 @@ namespace ScantelRoofingPrototype
         private void updateCustomerDataBox()
         {
             UpdateCustomersList();
-            CustomerDataBox.DataSource = customers;
+            CustomerDataGrid.DataSource = customers;
         }
 
         private void refreshcustomerinfoboxes()
         {
-            if (customers.Count != 0)
+            if (customers.Count != 0 && CustomerDataGrid.SelectedCells.Count >= 1)
             {
-                int index = CustomerDataBox.SelectedCells[0].RowIndex;
+                int index = CustomerDataGrid.SelectedCells[0].RowIndex;
                 CustomerNameInputBox.Text = customers[index].Name;
                 CustomerPhoneInputBox.Text = customers[index].PhoneNumber;
                 CustomerEmailInputBox.Text = customers[index].EmailAddress;
@@ -84,7 +84,7 @@ namespace ScantelRoofingPrototype
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            int index = CustomerDataBox.SelectedCells[0].RowIndex;
+            int index = CustomerDataGrid.SelectedCells[0].RowIndex;
             List<People> people = FileReader.ReadFromPeopleFile();
             for (int i = 0; i < people.Count; i++)
             {
@@ -100,7 +100,7 @@ namespace ScantelRoofingPrototype
 
         private void DeleteSelectedCustomerButton_Click(object sender, EventArgs e)
         {
-            int index = CustomerDataBox.SelectedCells[0].RowIndex;
+            int index = CustomerDataGrid.SelectedCells[0].RowIndex;
             List<Customers> customersList = FileReader.ReadFromCustomerFile();
             for (int i = 0; i < customersList.Count; i++)
             {

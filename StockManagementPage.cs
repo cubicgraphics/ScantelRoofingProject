@@ -22,6 +22,7 @@ namespace ScantelRoofingPrototype
             addNewMaterialPage = new AddNewMaterialPage(this);
             employeeInterface = Interface;
             InitializeComponent();
+            UpdateStocksAndStocksDataGrid();
             StocksDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             StocksDataGrid.MultiSelect = false;
         }
@@ -44,7 +45,7 @@ namespace ScantelRoofingPrototype
         }
         private void RefreshStockSideInfo()
         {
-            if(stocks.Count != 0)
+            if(stocks.Count != 0 && StocksDataGrid.SelectedCells.Count >= 1)
             {
                 int index = StocksDataGrid.SelectedCells[0].RowIndex;
                 AmountCurrentlyStockedTextBox.Text = stocks[index].CurrentAmount.ToString();
