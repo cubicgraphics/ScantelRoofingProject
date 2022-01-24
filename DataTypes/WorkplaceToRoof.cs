@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ScantelRoofingPrototype
 {
-    class WorkplaceToRoof
+    class WorkplaceToRoof : DefaultData
     {
-        public int ID { get; }
         public int RoofID { get; }
         public int WorkplaceID { get; }
 
@@ -17,19 +16,6 @@ namespace ScantelRoofingPrototype
             ID = id;
             RoofID = roofid;
             WorkplaceID = workplaceid;
-        }
-
-        public static int GetHighestID(List<WorkplaceToRoof> workplaceToRoof)
-        {
-            int highest = 0;
-            for (int i = 0; i < workplaceToRoof.Count; i++)
-            {
-                if (workplaceToRoof[i].ID > highest)
-                {
-                    highest = workplaceToRoof[i].ID;
-                }
-            }
-            return highest;
         }
     }
 }

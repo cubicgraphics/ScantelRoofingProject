@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ScantelRoofingPrototype
 {
-    class EmployeePeople
+    class EmployeePeople : DefaultData
     {
-        public int ID { get;}
         public string Name { get;}
         public string PhoneNumber { get;}
         public string EmailAddress { get; }
@@ -57,6 +56,7 @@ namespace ScantelRoofingPrototype
             }
             return Employeepeoplelist;
         }
+
         public static int GetListIndexFromID(List<EmployeePeople> employees, int ID)
         {
             int Index = -1;

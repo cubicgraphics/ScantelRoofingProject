@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ScantelRoofingPrototype
 {
-    class Stocks
+    class Stocks : DefaultData
     {
-        public int ID { get; }
         public string Name { get; }
         public int TOM { get; } //measure in tonnes, per one, or in meters
         public float CurrentAmount { get; set; }
@@ -63,19 +62,6 @@ namespace ScantelRoofingPrototype
                 }
             }
             return ID;
-        }
-
-        public static int GetHighestID(List<Stocks> stock)
-        {
-            int highest = 0;
-            for (int i = 0; i < stock.Count; i++)
-            {
-                if (stock[i].ID > highest)
-                {
-                    highest = stock[i].ID;
-                }
-            }
-            return highest;
         }
     }
 }

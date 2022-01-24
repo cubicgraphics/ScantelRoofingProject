@@ -7,9 +7,8 @@ using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
 {
-    class Employees
+    class Employees : DefaultData
     {
-        public int ID { get; }
         public int PersonID { get; }
         public int AccessLevel { get; }
         public float Wages { get; }
@@ -26,19 +25,6 @@ namespace ScantelRoofingPrototype
             Username = username;
             Password = password;
             AccessCode = accesscode;
-        }
-
-        public static int GetHighestID(List<Employees> employees)
-        {
-            int highest = 0;
-            for (int i = 0; i < employees.Count; i++)
-            {
-                if (employees[i].ID > highest)
-                {
-                    highest = employees[i].ID;
-                }
-            }
-            return highest;
         }
 
         public static int GetIDFromCode(List<Employees> employees, string accesscode)

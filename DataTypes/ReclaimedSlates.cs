@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ScantelRoofingPrototype
 {
-    class ReclaimedSlates 
+    class ReclaimedSlates : DefaultData
     {
-        public int ID { get; }
         public int EmployeeID { get; }
         public int Reclaimedslates { get; }
         public DateTime Date { get; }
@@ -21,18 +20,6 @@ namespace ScantelRoofingPrototype
             Reclaimedslates = reclaimedslates;
             Date = date;
             HoursWorked = hoursworked;
-        }
-        public static int GetHighestID(List<Employees> employees)
-        {
-            int highest = 0;
-            for (int i = 0; i < employees.Count; i++)
-            {
-                if (employees[i].ID > highest)
-                {
-                    highest = employees[i].ID;
-                }
-            }
-            return highest;
         }
 
         public static List<ReclaimedSlates> ReadFromFile()

@@ -7,28 +7,15 @@ using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
 {
-    class Customers
+    class Customers : DefaultData
     {
-        public int ID { get; }
-        public int PersonID { get; }
+        public int PersonID { get; set; }
 
         public Customers(int id, int personid)
         {
-            ID = id;
-            PersonID = personid;
-        }
 
-        public static int GetHighestID(List<Customers> employees)
-        {
-            int highest = 0;
-            for (int i = 0; i < employees.Count; i++)
-            {
-                if (employees[i].ID > highest)
-                {
-                    highest = employees[i].ID;
-                }
-            }
-            return highest;
+            this.ID = id;
+            this.PersonID = personid;
         }
 
         public static List<People> OnlyCustomers(List<People> people, List<Customers> customers)
