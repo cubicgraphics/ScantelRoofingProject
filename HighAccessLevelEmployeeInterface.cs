@@ -19,6 +19,7 @@ namespace ScantelRoofingPrototype
         ManageCustomersPage manageCustomersPage;
         SimpleRoofEditingPage simpleRoofEditingPage;
         ManageWorkplacesPage manageWorkplacesPage;
+        public int UserID = -1;
 
 
 
@@ -81,6 +82,19 @@ namespace ScantelRoofingPrototype
         {
             this.Hide();
             manageWorkplacesPage.Show();
+        }
+
+        private void HighAccessLevelEmployeeInterface_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HighAccessLevelEmployeeInterface_VisibleChanged(object sender, EventArgs e)
+        {
+            if (UserID != -1)
+            {
+                UsernameLabel.Text = Employees.GetUserNameFromID(Employees.ReadFromFile(), UserID);
+            }
         }
     }
 }

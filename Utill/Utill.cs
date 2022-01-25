@@ -24,7 +24,5 @@ namespace ScantelRoofingPrototype
             }
             return verif;
         }
-
-
     }
 }

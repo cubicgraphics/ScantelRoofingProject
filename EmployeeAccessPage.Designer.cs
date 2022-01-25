@@ -59,7 +59,7 @@ namespace ScantelRoofingPrototype
             this.EnterEmployeeCodeButton.Location = new System.Drawing.Point(254, 64);
             this.EnterEmployeeCodeButton.Name = "EnterEmployeeCodeButton";
             this.EnterEmployeeCodeButton.Size = new System.Drawing.Size(124, 45);
-            this.EnterEmployeeCodeButton.TabIndex = 2;
+            this.EnterEmployeeCodeButton.TabIndex = 3;
             this.EnterEmployeeCodeButton.Text = "Enter code";
             this.EnterEmployeeCodeButton.UseVisualStyleBackColor = true;
             this.EnterEmployeeCodeButton.Click += new System.EventHandler(this.EnterEmployeeCodeButton_Click);
@@ -69,7 +69,7 @@ namespace ScantelRoofingPrototype
             this.EmployeeCodeInputBox.Location = new System.Drawing.Point(12, 76);
             this.EmployeeCodeInputBox.Name = "EmployeeCodeInputBox";
             this.EmployeeCodeInputBox.Size = new System.Drawing.Size(208, 23);
-            this.EmployeeCodeInputBox.TabIndex = 3;
+            this.EmployeeCodeInputBox.TabIndex = 2;
             // 
             // EmployeeAccessPage
             // 

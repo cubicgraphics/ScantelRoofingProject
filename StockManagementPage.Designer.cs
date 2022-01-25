@@ -83,7 +83,7 @@ namespace ScantelRoofingPrototype
             this.SeachBox.Location = new System.Drawing.Point(72, 53);
             this.SeachBox.Name = "SeachBox";
             this.SeachBox.Size = new System.Drawing.Size(131, 23);
-            this.SeachBox.TabIndex = 3;
+            this.SeachBox.TabIndex = 1;
             // 
             // SearchLabel
             // 
@@ -99,7 +99,7 @@ namespace ScantelRoofingPrototype
             this.BackButton.Location = new System.Drawing.Point(1296, 14);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(110, 37);
-            this.BackButton.TabIndex = 5;
+            this.BackButton.TabIndex = 19;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -134,7 +134,7 @@ namespace ScantelRoofingPrototype
             this.MaterialCostTextBox.Location = new System.Drawing.Point(1110, 188);
             this.MaterialCostTextBox.Name = "MaterialCostTextBox";
             this.MaterialCostTextBox.Size = new System.Drawing.Size(131, 23);
-            this.MaterialCostTextBox.TabIndex = 8;
+            this.MaterialCostTextBox.TabIndex = 7;
             // 
             // IsTileMaterialCheckBox
             // 
@@ -143,7 +143,7 @@ namespace ScantelRoofingPrototype
             this.IsTileMaterialCheckBox.Location = new System.Drawing.Point(1068, 302);
             this.IsTileMaterialCheckBox.Name = "IsTileMaterialCheckBox";
             this.IsTileMaterialCheckBox.Size = new System.Drawing.Size(173, 19);
-            this.IsTileMaterialCheckBox.TabIndex = 10;
+            this.IsTileMaterialCheckBox.TabIndex = 11;
             this.IsTileMaterialCheckBox.Text = "material is a type of roof tile";
             this.IsTileMaterialCheckBox.UseVisualStyleBackColor = true;
             this.IsTileMaterialCheckBox.CheckedChanged += new System.EventHandler(this.IsTileMaterialCheckBox_CheckedChanged);
@@ -156,7 +156,7 @@ namespace ScantelRoofingPrototype
             this.IsWoodCheckBox.Location = new System.Drawing.Point(1077, 327);
             this.IsWoodCheckBox.Name = "IsWoodCheckBox";
             this.IsWoodCheckBox.Size = new System.Drawing.Size(164, 19);
-            this.IsWoodCheckBox.TabIndex = 11;
+            this.IsWoodCheckBox.TabIndex = 12;
             this.IsWoodCheckBox.Text = "material is a type of Wood";
             this.IsWoodCheckBox.UseVisualStyleBackColor = true;
             this.IsWoodCheckBox.CheckedChanged += new System.EventHandler(this.IsWoodCheckBox_CheckedChanged);
@@ -169,7 +169,7 @@ namespace ScantelRoofingPrototype
             this.PricePerMeterCheckBox.Location = new System.Drawing.Point(1124, 277);
             this.PricePerMeterCheckBox.Name = "PricePerMeterCheckBox";
             this.PricePerMeterCheckBox.Size = new System.Drawing.Size(117, 19);
-            this.PricePerMeterCheckBox.TabIndex = 12;
+            this.PricePerMeterCheckBox.TabIndex = 10;
             this.PricePerMeterCheckBox.Text = "Price is per meter";
             this.PricePerMeterCheckBox.UseVisualStyleBackColor = true;
             this.PricePerMeterCheckBox.CheckedChanged += new System.EventHandler(this.PricePerMeterCheckBox_CheckedChanged);
@@ -182,7 +182,7 @@ namespace ScantelRoofingPrototype
             this.PricePerTonneCheckBox.Location = new System.Drawing.Point(1124, 227);
             this.PricePerTonneCheckBox.Name = "PricePerTonneCheckBox";
             this.PricePerTonneCheckBox.Size = new System.Drawing.Size(117, 19);
-            this.PricePerTonneCheckBox.TabIndex = 13;
+            this.PricePerTonneCheckBox.TabIndex = 8;
             this.PricePerTonneCheckBox.Text = "Price is per tonne";
             this.PricePerTonneCheckBox.UseVisualStyleBackColor = true;
             this.PricePerTonneCheckBox.CheckedChanged += new System.EventHandler(this.PricePerTonneCheckBox_CheckedChanged);
@@ -195,7 +195,7 @@ namespace ScantelRoofingPrototype
             this.PricePerOneCheckBox.Location = new System.Drawing.Point(1135, 252);
             this.PricePerOneCheckBox.Name = "PricePerOneCheckBox";
             this.PricePerOneCheckBox.Size = new System.Drawing.Size(106, 19);
-            this.PricePerOneCheckBox.TabIndex = 14;
+            this.PricePerOneCheckBox.TabIndex = 9;
             this.PricePerOneCheckBox.Text = "Price is per one";
             this.PricePerOneCheckBox.UseVisualStyleBackColor = true;
             this.PricePerOneCheckBox.CheckedChanged += new System.EventHandler(this.PricePerOneCheckBox_CheckedChanged);
@@ -215,7 +215,7 @@ namespace ScantelRoofingPrototype
             this.TileWidthInputBox.Location = new System.Drawing.Point(1110, 352);
             this.TileWidthInputBox.Name = "TileWidthInputBox";
             this.TileWidthInputBox.Size = new System.Drawing.Size(131, 23);
-            this.TileWidthInputBox.TabIndex = 15;
+            this.TileWidthInputBox.TabIndex = 13;
             // 
             // LengthIfRoofTIleLabel
             // 
@@ -231,14 +231,14 @@ namespace ScantelRoofingPrototype
             this.TileLengthInputBox.Location = new System.Drawing.Point(1110, 376);
             this.TileLengthInputBox.Name = "TileLengthInputBox";
             this.TileLengthInputBox.Size = new System.Drawing.Size(131, 23);
-            this.TileLengthInputBox.TabIndex = 17;
+            this.TileLengthInputBox.TabIndex = 14;
             // 
             // SaveChangesButton
             // 
             this.SaveChangesButton.Location = new System.Drawing.Point(1011, 430);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(230, 29);
-            this.SaveChangesButton.TabIndex = 19;
+            this.SaveChangesButton.TabIndex = 16;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
@@ -248,14 +248,14 @@ namespace ScantelRoofingPrototype
             this.AmountCurrentlyStockedTextBox.Location = new System.Drawing.Point(1190, 70);
             this.AmountCurrentlyStockedTextBox.Name = "AmountCurrentlyStockedTextBox";
             this.AmountCurrentlyStockedTextBox.Size = new System.Drawing.Size(131, 23);
-            this.AmountCurrentlyStockedTextBox.TabIndex = 20;
+            this.AmountCurrentlyStockedTextBox.TabIndex = 3;
             // 
             // AmountNeededForWorkplacesTextBox
             // 
             this.AmountNeededForWorkplacesTextBox.Location = new System.Drawing.Point(1190, 96);
             this.AmountNeededForWorkplacesTextBox.Name = "AmountNeededForWorkplacesTextBox";
             this.AmountNeededForWorkplacesTextBox.Size = new System.Drawing.Size(131, 23);
-            this.AmountNeededForWorkplacesTextBox.TabIndex = 21;
+            this.AmountNeededForWorkplacesTextBox.TabIndex = 4;
             // 
             // MaterialAmountStockLabel
             // 
@@ -289,7 +289,7 @@ namespace ScantelRoofingPrototype
             this.AddNewMateriaButton.Location = new System.Drawing.Point(1260, 164);
             this.AddNewMateriaButton.Name = "AddNewMateriaButton";
             this.AddNewMateriaButton.Size = new System.Drawing.Size(146, 29);
-            this.AddNewMateriaButton.TabIndex = 26;
+            this.AddNewMateriaButton.TabIndex = 17;
             this.AddNewMateriaButton.Text = "Add new Material";
             this.AddNewMateriaButton.UseVisualStyleBackColor = true;
             this.AddNewMateriaButton.Click += new System.EventHandler(this.AddNewMateriaButton_Click);
@@ -299,7 +299,7 @@ namespace ScantelRoofingPrototype
             this.DeleteSelectedMaterialButton.Location = new System.Drawing.Point(1260, 199);
             this.DeleteSelectedMaterialButton.Name = "DeleteSelectedMaterialButton";
             this.DeleteSelectedMaterialButton.Size = new System.Drawing.Size(146, 29);
-            this.DeleteSelectedMaterialButton.TabIndex = 27;
+            this.DeleteSelectedMaterialButton.TabIndex = 18;
             this.DeleteSelectedMaterialButton.Text = "Delete selected material";
             this.DeleteSelectedMaterialButton.UseVisualStyleBackColor = true;
             this.DeleteSelectedMaterialButton.Click += new System.EventHandler(this.DeleteSelectedMaterialButton_Click);
@@ -312,7 +312,7 @@ namespace ScantelRoofingPrototype
             this.StocksDataGrid.ReadOnly = true;
             this.StocksDataGrid.RowTemplate.Height = 25;
             this.StocksDataGrid.Size = new System.Drawing.Size(993, 377);
-            this.StocksDataGrid.TabIndex = 28;
+            this.StocksDataGrid.TabIndex = 2;
             this.StocksDataGrid.VisibleChanged += new System.EventHandler(this.StocksDataGrid_VisibleChanged);
             this.StocksDataGrid.Click += new System.EventHandler(this.StocksDataGrid_Click);
             // 
@@ -322,7 +322,7 @@ namespace ScantelRoofingPrototype
             this.AmountToBuyAndCostLabelOutput.Location = new System.Drawing.Point(1190, 122);
             this.AmountToBuyAndCostLabelOutput.Name = "AmountToBuyAndCostLabelOutput";
             this.AmountToBuyAndCostLabelOutput.Size = new System.Drawing.Size(124, 15);
-            this.AmountToBuyAndCostLabelOutput.TabIndex = 29;
+            this.AmountToBuyAndCostLabelOutput.TabIndex = 5;
             this.AmountToBuyAndCostLabelOutput.Text = "AmountNeeded+Cost";
             // 
             // UseableInScantleCheckbox
@@ -332,7 +332,7 @@ namespace ScantelRoofingPrototype
             this.UseableInScantleCheckbox.Location = new System.Drawing.Point(1121, 405);
             this.UseableInScantleCheckbox.Name = "UseableInScantleCheckbox";
             this.UseableInScantleCheckbox.Size = new System.Drawing.Size(120, 19);
-            this.UseableInScantleCheckbox.TabIndex = 30;
+            this.UseableInScantleCheckbox.TabIndex = 15;
             this.UseableInScantleCheckbox.Text = "Useable in scantle";
             this.UseableInScantleCheckbox.UseVisualStyleBackColor = true;
             // 

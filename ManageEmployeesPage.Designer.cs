@@ -66,7 +66,7 @@ namespace ScantelRoofingPrototype
             this.DeleteSelectedCustomerButton.Location = new System.Drawing.Point(789, 110);
             this.DeleteSelectedCustomerButton.Name = "DeleteSelectedCustomerButton";
             this.DeleteSelectedCustomerButton.Size = new System.Drawing.Size(291, 43);
-            this.DeleteSelectedCustomerButton.TabIndex = 34;
+            this.DeleteSelectedCustomerButton.TabIndex = 2;
             this.DeleteSelectedCustomerButton.Text = "Delete selected employee";
             this.DeleteSelectedCustomerButton.UseVisualStyleBackColor = true;
             this.DeleteSelectedCustomerButton.Click += new System.EventHandler(this.DeleteSelectedCustomerButton_Click);
@@ -76,17 +76,17 @@ namespace ScantelRoofingPrototype
             this.NewCustomerButton.Location = new System.Drawing.Point(789, 61);
             this.NewCustomerButton.Name = "NewCustomerButton";
             this.NewCustomerButton.Size = new System.Drawing.Size(291, 43);
-            this.NewCustomerButton.TabIndex = 33;
+            this.NewCustomerButton.TabIndex = 1;
             this.NewCustomerButton.Text = "New Employee";
             this.NewCustomerButton.UseVisualStyleBackColor = true;
             this.NewCustomerButton.Click += new System.EventHandler(this.NewCustomerButton_Click);
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(878, 412);
+            this.SaveChangesButton.Location = new System.Drawing.Point(878, 420);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(104, 23);
-            this.SaveChangesButton.TabIndex = 32;
+            this.SaveChangesButton.TabIndex = 12;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
@@ -96,28 +96,28 @@ namespace ScantelRoofingPrototype
             this.EmployeeAddressBox.Location = new System.Drawing.Point(909, 246);
             this.EmployeeAddressBox.Name = "EmployeeAddressBox";
             this.EmployeeAddressBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeAddressBox.TabIndex = 31;
+            this.EmployeeAddressBox.TabIndex = 6;
             // 
             // EmployeeEmailBox
             // 
             this.EmployeeEmailBox.Location = new System.Drawing.Point(909, 217);
             this.EmployeeEmailBox.Name = "EmployeeEmailBox";
             this.EmployeeEmailBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeEmailBox.TabIndex = 30;
+            this.EmployeeEmailBox.TabIndex = 5;
             // 
             // EmployeePhoneBox
             // 
             this.EmployeePhoneBox.Location = new System.Drawing.Point(909, 188);
             this.EmployeePhoneBox.Name = "EmployeePhoneBox";
             this.EmployeePhoneBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeePhoneBox.TabIndex = 29;
+            this.EmployeePhoneBox.TabIndex = 4;
             // 
             // EmployeeNameBox
             // 
             this.EmployeeNameBox.Location = new System.Drawing.Point(909, 159);
             this.EmployeeNameBox.Name = "EmployeeNameBox";
             this.EmployeeNameBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeNameBox.TabIndex = 28;
+            this.EmployeeNameBox.TabIndex = 3;
             // 
             // EmployeeAddressLabel
             // 
@@ -160,7 +160,7 @@ namespace ScantelRoofingPrototype
             this.textBox1.Location = new System.Drawing.Point(74, 57);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 22;
+            this.textBox1.TabIndex = 17;
             // 
             // SearchLabel
             // 
@@ -185,14 +185,14 @@ namespace ScantelRoofingPrototype
             this.EmployeeAccessLevelBox.Location = new System.Drawing.Point(909, 275);
             this.EmployeeAccessLevelBox.Name = "EmployeeAccessLevelBox";
             this.EmployeeAccessLevelBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeAccessLevelBox.TabIndex = 35;
+            this.EmployeeAccessLevelBox.TabIndex = 7;
             // 
             // EmployeeWagesBox
             // 
             this.EmployeeWagesBox.Location = new System.Drawing.Point(909, 304);
             this.EmployeeWagesBox.Name = "EmployeeWagesBox";
             this.EmployeeWagesBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeWagesBox.TabIndex = 36;
+            this.EmployeeWagesBox.TabIndex = 8;
             // 
             // EmployeeAccessLevelLabel
             // 
@@ -217,7 +217,7 @@ namespace ScantelRoofingPrototype
             this.Back.Location = new System.Drawing.Point(935, 12);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(145, 43);
-            this.Back.TabIndex = 39;
+            this.Back.TabIndex = 13;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
@@ -231,8 +231,8 @@ namespace ScantelRoofingPrototype
             this.EmployeesDataBox.Name = "EmployeesDataBox";
             this.EmployeesDataBox.ReadOnly = true;
             this.EmployeesDataBox.RowTemplate.Height = 25;
-            this.EmployeesDataBox.Size = new System.Drawing.Size(761, 349);
-            this.EmployeesDataBox.TabIndex = 40;
+            this.EmployeesDataBox.Size = new System.Drawing.Size(761, 357);
+            this.EmployeesDataBox.TabIndex = 18;
             this.EmployeesDataBox.Click += new System.EventHandler(this.EmployeesDataBox_Click);
             // 
             // EmployeeUsernameTextBox
@@ -240,14 +240,14 @@ namespace ScantelRoofingPrototype
             this.EmployeeUsernameTextBox.Location = new System.Drawing.Point(909, 333);
             this.EmployeeUsernameTextBox.Name = "EmployeeUsernameTextBox";
             this.EmployeeUsernameTextBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeUsernameTextBox.TabIndex = 41;
+            this.EmployeeUsernameTextBox.TabIndex = 9;
             // 
             // EmployeeNewPasswordTextBox
             // 
             this.EmployeeNewPasswordTextBox.Location = new System.Drawing.Point(909, 362);
             this.EmployeeNewPasswordTextBox.Name = "EmployeeNewPasswordTextBox";
             this.EmployeeNewPasswordTextBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeNewPasswordTextBox.TabIndex = 42;
+            this.EmployeeNewPasswordTextBox.TabIndex = 10;
             // 
             // EmployeeUsernameLabel
             // 
@@ -272,7 +272,7 @@ namespace ScantelRoofingPrototype
             this.EmployeeAccessCodeBox.Location = new System.Drawing.Point(909, 391);
             this.EmployeeAccessCodeBox.Name = "EmployeeAccessCodeBox";
             this.EmployeeAccessCodeBox.Size = new System.Drawing.Size(171, 23);
-            this.EmployeeAccessCodeBox.TabIndex = 45;
+            this.EmployeeAccessCodeBox.TabIndex = 11;
             // 
             // AccessCodeLabel
             // 
@@ -288,7 +288,7 @@ namespace ScantelRoofingPrototype
             this.EmployeeOutputButton.Location = new System.Drawing.Point(634, 16);
             this.EmployeeOutputButton.Name = "EmployeeOutputButton";
             this.EmployeeOutputButton.Size = new System.Drawing.Size(140, 44);
-            this.EmployeeOutputButton.TabIndex = 47;
+            this.EmployeeOutputButton.TabIndex = 16;
             this.EmployeeOutputButton.Text = "Export Employee Pay";
             this.EmployeeOutputButton.UseVisualStyleBackColor = true;
             this.EmployeeOutputButton.Click += new System.EventHandler(this.EmployeeOutputButton_Click);
@@ -301,7 +301,7 @@ namespace ScantelRoofingPrototype
             this.EmployeeWorkDateTimePicker.Name = "EmployeeWorkDateTimePicker";
             this.EmployeeWorkDateTimePicker.ShowUpDown = true;
             this.EmployeeWorkDateTimePicker.Size = new System.Drawing.Size(200, 23);
-            this.EmployeeWorkDateTimePicker.TabIndex = 48;
+            this.EmployeeWorkDateTimePicker.TabIndex = 15;
             // 
             // OpenFileCheckBox
             // 
@@ -309,7 +309,7 @@ namespace ScantelRoofingPrototype
             this.OpenFileCheckBox.Location = new System.Drawing.Point(780, 25);
             this.OpenFileCheckBox.Name = "OpenFileCheckBox";
             this.OpenFileCheckBox.Size = new System.Drawing.Size(128, 19);
-            this.OpenFileCheckBox.TabIndex = 49;
+            this.OpenFileCheckBox.TabIndex = 14;
             this.OpenFileCheckBox.Text = "Open file on export";
             this.OpenFileCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -317,7 +317,7 @@ namespace ScantelRoofingPrototype
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 445);
+            this.ClientSize = new System.Drawing.Size(1092, 451);
             this.Controls.Add(this.OpenFileCheckBox);
             this.Controls.Add(this.EmployeeWorkDateTimePicker);
             this.Controls.Add(this.EmployeeOutputButton);

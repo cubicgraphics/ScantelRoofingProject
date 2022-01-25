@@ -97,7 +97,7 @@ namespace ScantelRoofingPrototype
             this.BackButton.Location = new System.Drawing.Point(670, 15);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(155, 50);
-            this.BackButton.TabIndex = 2;
+            this.BackButton.TabIndex = 26;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -116,7 +116,7 @@ namespace ScantelRoofingPrototype
             this.textBox1.Location = new System.Drawing.Point(60, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(112, 23);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 10;
             // 
             // SearchLabel
             // 
@@ -198,7 +198,7 @@ namespace ScantelRoofingPrototype
             this.WoodMaterialListBox.Location = new System.Drawing.Point(516, 470);
             this.WoodMaterialListBox.Name = "WoodMaterialListBox";
             this.WoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.WoodMaterialListBox.TabIndex = 27;
+            this.WoodMaterialListBox.TabIndex = 20;
             this.WoodMaterialListBox.VisibleChanged += new System.EventHandler(this.WoodMaterialListBox_VisibleChanged);
             // 
             // TileMaterialListBox
@@ -208,35 +208,35 @@ namespace ScantelRoofingPrototype
             this.TileMaterialListBox.Location = new System.Drawing.Point(516, 444);
             this.TileMaterialListBox.Name = "TileMaterialListBox";
             this.TileMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.TileMaterialListBox.TabIndex = 26;
+            this.TileMaterialListBox.TabIndex = 18;
             // 
             // ElevationSlantHeightBox
             // 
             this.ElevationSlantHeightBox.Location = new System.Drawing.Point(516, 388);
             this.ElevationSlantHeightBox.Name = "ElevationSlantHeightBox";
             this.ElevationSlantHeightBox.Size = new System.Drawing.Size(112, 23);
-            this.ElevationSlantHeightBox.TabIndex = 25;
+            this.ElevationSlantHeightBox.TabIndex = 16;
             // 
             // ElevationLengthBox
             // 
             this.ElevationLengthBox.Location = new System.Drawing.Point(516, 358);
             this.ElevationLengthBox.Name = "ElevationLengthBox";
             this.ElevationLengthBox.Size = new System.Drawing.Size(112, 23);
-            this.ElevationLengthBox.TabIndex = 24;
+            this.ElevationLengthBox.TabIndex = 15;
             // 
             // ElevationWidthBox
             // 
             this.ElevationWidthBox.Location = new System.Drawing.Point(516, 328);
             this.ElevationWidthBox.Name = "ElevationWidthBox";
             this.ElevationWidthBox.Size = new System.Drawing.Size(112, 23);
-            this.ElevationWidthBox.TabIndex = 23;
+            this.ElevationWidthBox.TabIndex = 14;
             // 
             // ElevationNameBox
             // 
             this.ElevationNameBox.Location = new System.Drawing.Point(516, 298);
             this.ElevationNameBox.Name = "ElevationNameBox";
             this.ElevationNameBox.Size = new System.Drawing.Size(112, 23);
-            this.ElevationNameBox.TabIndex = 22;
+            this.ElevationNameBox.TabIndex = 13;
             // 
             // SaveChangesButton
             // 
@@ -253,7 +253,7 @@ namespace ScantelRoofingPrototype
             this.RemoveElevationButton.Location = new System.Drawing.Point(831, 245);
             this.RemoveElevationButton.Name = "RemoveElevationButton";
             this.RemoveElevationButton.Size = new System.Drawing.Size(211, 30);
-            this.RemoveElevationButton.TabIndex = 34;
+            this.RemoveElevationButton.TabIndex = 9;
             this.RemoveElevationButton.Text = "Remove selected elevation";
             this.RemoveElevationButton.UseVisualStyleBackColor = true;
             this.RemoveElevationButton.Click += new System.EventHandler(this.RemoveElevationButton_Click);
@@ -263,7 +263,7 @@ namespace ScantelRoofingPrototype
             this.SearchByWorkplaceTextBox.Location = new System.Drawing.Point(304, 65);
             this.SearchByWorkplaceTextBox.Name = "SearchByWorkplaceTextBox";
             this.SearchByWorkplaceTextBox.Size = new System.Drawing.Size(103, 23);
-            this.SearchByWorkplaceTextBox.TabIndex = 44;
+            this.SearchByWorkplaceTextBox.TabIndex = 11;
             // 
             // SearchByWorkplaceLabel
             // 
@@ -284,7 +284,7 @@ namespace ScantelRoofingPrototype
             this.RoofsDataGridView.ReadOnly = true;
             this.RoofsDataGridView.RowTemplate.Height = 25;
             this.RoofsDataGridView.Size = new System.Drawing.Size(395, 430);
-            this.RoofsDataGridView.TabIndex = 46;
+            this.RoofsDataGridView.TabIndex = 12;
             this.RoofsDataGridView.Click += new System.EventHandler(this.RoofsDataGridView_Click);
             // 
             // ScantleRoofCheckBox
@@ -294,7 +294,7 @@ namespace ScantelRoofingPrototype
             this.ScantleRoofCheckBox.Location = new System.Drawing.Point(539, 418);
             this.ScantleRoofCheckBox.Name = "ScantleRoofCheckBox";
             this.ScantleRoofCheckBox.Size = new System.Drawing.Size(89, 19);
-            this.ScantleRoofCheckBox.TabIndex = 47;
+            this.ScantleRoofCheckBox.TabIndex = 17;
             this.ScantleRoofCheckBox.Text = "Scantle roof";
             this.ScantleRoofCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -305,7 +305,7 @@ namespace ScantelRoofingPrototype
             this.NewScantleRoofCheckBoxLabel.Location = new System.Drawing.Point(953, 132);
             this.NewScantleRoofCheckBoxLabel.Name = "NewScantleRoofCheckBoxLabel";
             this.NewScantleRoofCheckBoxLabel.Size = new System.Drawing.Size(89, 19);
-            this.NewScantleRoofCheckBoxLabel.TabIndex = 61;
+            this.NewScantleRoofCheckBoxLabel.TabIndex = 5;
             this.NewScantleRoofCheckBoxLabel.Text = "Scantle roof";
             this.NewScantleRoofCheckBoxLabel.UseVisualStyleBackColor = true;
             // 
@@ -370,7 +370,7 @@ namespace ScantelRoofingPrototype
             this.NewWoodMaterialListBox.Location = new System.Drawing.Point(930, 184);
             this.NewWoodMaterialListBox.Name = "NewWoodMaterialListBox";
             this.NewWoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewWoodMaterialListBox.TabIndex = 54;
+            this.NewWoodMaterialListBox.TabIndex = 7;
             // 
             // NewTileMaterialListBox
             // 
@@ -379,35 +379,35 @@ namespace ScantelRoofingPrototype
             this.NewTileMaterialListBox.Location = new System.Drawing.Point(930, 158);
             this.NewTileMaterialListBox.Name = "NewTileMaterialListBox";
             this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewTileMaterialListBox.TabIndex = 53;
+            this.NewTileMaterialListBox.TabIndex = 6;
             // 
             // NewSlantAngleTextBox
             // 
             this.NewSlantAngleTextBox.Location = new System.Drawing.Point(930, 102);
             this.NewSlantAngleTextBox.Name = "NewSlantAngleTextBox";
             this.NewSlantAngleTextBox.Size = new System.Drawing.Size(112, 23);
-            this.NewSlantAngleTextBox.TabIndex = 52;
+            this.NewSlantAngleTextBox.TabIndex = 4;
             // 
             // NewLengthTextBox
             // 
             this.NewLengthTextBox.Location = new System.Drawing.Point(930, 72);
             this.NewLengthTextBox.Name = "NewLengthTextBox";
             this.NewLengthTextBox.Size = new System.Drawing.Size(112, 23);
-            this.NewLengthTextBox.TabIndex = 51;
+            this.NewLengthTextBox.TabIndex = 3;
             // 
             // NewWidthTextBox
             // 
             this.NewWidthTextBox.Location = new System.Drawing.Point(930, 42);
             this.NewWidthTextBox.Name = "NewWidthTextBox";
             this.NewWidthTextBox.Size = new System.Drawing.Size(112, 23);
-            this.NewWidthTextBox.TabIndex = 50;
+            this.NewWidthTextBox.TabIndex = 2;
             // 
             // NewElevationNameTextBox
             // 
             this.NewElevationNameTextBox.Location = new System.Drawing.Point(930, 12);
             this.NewElevationNameTextBox.Name = "NewElevationNameTextBox";
             this.NewElevationNameTextBox.Size = new System.Drawing.Size(112, 23);
-            this.NewElevationNameTextBox.TabIndex = 49;
+            this.NewElevationNameTextBox.TabIndex = 1;
             // 
             // RoofOutputMultiLineTextBox
             // 
@@ -415,14 +415,14 @@ namespace ScantelRoofingPrototype
             this.RoofOutputMultiLineTextBox.Multiline = true;
             this.RoofOutputMultiLineTextBox.Name = "RoofOutputMultiLineTextBox";
             this.RoofOutputMultiLineTextBox.Size = new System.Drawing.Size(408, 198);
-            this.RoofOutputMultiLineTextBox.TabIndex = 62;
+            this.RoofOutputMultiLineTextBox.TabIndex = 25;
             // 
             // CalculateRoofButton
             // 
             this.CalculateRoofButton.Location = new System.Drawing.Point(634, 294);
             this.CalculateRoofButton.Name = "CalculateRoofButton";
-            this.CalculateRoofButton.Size = new System.Drawing.Size(211, 28);
-            this.CalculateRoofButton.TabIndex = 63;
+            this.CalculateRoofButton.Size = new System.Drawing.Size(191, 28);
+            this.CalculateRoofButton.TabIndex = 22;
             this.CalculateRoofButton.Text = "Calculate roof ";
             this.CalculateRoofButton.UseVisualStyleBackColor = true;
             // 
@@ -430,18 +430,18 @@ namespace ScantelRoofingPrototype
             // 
             this.SaveOutputButton.Location = new System.Drawing.Point(634, 328);
             this.SaveOutputButton.Name = "SaveOutputButton";
-            this.SaveOutputButton.Size = new System.Drawing.Size(211, 28);
-            this.SaveOutputButton.TabIndex = 64;
+            this.SaveOutputButton.Size = new System.Drawing.Size(191, 28);
+            this.SaveOutputButton.TabIndex = 23;
             this.SaveOutputButton.Text = "Save output";
             this.SaveOutputButton.UseVisualStyleBackColor = true;
             // 
             // OverallCostLabel
             // 
             this.OverallCostLabel.AutoSize = true;
-            this.OverallCostLabel.Location = new System.Drawing.Point(780, 366);
+            this.OverallCostLabel.Location = new System.Drawing.Point(756, 366);
             this.OverallCostLabel.Name = "OverallCostLabel";
             this.OverallCostLabel.Size = new System.Drawing.Size(69, 15);
-            this.OverallCostLabel.TabIndex = 65;
+            this.OverallCostLabel.TabIndex = 24;
             this.OverallCostLabel.Text = "Overall cost";
             // 
             // SimpleRoofEditingPage

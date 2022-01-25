@@ -145,6 +145,8 @@ namespace ScantelRoofingPrototype
             this.Name = "HighAccessLevelEmployeeInterface";
             this.Text = "HighAccessLevelEmployeeInterface";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HighAccessLevelEmployeeInterface_FormClosing);
+            this.Load += new System.EventHandler(this.HighAccessLevelEmployeeInterface_Load);
+            this.VisibleChanged += new System.EventHandler(this.HighAccessLevelEmployeeInterface_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

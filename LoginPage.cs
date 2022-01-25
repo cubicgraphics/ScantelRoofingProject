@@ -37,18 +37,20 @@ namespace ScantelRoofingPrototype
             if (UsernameInput.Text != "")
             {
                 int ID = Employees.GetIDFromUserPassword(FileReader.ReadFromEmployeeFile(), UsernameInput.Text, PasswordInput.Text);
-                lowAccessLevelEmployeeInterface.UserID = ID;
                 if (Employees.IsEmployeeAccessLevel(FileReader.ReadFromEmployeeFile(), 0, ID) == true)
                 {
+                    lowAccessLevelEmployeeInterface.UserID = ID;
                     lowAccessLevelEmployeeInterface.Show();
                 }
                 else
                 {
+                    highLevelEmployeeInterface.UserID = ID;
                     highLevelEmployeeInterface.Show();
                 }
             }
-            else // this is here for testing purposes
+            else //TODO this is here for testing purposes - remove it eventually
             {
+                highLevelEmployeeInterface.UserID = 0;
                 highLevelEmployeeInterface.Show();
             }
         }

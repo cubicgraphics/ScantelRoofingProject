@@ -51,7 +51,7 @@ namespace ScantelRoofingPrototype
             this.CreateNewMaterialButton.Location = new System.Drawing.Point(12, 277);
             this.CreateNewMaterialButton.Name = "CreateNewMaterialButton";
             this.CreateNewMaterialButton.Size = new System.Drawing.Size(230, 29);
-            this.CreateNewMaterialButton.TabIndex = 33;
+            this.CreateNewMaterialButton.TabIndex = 31;
             this.CreateNewMaterialButton.Text = "Create new material";
             this.CreateNewMaterialButton.UseVisualStyleBackColor = true;
             this.CreateNewMaterialButton.Click += new System.EventHandler(this.CreateNewMaterialButton_Click);
@@ -62,7 +62,7 @@ namespace ScantelRoofingPrototype
             this.LengthIfRoofTIleLabel.Location = new System.Drawing.Point(12, 221);
             this.LengthIfRoofTIleLabel.Name = "LengthIfRoofTIleLabel";
             this.LengthIfRoofTIleLabel.Size = new System.Drawing.Size(98, 15);
-            this.LengthIfRoofTIleLabel.TabIndex = 32;
+            this.LengthIfRoofTIleLabel.TabIndex = 35;
             this.LengthIfRoofTIleLabel.Text = "Length if roof tile";
             // 
             // TileLengthInputBox
@@ -70,7 +70,7 @@ namespace ScantelRoofingPrototype
             this.TileLengthInputBox.Location = new System.Drawing.Point(111, 218);
             this.TileLengthInputBox.Name = "TileLengthInputBox";
             this.TileLengthInputBox.Size = new System.Drawing.Size(131, 23);
-            this.TileLengthInputBox.TabIndex = 31;
+            this.TileLengthInputBox.TabIndex = 29;
             // 
             // WidthIfRoofTileWidthlabel
             // 
@@ -78,7 +78,7 @@ namespace ScantelRoofingPrototype
             this.WidthIfRoofTileWidthlabel.Location = new System.Drawing.Point(12, 197);
             this.WidthIfRoofTileWidthlabel.Name = "WidthIfRoofTileWidthlabel";
             this.WidthIfRoofTileWidthlabel.Size = new System.Drawing.Size(93, 15);
-            this.WidthIfRoofTileWidthlabel.TabIndex = 30;
+            this.WidthIfRoofTileWidthlabel.TabIndex = 34;
             this.WidthIfRoofTileWidthlabel.Text = "Width if roof tile";
             // 
             // TileWidthInputBox
@@ -86,7 +86,7 @@ namespace ScantelRoofingPrototype
             this.TileWidthInputBox.Location = new System.Drawing.Point(111, 194);
             this.TileWidthInputBox.Name = "TileWidthInputBox";
             this.TileWidthInputBox.Size = new System.Drawing.Size(131, 23);
-            this.TileWidthInputBox.TabIndex = 29;
+            this.TileWidthInputBox.TabIndex = 28;
             // 
             // PricePerOneCheckBox
             // 
@@ -94,7 +94,7 @@ namespace ScantelRoofingPrototype
             this.PricePerOneCheckBox.Location = new System.Drawing.Point(12, 87);
             this.PricePerOneCheckBox.Name = "PricePerOneCheckBox";
             this.PricePerOneCheckBox.Size = new System.Drawing.Size(106, 19);
-            this.PricePerOneCheckBox.TabIndex = 28;
+            this.PricePerOneCheckBox.TabIndex = 24;
             this.PricePerOneCheckBox.Text = "Price is per one";
             this.PricePerOneCheckBox.UseVisualStyleBackColor = true;
             this.PricePerOneCheckBox.CheckedChanged += new System.EventHandler(this.PricePerOneCheckBox_CheckedChanged);
@@ -106,7 +106,7 @@ namespace ScantelRoofingPrototype
             this.PricePerTonneCheckBox.Location = new System.Drawing.Point(12, 59);
             this.PricePerTonneCheckBox.Name = "PricePerTonneCheckBox";
             this.PricePerTonneCheckBox.Size = new System.Drawing.Size(117, 19);
-            this.PricePerTonneCheckBox.TabIndex = 27;
+            this.PricePerTonneCheckBox.TabIndex = 23;
             this.PricePerTonneCheckBox.Text = "Price is per tonne";
             this.PricePerTonneCheckBox.UseVisualStyleBackColor = true;
             this.PricePerTonneCheckBox.CheckedChanged += new System.EventHandler(this.PricePerTonneCheckBox_CheckedChanged);
@@ -118,7 +118,7 @@ namespace ScantelRoofingPrototype
             this.PricePerMeterCheckBox.Location = new System.Drawing.Point(12, 112);
             this.PricePerMeterCheckBox.Name = "PricePerMeterCheckBox";
             this.PricePerMeterCheckBox.Size = new System.Drawing.Size(117, 19);
-            this.PricePerMeterCheckBox.TabIndex = 26;
+            this.PricePerMeterCheckBox.TabIndex = 25;
             this.PricePerMeterCheckBox.Text = "Price is per meter";
             this.PricePerMeterCheckBox.UseVisualStyleBackColor = true;
             this.PricePerMeterCheckBox.CheckedChanged += new System.EventHandler(this.PricePerMeterCheckBox_CheckedChanged);
@@ -130,7 +130,7 @@ namespace ScantelRoofingPrototype
             this.IsWoodCheckBox.Location = new System.Drawing.Point(12, 169);
             this.IsWoodCheckBox.Name = "IsWoodCheckBox";
             this.IsWoodCheckBox.Size = new System.Drawing.Size(164, 19);
-            this.IsWoodCheckBox.TabIndex = 25;
+            this.IsWoodCheckBox.TabIndex = 27;
             this.IsWoodCheckBox.Text = "material is a type of Wood";
             this.IsWoodCheckBox.UseVisualStyleBackColor = true;
             this.IsWoodCheckBox.CheckedChanged += new System.EventHandler(this.IsWoodCheckBox_CheckedChanged);
@@ -142,7 +142,7 @@ namespace ScantelRoofingPrototype
             this.IsTileMaterialCheckBox.Location = new System.Drawing.Point(12, 141);
             this.IsTileMaterialCheckBox.Name = "IsTileMaterialCheckBox";
             this.IsTileMaterialCheckBox.Size = new System.Drawing.Size(173, 19);
-            this.IsTileMaterialCheckBox.TabIndex = 24;
+            this.IsTileMaterialCheckBox.TabIndex = 26;
             this.IsTileMaterialCheckBox.Text = "material is a type of roof tile";
             this.IsTileMaterialCheckBox.UseVisualStyleBackColor = true;
             this.IsTileMaterialCheckBox.CheckedChanged += new System.EventHandler(this.IsTileMaterialCheckBox_CheckedChanged);
@@ -154,7 +154,7 @@ namespace ScantelRoofingPrototype
             this.MaterialPriceLabel.Location = new System.Drawing.Point(12, 33);
             this.MaterialPriceLabel.Name = "MaterialPriceLabel";
             this.MaterialPriceLabel.Size = new System.Drawing.Size(31, 15);
-            this.MaterialPriceLabel.TabIndex = 23;
+            this.MaterialPriceLabel.TabIndex = 33;
             this.MaterialPriceLabel.Text = "Cost";
             // 
             // MaterialPriceInputBox
@@ -170,7 +170,7 @@ namespace ScantelRoofingPrototype
             this.MaterialNameLabel.Location = new System.Drawing.Point(12, 9);
             this.MaterialNameLabel.Name = "MaterialNameLabel";
             this.MaterialNameLabel.Size = new System.Drawing.Size(83, 15);
-            this.MaterialNameLabel.TabIndex = 21;
+            this.MaterialNameLabel.TabIndex = 32;
             this.MaterialNameLabel.Text = "Material name";
             // 
             // MaterialNameInputBox
@@ -186,7 +186,7 @@ namespace ScantelRoofingPrototype
             this.UseableInScantleCheckbox.Location = new System.Drawing.Point(12, 247);
             this.UseableInScantleCheckbox.Name = "UseableInScantleCheckbox";
             this.UseableInScantleCheckbox.Size = new System.Drawing.Size(120, 19);
-            this.UseableInScantleCheckbox.TabIndex = 34;
+            this.UseableInScantleCheckbox.TabIndex = 30;
             this.UseableInScantleCheckbox.Text = "Useable in scantle";
             this.UseableInScantleCheckbox.UseVisualStyleBackColor = true;
             // 

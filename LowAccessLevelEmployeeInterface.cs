@@ -14,7 +14,7 @@ namespace ScantelRoofingPrototype
     {
         public Form PrevFrom;
         public EmployeeWorkInputPage employeeWorkInputPage;
-        public int UserID;
+        public int UserID = -1;
 
         public LowAccessLevelEmployeeInterface(LoginPage loginPage)
         {
@@ -44,7 +44,10 @@ namespace ScantelRoofingPrototype
 
         private void LogoutButton_VisibleChanged(object sender, EventArgs e)
         {
-            UsernameLabel.Text = Employees.GetUserNameFromID(FileReader.ReadFromEmployeeFile(), UserID);
+            if (UserID != -1)
+            {
+                UsernameLabel.Text = Employees.GetUserNameFromID(Employees.ReadFromFile(), UserID);
+            }
         }
 
         private void LowAccessLevelEmployeeInterface_FormClosing(object sender, FormClosingEventArgs e)

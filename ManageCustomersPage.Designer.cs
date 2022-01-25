@@ -71,50 +71,50 @@ namespace ScantelRoofingPrototype
             this.textBox1.Location = new System.Drawing.Point(60, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 8;
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(558, 405);
+            this.SaveChangesButton.Location = new System.Drawing.Point(706, 309);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(104, 23);
-            this.SaveChangesButton.TabIndex = 17;
+            this.SaveChangesButton.TabIndex = 7;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // CustomerAddressInputBox
             // 
-            this.CustomerAddressInputBox.Location = new System.Drawing.Point(588, 368);
+            this.CustomerAddressInputBox.Location = new System.Drawing.Point(736, 272);
             this.CustomerAddressInputBox.Name = "CustomerAddressInputBox";
             this.CustomerAddressInputBox.Size = new System.Drawing.Size(171, 23);
-            this.CustomerAddressInputBox.TabIndex = 16;
+            this.CustomerAddressInputBox.TabIndex = 6;
             // 
             // CustomerEmailInputBox
             // 
-            this.CustomerEmailInputBox.Location = new System.Drawing.Point(588, 337);
+            this.CustomerEmailInputBox.Location = new System.Drawing.Point(736, 241);
             this.CustomerEmailInputBox.Name = "CustomerEmailInputBox";
             this.CustomerEmailInputBox.Size = new System.Drawing.Size(171, 23);
-            this.CustomerEmailInputBox.TabIndex = 15;
+            this.CustomerEmailInputBox.TabIndex = 5;
             // 
             // CustomerPhoneInputBox
             // 
-            this.CustomerPhoneInputBox.Location = new System.Drawing.Point(588, 304);
+            this.CustomerPhoneInputBox.Location = new System.Drawing.Point(736, 208);
             this.CustomerPhoneInputBox.Name = "CustomerPhoneInputBox";
             this.CustomerPhoneInputBox.Size = new System.Drawing.Size(171, 23);
-            this.CustomerPhoneInputBox.TabIndex = 14;
+            this.CustomerPhoneInputBox.TabIndex = 4;
             // 
             // CustomerNameInputBox
             // 
-            this.CustomerNameInputBox.Location = new System.Drawing.Point(588, 273);
+            this.CustomerNameInputBox.Location = new System.Drawing.Point(736, 177);
             this.CustomerNameInputBox.Name = "CustomerNameInputBox";
             this.CustomerNameInputBox.Size = new System.Drawing.Size(171, 23);
-            this.CustomerNameInputBox.TabIndex = 13;
+            this.CustomerNameInputBox.TabIndex = 3;
             // 
             // CustomerAddressLabel
             // 
             this.CustomerAddressLabel.AutoSize = true;
-            this.CustomerAddressLabel.Location = new System.Drawing.Point(468, 371);
+            this.CustomerAddressLabel.Location = new System.Drawing.Point(616, 275);
             this.CustomerAddressLabel.Name = "CustomerAddressLabel";
             this.CustomerAddressLabel.Size = new System.Drawing.Size(107, 15);
             this.CustomerAddressLabel.TabIndex = 12;
@@ -123,7 +123,7 @@ namespace ScantelRoofingPrototype
             // CustomerEmailLabel
             // 
             this.CustomerEmailLabel.AutoSize = true;
-            this.CustomerEmailLabel.Location = new System.Drawing.Point(468, 340);
+            this.CustomerEmailLabel.Location = new System.Drawing.Point(616, 244);
             this.CustomerEmailLabel.Name = "CustomerEmailLabel";
             this.CustomerEmailLabel.Size = new System.Drawing.Size(94, 15);
             this.CustomerEmailLabel.TabIndex = 11;
@@ -132,7 +132,7 @@ namespace ScantelRoofingPrototype
             // CustomerPhoneNumberLabel
             // 
             this.CustomerPhoneNumberLabel.AutoSize = true;
-            this.CustomerPhoneNumberLabel.Location = new System.Drawing.Point(468, 307);
+            this.CustomerPhoneNumberLabel.Location = new System.Drawing.Point(616, 211);
             this.CustomerPhoneNumberLabel.Name = "CustomerPhoneNumberLabel";
             this.CustomerPhoneNumberLabel.Size = new System.Drawing.Size(99, 15);
             this.CustomerPhoneNumberLabel.TabIndex = 10;
@@ -141,7 +141,7 @@ namespace ScantelRoofingPrototype
             // CustomerNameLabel
             // 
             this.CustomerNameLabel.AutoSize = true;
-            this.CustomerNameLabel.Location = new System.Drawing.Point(468, 276);
+            this.CustomerNameLabel.Location = new System.Drawing.Point(616, 180);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
             this.CustomerNameLabel.Size = new System.Drawing.Size(97, 15);
             this.CustomerNameLabel.TabIndex = 9;
@@ -149,50 +149,50 @@ namespace ScantelRoofingPrototype
             // 
             // NewCustomerButton
             // 
-            this.NewCustomerButton.Location = new System.Drawing.Point(469, 79);
+            this.NewCustomerButton.Location = new System.Drawing.Point(617, 79);
             this.NewCustomerButton.Name = "NewCustomerButton";
             this.NewCustomerButton.Size = new System.Drawing.Size(291, 43);
-            this.NewCustomerButton.TabIndex = 18;
+            this.NewCustomerButton.TabIndex = 1;
             this.NewCustomerButton.Text = "New customer";
             this.NewCustomerButton.UseVisualStyleBackColor = true;
             this.NewCustomerButton.Click += new System.EventHandler(this.NewCustomerButton_Click);
             // 
             // DeleteSelectedCustomerButton
             // 
-            this.DeleteSelectedCustomerButton.Location = new System.Drawing.Point(469, 128);
+            this.DeleteSelectedCustomerButton.Location = new System.Drawing.Point(617, 128);
             this.DeleteSelectedCustomerButton.Name = "DeleteSelectedCustomerButton";
             this.DeleteSelectedCustomerButton.Size = new System.Drawing.Size(291, 43);
-            this.DeleteSelectedCustomerButton.TabIndex = 19;
+            this.DeleteSelectedCustomerButton.TabIndex = 2;
             this.DeleteSelectedCustomerButton.Text = "Delete selected customer";
             this.DeleteSelectedCustomerButton.UseVisualStyleBackColor = true;
             this.DeleteSelectedCustomerButton.Click += new System.EventHandler(this.DeleteSelectedCustomerButton_Click);
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(611, 9);
+            this.BackButton.Location = new System.Drawing.Point(759, 9);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(148, 43);
-            this.BackButton.TabIndex = 20;
+            this.BackButton.TabIndex = 10;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // CustomerDataBox
+            // CustomerDataGrid
             // 
             this.CustomerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomerDataGrid.Location = new System.Drawing.Point(12, 93);
-            this.CustomerDataGrid.Name = "CustomerDataBox";
+            this.CustomerDataGrid.Location = new System.Drawing.Point(12, 79);
+            this.CustomerDataGrid.Name = "CustomerDataGrid";
             this.CustomerDataGrid.ReadOnly = true;
             this.CustomerDataGrid.RowTemplate.Height = 25;
-            this.CustomerDataGrid.Size = new System.Drawing.Size(450, 293);
-            this.CustomerDataGrid.TabIndex = 21;
+            this.CustomerDataGrid.Size = new System.Drawing.Size(598, 307);
+            this.CustomerDataGrid.TabIndex = 9;
             this.CustomerDataGrid.Click += new System.EventHandler(this.CustomerDataBox_Click);
             // 
             // ManageCustomersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(919, 401);
             this.Controls.Add(this.CustomerDataGrid);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.DeleteSelectedCustomerButton);

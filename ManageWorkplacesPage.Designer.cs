@@ -95,7 +95,7 @@ namespace ScantelRoofingPrototype
             this.textBox1.Location = new System.Drawing.Point(60, 57);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 23;
             // 
             // ShowOldWorkplaces
             // 
@@ -114,7 +114,7 @@ namespace ScantelRoofingPrototype
             this.EmployeesAtWorksitelistBox.Location = new System.Drawing.Point(773, 86);
             this.EmployeesAtWorksitelistBox.Name = "EmployeesAtWorksitelistBox";
             this.EmployeesAtWorksitelistBox.Size = new System.Drawing.Size(108, 79);
-            this.EmployeesAtWorksitelistBox.TabIndex = 5;
+            this.EmployeesAtWorksitelistBox.TabIndex = 10;
             // 
             // EmployeesListBox
             // 
@@ -123,7 +123,7 @@ namespace ScantelRoofingPrototype
             this.EmployeesListBox.Location = new System.Drawing.Point(916, 86);
             this.EmployeesListBox.Name = "EmployeesListBox";
             this.EmployeesListBox.Size = new System.Drawing.Size(108, 79);
-            this.EmployeesListBox.TabIndex = 6;
+            this.EmployeesListBox.TabIndex = 12;
             // 
             // RoofsAtWorksiteListBox
             // 
@@ -132,7 +132,7 @@ namespace ScantelRoofingPrototype
             this.RoofsAtWorksiteListBox.Location = new System.Drawing.Point(774, 291);
             this.RoofsAtWorksiteListBox.Name = "RoofsAtWorksiteListBox";
             this.RoofsAtWorksiteListBox.Size = new System.Drawing.Size(108, 139);
-            this.RoofsAtWorksiteListBox.TabIndex = 7;
+            this.RoofsAtWorksiteListBox.TabIndex = 19;
             // 
             // RoofslistBox
             // 
@@ -141,14 +141,14 @@ namespace ScantelRoofingPrototype
             this.RoofslistBox.Location = new System.Drawing.Point(917, 291);
             this.RoofslistBox.Name = "RoofslistBox";
             this.RoofslistBox.Size = new System.Drawing.Size(108, 139);
-            this.RoofslistBox.TabIndex = 8;
+            this.RoofslistBox.TabIndex = 21;
             // 
             // BackButton
             // 
             this.BackButton.Location = new System.Drawing.Point(1157, 12);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(131, 43);
-            this.BackButton.TabIndex = 9;
+            this.BackButton.TabIndex = 25;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -158,7 +158,7 @@ namespace ScantelRoofingPrototype
             this.NewWorkplaceButton.Location = new System.Drawing.Point(1031, 73);
             this.NewWorkplaceButton.Name = "NewWorkplaceButton";
             this.NewWorkplaceButton.Size = new System.Drawing.Size(257, 43);
-            this.NewWorkplaceButton.TabIndex = 10;
+            this.NewWorkplaceButton.TabIndex = 1;
             this.NewWorkplaceButton.Text = "Create New Workplace";
             this.NewWorkplaceButton.UseVisualStyleBackColor = true;
             this.NewWorkplaceButton.Click += new System.EventHandler(this.NewWorkplaceButton_Click);
@@ -168,7 +168,7 @@ namespace ScantelRoofingPrototype
             this.DeleteSelectedWorkplaceButton.Location = new System.Drawing.Point(1031, 122);
             this.DeleteSelectedWorkplaceButton.Name = "DeleteSelectedWorkplaceButton";
             this.DeleteSelectedWorkplaceButton.Size = new System.Drawing.Size(257, 43);
-            this.DeleteSelectedWorkplaceButton.TabIndex = 11;
+            this.DeleteSelectedWorkplaceButton.TabIndex = 2;
             this.DeleteSelectedWorkplaceButton.Text = "Delete selected workplace";
             this.DeleteSelectedWorkplaceButton.UseVisualStyleBackColor = true;
             this.DeleteSelectedWorkplaceButton.Click += new System.EventHandler(this.DeleteSelectedWorkplaceButton_Click);
@@ -178,7 +178,7 @@ namespace ScantelRoofingPrototype
             this.AddEmployeeToWorkplaceButton.Location = new System.Drawing.Point(887, 92);
             this.AddEmployeeToWorkplaceButton.Name = "AddEmployeeToWorkplaceButton";
             this.AddEmployeeToWorkplaceButton.Size = new System.Drawing.Size(23, 24);
-            this.AddEmployeeToWorkplaceButton.TabIndex = 12;
+            this.AddEmployeeToWorkplaceButton.TabIndex = 13;
             this.AddEmployeeToWorkplaceButton.Text = "<";
             this.AddEmployeeToWorkplaceButton.UseVisualStyleBackColor = true;
             this.AddEmployeeToWorkplaceButton.Click += new System.EventHandler(this.AddEmployeeToWorkplaceButton_Click);
@@ -188,7 +188,7 @@ namespace ScantelRoofingPrototype
             this.RemoveEmployeeFromWorkplaceButton.Location = new System.Drawing.Point(887, 131);
             this.RemoveEmployeeFromWorkplaceButton.Name = "RemoveEmployeeFromWorkplaceButton";
             this.RemoveEmployeeFromWorkplaceButton.Size = new System.Drawing.Size(23, 24);
-            this.RemoveEmployeeFromWorkplaceButton.TabIndex = 13;
+            this.RemoveEmployeeFromWorkplaceButton.TabIndex = 11;
             this.RemoveEmployeeFromWorkplaceButton.Text = ">";
             this.RemoveEmployeeFromWorkplaceButton.UseVisualStyleBackColor = true;
             this.RemoveEmployeeFromWorkplaceButton.Click += new System.EventHandler(this.RemoveEmployeeFromWorkplaceButton_Click);
@@ -198,7 +198,7 @@ namespace ScantelRoofingPrototype
             this.RemoveRoofFromWorkplaceButton.Location = new System.Drawing.Point(888, 385);
             this.RemoveRoofFromWorkplaceButton.Name = "RemoveRoofFromWorkplaceButton";
             this.RemoveRoofFromWorkplaceButton.Size = new System.Drawing.Size(23, 24);
-            this.RemoveRoofFromWorkplaceButton.TabIndex = 14;
+            this.RemoveRoofFromWorkplaceButton.TabIndex = 20;
             this.RemoveRoofFromWorkplaceButton.Text = ">";
             this.RemoveRoofFromWorkplaceButton.UseVisualStyleBackColor = true;
             this.RemoveRoofFromWorkplaceButton.Click += new System.EventHandler(this.RemoveRoofFromWorkplaceButton_Click);
@@ -208,7 +208,7 @@ namespace ScantelRoofingPrototype
             this.AddRoofToWorkplaceButton.Location = new System.Drawing.Point(888, 318);
             this.AddRoofToWorkplaceButton.Name = "AddRoofToWorkplaceButton";
             this.AddRoofToWorkplaceButton.Size = new System.Drawing.Size(23, 24);
-            this.AddRoofToWorkplaceButton.TabIndex = 15;
+            this.AddRoofToWorkplaceButton.TabIndex = 22;
             this.AddRoofToWorkplaceButton.Text = "<";
             this.AddRoofToWorkplaceButton.UseVisualStyleBackColor = true;
             this.AddRoofToWorkplaceButton.Click += new System.EventHandler(this.AddRoofToWorkplaceButton_Click);
@@ -300,14 +300,14 @@ namespace ScantelRoofingPrototype
             this.WorkplaceNameBox.Location = new System.Drawing.Point(1127, 179);
             this.WorkplaceNameBox.Name = "WorkplaceNameBox";
             this.WorkplaceNameBox.Size = new System.Drawing.Size(161, 23);
-            this.WorkplaceNameBox.TabIndex = 25;
+            this.WorkplaceNameBox.TabIndex = 3;
             // 
             // WorkplaceAddressBox
             // 
             this.WorkplaceAddressBox.Location = new System.Drawing.Point(1127, 294);
             this.WorkplaceAddressBox.Name = "WorkplaceAddressBox";
             this.WorkplaceAddressBox.Size = new System.Drawing.Size(161, 23);
-            this.WorkplaceAddressBox.TabIndex = 26;
+            this.WorkplaceAddressBox.TabIndex = 7;
             // 
             // EndDateLabel
             // 
@@ -323,31 +323,31 @@ namespace ScantelRoofingPrototype
             this.StartDateTimePicker.Location = new System.Drawing.Point(1127, 208);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.Size = new System.Drawing.Size(161, 23);
-            this.StartDateTimePicker.TabIndex = 28;
+            this.StartDateTimePicker.TabIndex = 4;
             // 
             // PredictedEndDateTimePicker
             // 
             this.PredictedEndDateTimePicker.Location = new System.Drawing.Point(1127, 237);
             this.PredictedEndDateTimePicker.Name = "PredictedEndDateTimePicker";
             this.PredictedEndDateTimePicker.Size = new System.Drawing.Size(161, 23);
-            this.PredictedEndDateTimePicker.TabIndex = 29;
+            this.PredictedEndDateTimePicker.TabIndex = 5;
             // 
             // EndDateTimePicker
             // 
             this.EndDateTimePicker.Location = new System.Drawing.Point(1127, 265);
             this.EndDateTimePicker.Name = "EndDateTimePicker";
             this.EndDateTimePicker.Size = new System.Drawing.Size(161, 23);
-            this.EndDateTimePicker.TabIndex = 30;
+            this.EndDateTimePicker.TabIndex = 6;
             // 
-            // WorkplaceDataTable
+            // WorkplaceDataGrid
             // 
             this.WorkplaceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WorkplaceDataGrid.Location = new System.Drawing.Point(13, 111);
-            this.WorkplaceDataGrid.Name = "WorkplaceDataTable";
+            this.WorkplaceDataGrid.Name = "WorkplaceDataGrid";
             this.WorkplaceDataGrid.ReadOnly = true;
             this.WorkplaceDataGrid.RowTemplate.Height = 25;
             this.WorkplaceDataGrid.Size = new System.Drawing.Size(745, 319);
-            this.WorkplaceDataGrid.TabIndex = 31;
+            this.WorkplaceDataGrid.TabIndex = 24;
             this.WorkplaceDataGrid.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
             // 
             // SaveWorkplaceChangesButton
@@ -355,7 +355,7 @@ namespace ScantelRoofingPrototype
             this.SaveWorkplaceChangesButton.Location = new System.Drawing.Point(1033, 345);
             this.SaveWorkplaceChangesButton.Name = "SaveWorkplaceChangesButton";
             this.SaveWorkplaceChangesButton.Size = new System.Drawing.Size(257, 24);
-            this.SaveWorkplaceChangesButton.TabIndex = 32;
+            this.SaveWorkplaceChangesButton.TabIndex = 9;
             this.SaveWorkplaceChangesButton.Text = "Save changes";
             this.SaveWorkplaceChangesButton.UseVisualStyleBackColor = true;
             this.SaveWorkplaceChangesButton.Click += new System.EventHandler(this.SaveWorkplaceChangesButton_Click);
@@ -367,7 +367,7 @@ namespace ScantelRoofingPrototype
             this.BeingWorkedAtCheckBox.Location = new System.Drawing.Point(1043, 323);
             this.BeingWorkedAtCheckBox.Name = "BeingWorkedAtCheckBox";
             this.BeingWorkedAtCheckBox.Size = new System.Drawing.Size(166, 19);
-            this.BeingWorkedAtCheckBox.TabIndex = 33;
+            this.BeingWorkedAtCheckBox.TabIndex = 8;
             this.BeingWorkedAtCheckBox.Text = "worksite currently working";
             this.BeingWorkedAtCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -394,7 +394,7 @@ namespace ScantelRoofingPrototype
             this.RemoveCustomerFromWorkplace.Location = new System.Drawing.Point(888, 242);
             this.RemoveCustomerFromWorkplace.Name = "RemoveCustomerFromWorkplace";
             this.RemoveCustomerFromWorkplace.Size = new System.Drawing.Size(23, 24);
-            this.RemoveCustomerFromWorkplace.TabIndex = 37;
+            this.RemoveCustomerFromWorkplace.TabIndex = 15;
             this.RemoveCustomerFromWorkplace.Text = ">";
             this.RemoveCustomerFromWorkplace.UseVisualStyleBackColor = true;
             this.RemoveCustomerFromWorkplace.Click += new System.EventHandler(this.RemoveCustomerFromWorkplace_Click);
@@ -404,7 +404,7 @@ namespace ScantelRoofingPrototype
             this.AddCustomerToWorkplace.Location = new System.Drawing.Point(888, 205);
             this.AddCustomerToWorkplace.Name = "AddCustomerToWorkplace";
             this.AddCustomerToWorkplace.Size = new System.Drawing.Size(23, 24);
-            this.AddCustomerToWorkplace.TabIndex = 36;
+            this.AddCustomerToWorkplace.TabIndex = 18;
             this.AddCustomerToWorkplace.Text = "<";
             this.AddCustomerToWorkplace.UseVisualStyleBackColor = true;
             this.AddCustomerToWorkplace.Click += new System.EventHandler(this.AddCustomerToWorkplace_Click);
@@ -416,7 +416,7 @@ namespace ScantelRoofingPrototype
             this.CustomerListBox.Location = new System.Drawing.Point(917, 206);
             this.CustomerListBox.Name = "CustomerListBox";
             this.CustomerListBox.Size = new System.Drawing.Size(108, 64);
-            this.CustomerListBox.TabIndex = 35;
+            this.CustomerListBox.TabIndex = 17;
             // 
             // CustomerAtWorkplaceListBox
             // 
@@ -425,14 +425,14 @@ namespace ScantelRoofingPrototype
             this.CustomerAtWorkplaceListBox.Location = new System.Drawing.Point(774, 191);
             this.CustomerAtWorkplaceListBox.Name = "CustomerAtWorkplaceListBox";
             this.CustomerAtWorkplaceListBox.Size = new System.Drawing.Size(108, 79);
-            this.CustomerAtWorkplaceListBox.TabIndex = 34;
+            this.CustomerAtWorkplaceListBox.TabIndex = 14;
             // 
             // CustomerListSearchBox
             // 
             this.CustomerListSearchBox.Location = new System.Drawing.Point(917, 182);
             this.CustomerListSearchBox.Name = "CustomerListSearchBox";
             this.CustomerListSearchBox.Size = new System.Drawing.Size(108, 23);
-            this.CustomerListSearchBox.TabIndex = 40;
+            this.CustomerListSearchBox.TabIndex = 16;
             // 
             // ManageWorkplacesPage
             // 
