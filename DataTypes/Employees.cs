@@ -95,6 +95,5 @@ namespace ScantelRoofingPrototype
         {
             return FileReader.ReadFromEmployeeFile();
         }
-
     }
 }

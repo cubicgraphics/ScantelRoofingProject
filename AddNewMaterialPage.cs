@@ -24,8 +24,6 @@ namespace ScantelRoofingPrototype
             if (Utill.VerifyIntInput(MaterialPriceInputBox.Text) && Utill.VerifyIntInput(TileWidthInputBox.Text) && Utill.VerifyIntInput(TileLengthInputBox.Text))
             {
 
-
-
                 List<Stocks> stock = FileReader.ReadFromStocksFile();
                 int tom = 0;
                 if (PricePerOneCheckBox.Checked == true)
@@ -123,7 +121,6 @@ namespace ScantelRoofingPrototype
                 TileLengthInputBox.Text = "0";
             }
         }
-
         private void PricePerMeterCheckBox_Click(object sender, EventArgs e)
         {
             PricePerMeterCheckBox.Checked = true;
@@ -136,7 +133,6 @@ namespace ScantelRoofingPrototype
         {
             PricePerOneCheckBox.Checked = true;
         }
-
         private void IsTileMaterialCheckBox_Click(object sender, EventArgs e)
         {
             IsTileMaterialCheckBox.Checked = true;
@@ -145,7 +141,6 @@ namespace ScantelRoofingPrototype
         {
             IsWoodCheckBox.Checked = true;
         }
-
         private void AddNewMaterialPage_VisibleChanged(object sender, EventArgs e)
         {
             PricePerOneCheckBox.Checked = true;
