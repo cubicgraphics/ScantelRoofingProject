@@ -33,6 +33,7 @@ namespace ScantelRoofingPrototype
             this.LoginPageButton = new System.Windows.Forms.Button();
             this.EnterEmployeeCodeButton = new System.Windows.Forms.Button();
             this.EmployeeCodeInputBox = new System.Windows.Forms.TextBox();
+            this.CodeNotFoundLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LoginTitleLabel
@@ -71,11 +72,23 @@ namespace ScantelRoofingPrototype
             this.EmployeeCodeInputBox.Size = new System.Drawing.Size(208, 23);
             this.EmployeeCodeInputBox.TabIndex = 2;
             // 
+            // CodeNotFoundLabel
+            // 
+            this.CodeNotFoundLabel.AutoSize = true;
+            this.CodeNotFoundLabel.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.CodeNotFoundLabel.Location = new System.Drawing.Point(71, 102);
+            this.CodeNotFoundLabel.Name = "CodeNotFoundLabel";
+            this.CodeNotFoundLabel.Size = new System.Drawing.Size(91, 15);
+            this.CodeNotFoundLabel.TabIndex = 4;
+            this.CodeNotFoundLabel.Text = "Code not found";
+            this.CodeNotFoundLabel.Visible = false;
+            // 
             // EmployeeAccessPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 124);
+            this.Controls.Add(this.CodeNotFoundLabel);
             this.Controls.Add(this.EmployeeCodeInputBox);
             this.Controls.Add(this.EnterEmployeeCodeButton);
             this.Controls.Add(this.LoginPageButton);
@@ -93,6 +106,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Button LoginPageButton;
         private System.Windows.Forms.Button EnterEmployeeCodeButton;
         private System.Windows.Forms.TextBox EmployeeCodeInputBox;
+        private System.Windows.Forms.Label CodeNotFoundLabel;
     }
 }
 

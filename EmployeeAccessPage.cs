@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
@@ -32,11 +25,16 @@ namespace ScantelRoofingPrototype
             int ID = Employees.GetIDFromCode(FileReader.ReadFromEmployeeFile(), EmployeeCodeInputBox.Text);
             if (ID != -1)
             {
+                CodeNotFoundLabel.Hide();
                 employeeWorkInputPage.EmployeeID = ID;
                 ID = 0;
                 EmployeeCodeInputBox.Text = "";
                 this.Hide();
                 employeeWorkInputPage.Show();
+            }
+            else
+            {
+                CodeNotFoundLabel.Show();
             }
 
         }

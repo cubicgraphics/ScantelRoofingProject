@@ -25,5 +25,31 @@ namespace ScantelRoofingPrototype
             PredictedEndDate = predictedenddate;
             RealEndDate = realenddate;
         }
+
+        public static List<Workplaces> SearchByName(List<Workplaces> people, string searchKey)
+        {
+            List<Workplaces> output = new List<Workplaces>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].PlaceName.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
+
+        public static List<Workplaces> SearchByAddress(List<Workplaces> people, string searchKey)
+        {
+            List<Workplaces> output = new List<Workplaces>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Address.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
     }
 }

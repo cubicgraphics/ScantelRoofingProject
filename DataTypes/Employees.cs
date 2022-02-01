@@ -95,5 +95,18 @@ namespace ScantelRoofingPrototype
         {
             return FileReader.ReadFromEmployeeFile();
         }
+
+        public static List<Employees> SearchByUName(List<Employees> people, string searchKey)
+        {
+            List<Employees> output = new List<Employees>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Username.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
     }
 }

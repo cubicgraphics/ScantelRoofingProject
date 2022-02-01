@@ -78,12 +78,12 @@ namespace ScantelRoofingPrototype
             this.SlateMaterialTypesListBox.ItemHeight = 15;
             this.SlateMaterialTypesListBox.Location = new System.Drawing.Point(278, 32);
             this.SlateMaterialTypesListBox.Name = "SlateMaterialTypesListBox";
-            this.SlateMaterialTypesListBox.Size = new System.Drawing.Size(116, 19);
+            this.SlateMaterialTypesListBox.Size = new System.Drawing.Size(263, 19);
             this.SlateMaterialTypesListBox.TabIndex = 3;
             // 
             // TimeWorkedInputBox
             // 
-            this.TimeWorkedInputBox.Location = new System.Drawing.Point(136, 74);
+            this.TimeWorkedInputBox.Location = new System.Drawing.Point(136, 76);
             this.TimeWorkedInputBox.Maximum = new decimal(new int[] {
             20,
             0,
@@ -96,7 +96,7 @@ namespace ScantelRoofingPrototype
             // TimeWorkedLabel
             // 
             this.TimeWorkedLabel.AutoSize = true;
-            this.TimeWorkedLabel.Location = new System.Drawing.Point(22, 76);
+            this.TimeWorkedLabel.Location = new System.Drawing.Point(22, 78);
             this.TimeWorkedLabel.Name = "TimeWorkedLabel";
             this.TimeWorkedLabel.Size = new System.Drawing.Size(81, 15);
             this.TimeWorkedLabel.TabIndex = 4;
@@ -106,7 +106,7 @@ namespace ScantelRoofingPrototype
             // 
             this.DoneButton.Location = new System.Drawing.Point(278, 76);
             this.DoneButton.Name = "DoneButton";
-            this.DoneButton.Size = new System.Drawing.Size(116, 23);
+            this.DoneButton.Size = new System.Drawing.Size(263, 23);
             this.DoneButton.TabIndex = 7;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@ namespace ScantelRoofingPrototype
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 109);
+            this.ClientSize = new System.Drawing.Size(553, 111);
             this.Controls.Add(this.UserNameLabel);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.TimeWorkedInputBox);

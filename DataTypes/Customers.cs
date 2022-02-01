@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace ScantelRoofingPrototype
 {
@@ -13,7 +8,6 @@ namespace ScantelRoofingPrototype
 
         public Customers(int id, int personid)
         {
-
             this.ID = id;
             this.PersonID = personid;
         }
@@ -34,5 +28,31 @@ namespace ScantelRoofingPrototype
             }
             return confirmedcustomers;
         }
+
+        public static List<People> SearchByName(List<People> people, string searchKey)
+        {
+            List<People> output = new List<People>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Name.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
+        public static List<People> SearchByAddress(List<People> people, string searchKey)
+        {
+            List<People> output = new List<People>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Address.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
     }
+
 }

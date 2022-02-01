@@ -28,6 +28,20 @@ namespace ScantelRoofingPrototype
             WoodMaterialID = woodmaterialid;
             Scantle = scantle;
         }
+
+
+        public static List<RoofElevation> SearchByName(List<RoofElevation> people, string searchKey)
+        {
+            List<RoofElevation> output = new List<RoofElevation>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Name.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
     }
 
 }

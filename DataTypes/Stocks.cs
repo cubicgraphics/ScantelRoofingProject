@@ -63,5 +63,17 @@ namespace ScantelRoofingPrototype
             }
             return ID;
         }
+        public static List<Stocks> SearchByName(List<Stocks> people, string searchKey)
+        {
+            List<Stocks> output = new List<Stocks>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Name.Contains(searchKey))
+                {
+                    output.Add(people[i]);
+                }
+            }
+            return output;
+        }
     }
 }
