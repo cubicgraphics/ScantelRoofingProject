@@ -17,8 +17,8 @@ namespace ScantelRoofingPrototype
         public int AccessLevel { get; }
         public float Wages { get; }
         public string Username { get; }
-        public string Password { get; }
-        public string AccessCode { get; }
+        public string HashPassword { get; }
+        public string HashAccessCode { get; }
 
         public EmployeePeople(People person, Employees employee)
         {
@@ -31,8 +31,8 @@ namespace ScantelRoofingPrototype
             AccessLevel = employee.AccessLevel;
             Wages = employee.Wages;
             Username = employee.Username;
-            Password = employee.Password;
-            AccessCode = employee.AccessCode;
+            HashPassword = employee.HashPassword;
+            HashAccessCode = employee.HashAccessCode;
         }
 
         public static List<EmployeePeople>  CombineEmployeePeopleList(List<Employees> employeelist, List<People> peoplelist)
@@ -46,7 +46,6 @@ namespace ScantelRoofingPrototype
                 {
                     if (employeelist[i].PersonID == peoplelist[loop].ID)
                     {
-
                         Employeepeoplelist.Add(new EmployeePeople(peoplelist[loop], employeelist[i]));
                         found = true;
                     }

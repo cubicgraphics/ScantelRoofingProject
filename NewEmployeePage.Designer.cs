@@ -46,6 +46,8 @@ namespace ScantelRoofingPrototype
             this.EmployeeUsernameInputBox = new System.Windows.Forms.TextBox();
             this.EmployeePasswordLabel = new System.Windows.Forms.Label();
             this.EmployeePasswordInputBox = new System.Windows.Forms.TextBox();
+            this.AccessCodeLabel = new System.Windows.Forms.Label();
+            this.AccessCodeTextInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // EmployeeWagesLabel
@@ -82,7 +84,7 @@ namespace ScantelRoofingPrototype
             // 
             // CreateNewEmployeeButton
             // 
-            this.CreateNewEmployeeButton.Location = new System.Drawing.Point(11, 252);
+            this.CreateNewEmployeeButton.Location = new System.Drawing.Point(11, 285);
             this.CreateNewEmployeeButton.Name = "CreateNewEmployeeButton";
             this.CreateNewEmployeeButton.Size = new System.Drawing.Size(291, 23);
             this.CreateNewEmployeeButton.TabIndex = 9;
@@ -186,11 +188,29 @@ namespace ScantelRoofingPrototype
             this.EmployeePasswordInputBox.Size = new System.Drawing.Size(171, 23);
             this.EmployeePasswordInputBox.TabIndex = 8;
             // 
+            // AccessCodeLabel
+            // 
+            this.AccessCodeLabel.AutoSize = true;
+            this.AccessCodeLabel.Location = new System.Drawing.Point(33, 255);
+            this.AccessCodeLabel.Name = "AccessCodeLabel";
+            this.AccessCodeLabel.Size = new System.Drawing.Size(72, 15);
+            this.AccessCodeLabel.TabIndex = 57;
+            this.AccessCodeLabel.Text = "Access code";
+            // 
+            // AccessCodeTextInput
+            // 
+            this.AccessCodeTextInput.Location = new System.Drawing.Point(131, 252);
+            this.AccessCodeTextInput.Name = "AccessCodeTextInput";
+            this.AccessCodeTextInput.Size = new System.Drawing.Size(171, 23);
+            this.AccessCodeTextInput.TabIndex = 56;
+            // 
             // NewEmployeePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 281);
+            this.ClientSize = new System.Drawing.Size(308, 320);
+            this.Controls.Add(this.AccessCodeLabel);
+            this.Controls.Add(this.AccessCodeTextInput);
             this.Controls.Add(this.EmployeePasswordLabel);
             this.Controls.Add(this.EmployeePasswordInputBox);
             this.Controls.Add(this.EmployeeUsernameLabel);
@@ -235,5 +255,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox EmployeeUsernameInputBox;
         private System.Windows.Forms.Label EmployeePasswordLabel;
         private System.Windows.Forms.TextBox EmployeePasswordInputBox;
+        private System.Windows.Forms.Label AccessCodeLabel;
+        private System.Windows.Forms.TextBox AccessCodeTextInput;
     }
 }

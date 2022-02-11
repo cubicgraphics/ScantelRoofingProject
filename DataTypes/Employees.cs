@@ -13,28 +13,30 @@ namespace ScantelRoofingPrototype
         public int AccessLevel { get; }
         public float Wages { get; }
         public string Username { get; }
-        public string Password { get; }
-        public string AccessCode { get; }
+        public string HashPassword { get; }
+        public string HashAccessCode { get; }
 
-        public Employees(int id, int personid, int accesslevel, float wages, string username, string password, string accesscode )
+        public Employees(int id, int personid, int accesslevel, float wages, string username, string HashPassword, string HashAccessCode)
         {
-            ID = id;
-            PersonID = personid;
-            AccessLevel = accesslevel;
-            Wages = wages;
-            Username = username;
-            Password = password;
-            AccessCode = accesscode;
+            this.ID = id;
+            this.PersonID = personid;
+            this.AccessLevel = accesslevel;
+            this.Wages = wages;
+            this.Username = username;
+            this.HashPassword = HashPassword;
+            this.HashAccessCode = HashAccessCode;
         }
 
         public static int GetIDFromCode(List<Employees> employees, string accesscode)
         {
             int ID = -1;
+            string hash = Hash.HashString(accesscode);
             for (int i = 0; i < employees.Count; i++)
             {
-                if (employees[i].AccessCode == accesscode)
+                if (employees[i].HashAccessCode == hash)
                 {
                     ID = employees[i].ID;
+                    break;
                 }
             }
             return ID;
@@ -42,11 +44,13 @@ namespace ScantelRoofingPrototype
         public static int GetIDFromUserPassword(List<Employees> employees, string username, string password)
         {
             int ID = -1;
+            string hash = Hash.HashString(password);
             for (int i = 0; i < employees.Count; i++)
             {
-                if ((employees[i].Username == username) && (employees[i].Password == password))
+                if ((employees[i].Username == username) && (employees[i].HashPassword == hash))
                 {
                     ID = employees[i].ID;
+                    break;
                 }
             }
             return ID;

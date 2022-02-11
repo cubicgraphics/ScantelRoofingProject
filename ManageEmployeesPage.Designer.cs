@@ -279,9 +279,9 @@ namespace ScantelRoofingPrototype
             this.AccessCodeLabel.AutoSize = true;
             this.AccessCodeLabel.Location = new System.Drawing.Point(799, 394);
             this.AccessCodeLabel.Name = "AccessCodeLabel";
-            this.AccessCodeLabel.Size = new System.Drawing.Size(75, 15);
+            this.AccessCodeLabel.Size = new System.Drawing.Size(100, 15);
             this.AccessCodeLabel.TabIndex = 46;
-            this.AccessCodeLabel.Text = "Access code:";
+            this.AccessCodeLabel.Text = "New access code:";
             // 
             // EmployeeOutputButton
             // 

@@ -33,25 +33,31 @@ namespace ScantelRoofingPrototype
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             if (UsernameInput.Text != "")
             {
                 int ID = Employees.GetIDFromUserPassword(FileReader.ReadFromEmployeeFile(), UsernameInput.Text, PasswordInput.Text);
-                if (Employees.IsEmployeeAccessLevel(FileReader.ReadFromEmployeeFile(), 0, ID) == true)
+                if(ID != -1)
                 {
-                    lowAccessLevelEmployeeInterface.UserID = ID;
-                    lowAccessLevelEmployeeInterface.Show();
-                }
-                else
-                {
-                    highLevelEmployeeInterface.UserID = ID;
-                    highLevelEmployeeInterface.Show();
+                    if (Employees.IsEmployeeAccessLevel(FileReader.ReadFromEmployeeFile(), 0, ID) == true)
+                    {
+                        lowAccessLevelEmployeeInterface.UserID = ID;
+                        lowAccessLevelEmployeeInterface.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        highLevelEmployeeInterface.UserID = ID;
+                        highLevelEmployeeInterface.Show();
+                        this.Hide();
+                    }
                 }
             }
-            else //TODO this is here for testing purposes - remove it eventually
+            else //TODO this is here for testing purposes - it bypasses the need for a password. remove it eventually
             {
                 highLevelEmployeeInterface.UserID = 0;
                 highLevelEmployeeInterface.Show();
+                this.Hide();
             }
         }
 

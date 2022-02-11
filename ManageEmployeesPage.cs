@@ -107,7 +107,6 @@ namespace ScantelRoofingPrototype
                 EmployeeAccessLevelBox.Text = employeePeopleLinked[index].AccessLevel.ToString();
                 EmployeeWagesBox.Text = employeePeopleLinked[index].Wages.ToString();
                 EmployeeUsernameTextBox.Text = employeePeopleLinked[index].Username;
-                EmployeeAccessCodeBox.Text = employeePeopleLinked[index].AccessCode;
             }
         }
 
@@ -117,12 +116,17 @@ namespace ScantelRoofingPrototype
             {
                 int index = EmployeesDataBox.SelectedCells[0].RowIndex;
                 People editperson = new People(employeePeopleLinked[index].PersonID, EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text, EmployeeAddressBox.Text);
-                string newpassword = employeePeopleLinked[index].Password;
+                string Hashpassword = employeePeopleLinked[index].HashPassword;
                 if (EmployeeNewPasswordTextBox.Text != "")
                 {
-                    newpassword = EmployeeNewPasswordTextBox.Text;
+                    Hashpassword = Hash.HashString(EmployeeNewPasswordTextBox.Text);
                 }
-                Employees editemployee = new Employees(employeePeopleLinked[index].ID, employeePeopleLinked[index].PersonID, int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameTextBox.Text, newpassword, EmployeeAccessCodeBox.Text);
+                string Hashcode = employeePeopleLinked[index].HashAccessCode;
+                if (EmployeeAccessCodeBox.Text != "")
+                {
+                    Hashcode = Hash.HashString(EmployeeAccessCodeBox.Text);
+                }
+                Employees editemployee = new Employees(employeePeopleLinked[index].ID, employeePeopleLinked[index].PersonID, int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameTextBox.Text, Hashpassword, Hashcode);
                 for (int i = 0; i < people.Count; i++)
                 {
                     if(people[i].ID == employeePeopleLinked[index].PersonID)
@@ -150,7 +154,7 @@ namespace ScantelRoofingPrototype
 
         private void EmployeeOutputButton_Click(object sender, EventArgs e)
         {
-            ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value,OpenFileCheckBox.Checked); //should work
+            ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value,OpenFileCheckBox.Checked);
         }
     }
 }

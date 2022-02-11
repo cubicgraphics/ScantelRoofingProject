@@ -68,7 +68,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[employees.Count()];
             for (int i = 0; i < employees.Count; i++)
             {
-                texttowrite[i] = employees[i].ID.ToString() + Seperator + employees[i].PersonID.ToString() + Seperator + employees[i].AccessLevel.ToString() + Seperator + employees[i].Wages.ToString() + Seperator + SafeToSave(employees[i].Username) + Seperator + SafeToSave(employees[i].Password) + Seperator + SafeToSave(employees[i].AccessCode);
+                texttowrite[i] = employees[i].ID.ToString() + Seperator + employees[i].PersonID.ToString() + Seperator + employees[i].AccessLevel.ToString() + Seperator + employees[i].Wages.ToString() + Seperator + SafeToSave(employees[i].Username) + Seperator + SafeToSave(employees[i].HashPassword) + Seperator + SafeToSave(employees[i].HashAccessCode);
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Employees.txt", texttowrite);

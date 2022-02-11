@@ -26,20 +26,25 @@ namespace ScantelRoofingPrototype
         {
             employees = FileReader.ReadFromEmployeeFile();
             people = FileReader.ReadFromPeopleFile();
-            People newperson = new People((People.GetHighestID(people) + 1), EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text,EmployeeAddressBox.Text);
-            
-            string accesscode = "12345";///make this random and not the same as any before it///
+            if (AccessCodeTextInput.Text != "" && EmployeePasswordInputBox.Text != "" && EmployeeNameBox.Text != "" && EmployeeUsernameInputBox.Text != "")
+            {
+                People newperson = new People((People.GetHighestID(people) + 1), EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text, EmployeeAddressBox.Text);
 
-            Employees newemployee = new Employees((Employees.GetHighestID(employees) + 1), (People.GetHighestID(people) + 1), int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameInputBox.Text, EmployeePasswordInputBox.Text, accesscode);
+                Employees newemployee = new Employees((Employees.GetHighestID(employees) + 1), (People.GetHighestID(people) + 1), int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameInputBox.Text, Hash.HashString(EmployeePasswordInputBox.Text), Hash.HashString(AccessCodeTextInput.Text));
 
-            MessageBox.Show("Adding the employee: " + newperson.Name + " " + newperson.PhoneNumber.ToString() + " " + newperson.Address.ToString() + "  Username: " + newemployee.Username + " Password: " + newemployee.Password + " Wages: " + newemployee.Wages.ToString() + " AccessLevel: " + newemployee.AccessLevel.ToString() + " AccessCode: " + newemployee.AccessCode);
-            people.Add(newperson);
-            employees.Add(newemployee);
-            FileReader.WriteToEmployeeFile(employees);
-            FileReader.WriteToPeopleFile(people);
-            manageEmployeesPage.LoadAndRefreshEmployeesPeople();
-            manageEmployeesPage.Show();
-            this.Hide();
+                MessageBox.Show("Adding the employee: " + newperson.Name + " " + newperson.PhoneNumber.ToString() + " " + newperson.Address.ToString() + "  Username: " + newemployee.Username + " Password: " + EmployeePasswordInputBox.Text + " Wages: " + newemployee.Wages.ToString() + " AccessLevel: " + newemployee.AccessLevel.ToString() + " AccessCode: " + AccessCodeTextInput.Text);
+                people.Add(newperson);
+                employees.Add(newemployee);
+                FileReader.WriteToEmployeeFile(employees);
+                FileReader.WriteToPeopleFile(people);
+                manageEmployeesPage.LoadAndRefreshEmployeesPeople();
+                manageEmployeesPage.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in the empty boxes");
+            }
         }
 
         private void NewEmployeePage_FormClosing(object sender, FormClosingEventArgs e)
