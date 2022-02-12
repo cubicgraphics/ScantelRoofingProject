@@ -23,30 +23,5 @@ namespace ScantelRoofingPrototype
         {
             return FileReader.ReadFromPeopleFile();
         }
-
-        public static List<EmployeePeople> SearchByName(List<EmployeePeople> people, string searchKey)
-        {
-            List<EmployeePeople> output = new List<EmployeePeople>();
-            for (int i = 0; i < people.Count; i++)
-            {
-                if (people[i].Name.Contains(searchKey))
-                {
-                    output.Add(people[i]);
-                }
-            }
-            return output;
-        }
-        public static List<EmployeePeople> SearchByAddress(List<EmployeePeople> people, string searchKey)
-        {
-            List<EmployeePeople> output = new List<EmployeePeople>();
-            for (int i = 0; i < people.Count; i++)
-            {
-                if (people[i].Address.Contains(searchKey))
-                {
-                    output.Add(people[i]);
-                }
-            }
-            return output;
-        }
     }
 }

@@ -28,31 +28,6 @@ namespace ScantelRoofingPrototype
             }
             return confirmedcustomers;
         }
-
-        public static List<People> SearchByName(List<People> people, string searchKey)
-        {
-            List<People> output = new List<People>();
-            for (int i = 0; i < people.Count; i++)
-            {
-                if (people[i].Name.Contains(searchKey))
-                {
-                    output.Add(people[i]);
-                }
-            }
-            return output;
-        }
-        public static List<People> SearchByAddress(List<People> people, string searchKey)
-        {
-            List<People> output = new List<People>();
-            for (int i = 0; i < people.Count; i++)
-            {
-                if (people[i].Address.Contains(searchKey))
-                {
-                    output.Add(people[i]);
-                }
-            }
-            return output;
-        }
     }
 
 }

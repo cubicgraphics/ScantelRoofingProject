@@ -42,7 +42,7 @@ namespace ScantelRoofingPrototype
             this.ElevationLengthLabel = new System.Windows.Forms.Label();
             this.ElevationWidthLabel = new System.Windows.Forms.Label();
             this.ElevationNameLabel = new System.Windows.Forms.Label();
-            this.ElevationSlantHeightBox = new System.Windows.Forms.TextBox();
+            this.ElevationSlantAngleBox = new System.Windows.Forms.TextBox();
             this.ElevationLengthBox = new System.Windows.Forms.TextBox();
             this.ElevationWidthBox = new System.Windows.Forms.TextBox();
             this.ElevationNameBox = new System.Windows.Forms.TextBox();
@@ -191,12 +191,12 @@ namespace ScantelRoofingPrototype
             this.ElevationNameLabel.TabIndex = 28;
             this.ElevationNameLabel.Text = "Elevation name";
             // 
-            // ElevationSlantHeightBox
+            // ElevationSlantAngleBox
             // 
-            this.ElevationSlantHeightBox.Location = new System.Drawing.Point(516, 388);
-            this.ElevationSlantHeightBox.Name = "ElevationSlantHeightBox";
-            this.ElevationSlantHeightBox.Size = new System.Drawing.Size(112, 23);
-            this.ElevationSlantHeightBox.TabIndex = 16;
+            this.ElevationSlantAngleBox.Location = new System.Drawing.Point(516, 388);
+            this.ElevationSlantAngleBox.Name = "ElevationSlantAngleBox";
+            this.ElevationSlantAngleBox.Size = new System.Drawing.Size(112, 23);
+            this.ElevationSlantAngleBox.TabIndex = 16;
             // 
             // ElevationLengthBox
             // 
@@ -475,7 +475,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.ElevationLengthLabel);
             this.Controls.Add(this.ElevationWidthLabel);
             this.Controls.Add(this.ElevationNameLabel);
-            this.Controls.Add(this.ElevationSlantHeightBox);
+            this.Controls.Add(this.ElevationSlantAngleBox);
             this.Controls.Add(this.ElevationLengthBox);
             this.Controls.Add(this.ElevationWidthBox);
             this.Controls.Add(this.ElevationNameBox);
@@ -490,6 +490,7 @@ namespace ScantelRoofingPrototype
             this.Name = "SimpleRoofEditingPage";
             this.Text = "SimpleRoofEditingPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SimpleRoofEditingPage_FormClosing);
+            this.VisibleChanged += new System.EventHandler(this.SimpleRoofEditingPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.RoofsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -511,7 +512,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label ElevationLengthLabel;
         private System.Windows.Forms.Label ElevationWidthLabel;
         private System.Windows.Forms.Label ElevationNameLabel;
-        private System.Windows.Forms.TextBox ElevationSlantHeightBox;
+        private System.Windows.Forms.TextBox ElevationSlantAngleBox;
         private System.Windows.Forms.TextBox ElevationLengthBox;
         private System.Windows.Forms.TextBox ElevationWidthBox;
         private System.Windows.Forms.TextBox ElevationNameBox;

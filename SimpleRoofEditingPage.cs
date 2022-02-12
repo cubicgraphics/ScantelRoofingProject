@@ -91,7 +91,7 @@ namespace ScantelRoofingPrototype
                 ElevationNameBox.Text = Roofs[index].Name;
                 ElevationWidthBox.Text = Roofs[index].Width.ToString();
                 ElevationLengthBox.Text = Roofs[index].Length.ToString();
-                ElevationSlantHeightBox.Text = Roofs[index].SlantAngle.ToString();
+                ElevationSlantAngleBox.Text = Roofs[index].SlantAngle.ToString();
                 ScantleRoofCheckBox.Checked = Roofs[index].Scantle;
             }
         }
@@ -121,13 +121,6 @@ namespace ScantelRoofingPrototype
             }
         }
 
-        private void WoodMaterialListBox_VisibleChanged(object sender, EventArgs e)
-        {
-            LoadAndUpdateRoofData();
-            UpdateAndRefreshRoofListAndTable();
-            UpdateChangesTextBoxes();
-        }
-
         private void RoofsDataGridView_Click(object sender, EventArgs e)
         {
             UpdateChangesTextBoxes();
@@ -135,11 +128,10 @@ namespace ScantelRoofingPrototype
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            int TileID = TileStocks[TileMaterialListBox.SelectedIndex].ID;
-            int WoodID = WoodStocks[WoodMaterialListBox.SelectedIndex].ID;
+            int index = RoofsDataGridView.SelectedCells[0].RowIndex;
+            RoofElevation roof = new RoofElevation(Roofs[index].ID, ElevationNameBox.Text,float.Parse( ElevationLengthBox.Text),float.Parse(ElevationWidthBox.Text),float.Parse(ElevationSlantAngleBox.Text), TileStocks[TileMaterialListBox.SelectedIndex].ID, WoodStocks[WoodMaterialListBox.SelectedIndex].ID,ScantleRoofCheckBox.Checked);
+            Roofs[index] = roof;
             FileReader.WriteToRoofFile(Roofs);
-            //TODO here
-
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
         }
@@ -164,6 +156,13 @@ namespace ScantelRoofingPrototype
                 ElevationTileMaterialLabel.Show();
                 TileMaterialListBox.Show();
             }
+        }
+
+        private void SimpleRoofEditingPage_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadAndUpdateRoofData();
+            UpdateAndRefreshRoofListAndTable();
+            UpdateChangesTextBoxes();
         }
 
 
