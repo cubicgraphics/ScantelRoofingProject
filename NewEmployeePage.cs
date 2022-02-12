@@ -26,13 +26,13 @@ namespace ScantelRoofingPrototype
         {
             employees = FileReader.ReadFromEmployeeFile();
             people = FileReader.ReadFromPeopleFile();
-            if (AccessCodeTextInput.Text != "" && EmployeePasswordInputBox.Text != "" && EmployeeNameBox.Text != "" && EmployeeUsernameInputBox.Text != "")
+            if (AccessCodeTextInput.Text != "" && EmployeePasswordInputBox.Text != "" && EmployeeNameBox.Text != "" && EmployeeUsernameInputBox.Text != "" && Utill.VerifyIntInput(EmployeeWagesBox.Text) && Utill.VerifyIntInput(EmployeeAccessLevelBox.Text))
             {
                 People newperson = new People((People.GetHighestID(people) + 1), EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text, EmployeeAddressBox.Text);
 
                 Employees newemployee = new Employees((Employees.GetHighestID(employees) + 1), (People.GetHighestID(people) + 1), int.Parse(EmployeeAccessLevelBox.Text), float.Parse(EmployeeWagesBox.Text), EmployeeUsernameInputBox.Text, Hash.HashString(EmployeePasswordInputBox.Text), Hash.HashString(AccessCodeTextInput.Text));
 
-                MessageBox.Show("Adding the employee: " + newperson.Name + " " + newperson.PhoneNumber.ToString() + " " + newperson.Address.ToString() + "  Username: " + newemployee.Username + " Password: " + EmployeePasswordInputBox.Text + " Wages: " + newemployee.Wages.ToString() + " AccessLevel: " + newemployee.AccessLevel.ToString() + " AccessCode: " + AccessCodeTextInput.Text);
+                MessageBox.Show("Adding the employee: " + newperson.Name + " Phone number: " + newperson.PhoneNumber.ToString() + " Address: " + newperson.Address.ToString() + " Email: " + newperson.EmailAddress.ToString() + "  Username: " + newemployee.Username + " Password: " + EmployeePasswordInputBox.Text + " Wages: " + newemployee.Wages.ToString() + " AccessLevel: " + newemployee.AccessLevel.ToString() + " AccessCode: " + AccessCodeTextInput.Text);
                 people.Add(newperson);
                 employees.Add(newemployee);
                 FileReader.WriteToEmployeeFile(employees);
@@ -43,7 +43,7 @@ namespace ScantelRoofingPrototype
             }
             else
             {
-                MessageBox.Show("Please fill in the empty boxes");
+                MessageBox.Show("Please fill in the empty boxes and/or enter correct data");
             }
         }
 

@@ -15,7 +15,7 @@ namespace ScantelRoofingPrototype
             char[] c = text.ToCharArray();
             for (int i = 0; i < c.Length; i++)
             {
-                MessageBox.Show("char is " + c[i]);
+                //MessageBox.Show("char is " + c[i]);
                 if (!char.IsDigit(c[i]) && c[i] != '.')
                 {
                     verif = false;

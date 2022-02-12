@@ -55,9 +55,9 @@ namespace ScantelRoofingPrototype
             this.EmployeeWagesLabel.AutoSize = true;
             this.EmployeeWagesLabel.Location = new System.Drawing.Point(11, 168);
             this.EmployeeWagesLabel.Name = "EmployeeWagesLabel";
-            this.EmployeeWagesLabel.Size = new System.Drawing.Size(95, 15);
+            this.EmployeeWagesLabel.Size = new System.Drawing.Size(119, 15);
             this.EmployeeWagesLabel.TabIndex = 51;
-            this.EmployeeWagesLabel.Text = "Employee wages";
+            this.EmployeeWagesLabel.Text = "Employee wages      £";
             // 
             // EmployeeAccessLevelLabel
             // 
@@ -87,7 +87,7 @@ namespace ScantelRoofingPrototype
             this.CreateNewEmployeeButton.Location = new System.Drawing.Point(11, 285);
             this.CreateNewEmployeeButton.Name = "CreateNewEmployeeButton";
             this.CreateNewEmployeeButton.Size = new System.Drawing.Size(291, 23);
-            this.CreateNewEmployeeButton.TabIndex = 9;
+            this.CreateNewEmployeeButton.TabIndex = 10;
             this.CreateNewEmployeeButton.Text = "Create new employee";
             this.CreateNewEmployeeButton.UseVisualStyleBackColor = true;
             this.CreateNewEmployeeButton.Click += new System.EventHandler(this.CreateNewEmployeeButton_Click);
@@ -202,7 +202,7 @@ namespace ScantelRoofingPrototype
             this.AccessCodeTextInput.Location = new System.Drawing.Point(131, 252);
             this.AccessCodeTextInput.Name = "AccessCodeTextInput";
             this.AccessCodeTextInput.Size = new System.Drawing.Size(171, 23);
-            this.AccessCodeTextInput.TabIndex = 56;
+            this.AccessCodeTextInput.TabIndex = 9;
             // 
             // NewEmployeePage
             // 
