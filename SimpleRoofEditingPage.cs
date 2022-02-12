@@ -165,11 +165,14 @@ namespace ScantelRoofingPrototype
             UpdateChangesTextBoxes();
         }
 
+        private void CalculateRoofButton_Click(object sender, EventArgs e)
+        {
+            // calculates the roof and outputs it into the text box
+        }
 
-
-
-
-
-        //When calculating needed materials for scantel roofs, calculate by diminishing courses - calculate by using small slates first then upwards to bigger ones and calculate how many batons are needed.
+        private void SaveOutputButton_Click(object sender, EventArgs e)
+        {
+            //takes what is in the test box and saves it to a file
+        }
     }
 }

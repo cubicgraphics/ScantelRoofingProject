@@ -389,6 +389,7 @@ namespace ScantelRoofingPrototype
             this.CalculateRoofButton.TabIndex = 22;
             this.CalculateRoofButton.Text = "Calculate roof ";
             this.CalculateRoofButton.UseVisualStyleBackColor = true;
+            this.CalculateRoofButton.Click += new System.EventHandler(this.CalculateRoofButton_Click);
             // 
             // SaveOutputButton
             // 
@@ -398,6 +399,7 @@ namespace ScantelRoofingPrototype
             this.SaveOutputButton.TabIndex = 23;
             this.SaveOutputButton.Text = "Save output";
             this.SaveOutputButton.UseVisualStyleBackColor = true;
+            this.SaveOutputButton.Click += new System.EventHandler(this.SaveOutputButton_Click);
             // 
             // OverallCostLabel
             // 
