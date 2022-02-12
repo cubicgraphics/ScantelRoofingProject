@@ -42,8 +42,6 @@ namespace ScantelRoofingPrototype
             this.ElevationLengthLabel = new System.Windows.Forms.Label();
             this.ElevationWidthLabel = new System.Windows.Forms.Label();
             this.ElevationNameLabel = new System.Windows.Forms.Label();
-            this.WoodMaterialListBox = new System.Windows.Forms.ListBox();
-            this.TileMaterialListBox = new System.Windows.Forms.ListBox();
             this.ElevationSlantHeightBox = new System.Windows.Forms.TextBox();
             this.ElevationLengthBox = new System.Windows.Forms.TextBox();
             this.ElevationWidthBox = new System.Windows.Forms.TextBox();
@@ -61,8 +59,6 @@ namespace ScantelRoofingPrototype
             this.NewLengthLabel = new System.Windows.Forms.Label();
             this.NewWidthLabel = new System.Windows.Forms.Label();
             this.NewElevationNameLabel = new System.Windows.Forms.Label();
-            this.NewWoodMaterialListBox = new System.Windows.Forms.ListBox();
-            this.NewTileMaterialListBox = new System.Windows.Forms.ListBox();
             this.NewSlantAngleTextBox = new System.Windows.Forms.TextBox();
             this.NewLengthTextBox = new System.Windows.Forms.TextBox();
             this.NewWidthTextBox = new System.Windows.Forms.TextBox();
@@ -71,6 +67,10 @@ namespace ScantelRoofingPrototype
             this.CalculateRoofButton = new System.Windows.Forms.Button();
             this.SaveOutputButton = new System.Windows.Forms.Button();
             this.OverallCostLabel = new System.Windows.Forms.Label();
+            this.TileMaterialListBox = new System.Windows.Forms.ComboBox();
+            this.WoodMaterialListBox = new System.Windows.Forms.ComboBox();
+            this.NewWoodMaterialListBox = new System.Windows.Forms.ComboBox();
+            this.NewTileMaterialListBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.RoofsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,25 +191,6 @@ namespace ScantelRoofingPrototype
             this.ElevationNameLabel.TabIndex = 28;
             this.ElevationNameLabel.Text = "Elevation name";
             // 
-            // WoodMaterialListBox
-            // 
-            this.WoodMaterialListBox.FormattingEnabled = true;
-            this.WoodMaterialListBox.ItemHeight = 15;
-            this.WoodMaterialListBox.Location = new System.Drawing.Point(516, 470);
-            this.WoodMaterialListBox.Name = "WoodMaterialListBox";
-            this.WoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.WoodMaterialListBox.TabIndex = 20;
-            this.WoodMaterialListBox.VisibleChanged += new System.EventHandler(this.WoodMaterialListBox_VisibleChanged);
-            // 
-            // TileMaterialListBox
-            // 
-            this.TileMaterialListBox.FormattingEnabled = true;
-            this.TileMaterialListBox.ItemHeight = 15;
-            this.TileMaterialListBox.Location = new System.Drawing.Point(516, 444);
-            this.TileMaterialListBox.Name = "TileMaterialListBox";
-            this.TileMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.TileMaterialListBox.TabIndex = 18;
-            // 
             // ElevationSlantHeightBox
             // 
             this.ElevationSlantHeightBox.Location = new System.Drawing.Point(516, 388);
@@ -297,6 +278,7 @@ namespace ScantelRoofingPrototype
             this.ScantleRoofCheckBox.TabIndex = 17;
             this.ScantleRoofCheckBox.Text = "Scantle roof";
             this.ScantleRoofCheckBox.UseVisualStyleBackColor = true;
+            this.ScantleRoofCheckBox.CheckedChanged += new System.EventHandler(this.ScantleRoofCheckBox_CheckedChanged);
             // 
             // NewScantleRoofCheckBoxLabel
             // 
@@ -363,24 +345,6 @@ namespace ScantelRoofingPrototype
             this.NewElevationNameLabel.TabIndex = 55;
             this.NewElevationNameLabel.Text = "Elevation name";
             // 
-            // NewWoodMaterialListBox
-            // 
-            this.NewWoodMaterialListBox.FormattingEnabled = true;
-            this.NewWoodMaterialListBox.ItemHeight = 15;
-            this.NewWoodMaterialListBox.Location = new System.Drawing.Point(930, 184);
-            this.NewWoodMaterialListBox.Name = "NewWoodMaterialListBox";
-            this.NewWoodMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewWoodMaterialListBox.TabIndex = 7;
-            // 
-            // NewTileMaterialListBox
-            // 
-            this.NewTileMaterialListBox.FormattingEnabled = true;
-            this.NewTileMaterialListBox.ItemHeight = 15;
-            this.NewTileMaterialListBox.Location = new System.Drawing.Point(930, 158);
-            this.NewTileMaterialListBox.Name = "NewTileMaterialListBox";
-            this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 19);
-            this.NewTileMaterialListBox.TabIndex = 6;
-            // 
             // NewSlantAngleTextBox
             // 
             this.NewSlantAngleTextBox.Location = new System.Drawing.Point(930, 102);
@@ -444,11 +408,47 @@ namespace ScantelRoofingPrototype
             this.OverallCostLabel.TabIndex = 24;
             this.OverallCostLabel.Text = "Overall cost";
             // 
+            // TileMaterialListBox
+            // 
+            this.TileMaterialListBox.FormattingEnabled = true;
+            this.TileMaterialListBox.Location = new System.Drawing.Point(516, 443);
+            this.TileMaterialListBox.Name = "TileMaterialListBox";
+            this.TileMaterialListBox.Size = new System.Drawing.Size(112, 23);
+            this.TileMaterialListBox.TabIndex = 61;
+            // 
+            // WoodMaterialListBox
+            // 
+            this.WoodMaterialListBox.FormattingEnabled = true;
+            this.WoodMaterialListBox.Location = new System.Drawing.Point(516, 471);
+            this.WoodMaterialListBox.Name = "WoodMaterialListBox";
+            this.WoodMaterialListBox.Size = new System.Drawing.Size(112, 23);
+            this.WoodMaterialListBox.TabIndex = 62;
+            // 
+            // NewWoodMaterialListBox
+            // 
+            this.NewWoodMaterialListBox.FormattingEnabled = true;
+            this.NewWoodMaterialListBox.Location = new System.Drawing.Point(931, 183);
+            this.NewWoodMaterialListBox.Name = "NewWoodMaterialListBox";
+            this.NewWoodMaterialListBox.Size = new System.Drawing.Size(112, 23);
+            this.NewWoodMaterialListBox.TabIndex = 63;
+            // 
+            // NewTileMaterialListBox
+            // 
+            this.NewTileMaterialListBox.FormattingEnabled = true;
+            this.NewTileMaterialListBox.Location = new System.Drawing.Point(931, 157);
+            this.NewTileMaterialListBox.Name = "NewTileMaterialListBox";
+            this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 23);
+            this.NewTileMaterialListBox.TabIndex = 64;
+            // 
             // SimpleRoofEditingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 536);
+            this.Controls.Add(this.NewTileMaterialListBox);
+            this.Controls.Add(this.NewWoodMaterialListBox);
+            this.Controls.Add(this.WoodMaterialListBox);
+            this.Controls.Add(this.TileMaterialListBox);
             this.Controls.Add(this.OverallCostLabel);
             this.Controls.Add(this.SaveOutputButton);
             this.Controls.Add(this.CalculateRoofButton);
@@ -460,8 +460,6 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.NewLengthLabel);
             this.Controls.Add(this.NewWidthLabel);
             this.Controls.Add(this.NewElevationNameLabel);
-            this.Controls.Add(this.NewWoodMaterialListBox);
-            this.Controls.Add(this.NewTileMaterialListBox);
             this.Controls.Add(this.NewSlantAngleTextBox);
             this.Controls.Add(this.NewLengthTextBox);
             this.Controls.Add(this.NewWidthTextBox);
@@ -477,8 +475,6 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.ElevationLengthLabel);
             this.Controls.Add(this.ElevationWidthLabel);
             this.Controls.Add(this.ElevationNameLabel);
-            this.Controls.Add(this.WoodMaterialListBox);
-            this.Controls.Add(this.TileMaterialListBox);
             this.Controls.Add(this.ElevationSlantHeightBox);
             this.Controls.Add(this.ElevationLengthBox);
             this.Controls.Add(this.ElevationWidthBox);
@@ -515,8 +511,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label ElevationLengthLabel;
         private System.Windows.Forms.Label ElevationWidthLabel;
         private System.Windows.Forms.Label ElevationNameLabel;
-        private System.Windows.Forms.ListBox WoodMaterialListBox;
-        private System.Windows.Forms.ListBox TileMaterialListBox;
         private System.Windows.Forms.TextBox ElevationSlantHeightBox;
         private System.Windows.Forms.TextBox ElevationLengthBox;
         private System.Windows.Forms.TextBox ElevationWidthBox;
@@ -534,8 +528,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label NewLengthLabel;
         private System.Windows.Forms.Label NewWidthLabel;
         private System.Windows.Forms.Label NewElevationNameLabel;
-        private System.Windows.Forms.ListBox NewWoodMaterialListBox;
-        private System.Windows.Forms.ListBox NewTileMaterialListBox;
         private System.Windows.Forms.TextBox NewSlantAngleTextBox;
         private System.Windows.Forms.TextBox NewLengthTextBox;
         private System.Windows.Forms.TextBox NewWidthTextBox;
@@ -544,5 +536,9 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Button CalculateRoofButton;
         private System.Windows.Forms.Button SaveOutputButton;
         private System.Windows.Forms.Label OverallCostLabel;
+        private System.Windows.Forms.ComboBox TileMaterialListBox;
+        private System.Windows.Forms.ComboBox WoodMaterialListBox;
+        private System.Windows.Forms.ComboBox NewWoodMaterialListBox;
+        private System.Windows.Forms.ComboBox NewTileMaterialListBox;
     }
 }

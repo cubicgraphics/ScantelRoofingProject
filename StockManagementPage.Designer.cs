@@ -58,6 +58,8 @@ namespace ScantelRoofingPrototype
             this.StocksDataGrid = new System.Windows.Forms.DataGridView();
             this.AmountToBuyAndCostLabelOutput = new System.Windows.Forms.Label();
             this.UseableInScantleCheckbox = new System.Windows.Forms.CheckBox();
+            this.MeasurementLabel1 = new System.Windows.Forms.Label();
+            this.MeasurementLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StocksDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -336,11 +338,31 @@ namespace ScantelRoofingPrototype
             this.UseableInScantleCheckbox.Text = "Useable in scantle";
             this.UseableInScantleCheckbox.UseVisualStyleBackColor = true;
             // 
+            // MeasurementLabel1
+            // 
+            this.MeasurementLabel1.AutoSize = true;
+            this.MeasurementLabel1.Location = new System.Drawing.Point(1247, 355);
+            this.MeasurementLabel1.Name = "MeasurementLabel1";
+            this.MeasurementLabel1.Size = new System.Drawing.Size(18, 15);
+            this.MeasurementLabel1.TabIndex = 25;
+            this.MeasurementLabel1.Text = "M";
+            // 
+            // MeasurementLabel2
+            // 
+            this.MeasurementLabel2.AutoSize = true;
+            this.MeasurementLabel2.Location = new System.Drawing.Point(1247, 379);
+            this.MeasurementLabel2.Name = "MeasurementLabel2";
+            this.MeasurementLabel2.Size = new System.Drawing.Size(18, 15);
+            this.MeasurementLabel2.TabIndex = 26;
+            this.MeasurementLabel2.Text = "M";
+            // 
             // StockManagementPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1417, 491);
+            this.Controls.Add(this.MeasurementLabel2);
+            this.Controls.Add(this.MeasurementLabel1);
             this.Controls.Add(this.UseableInScantleCheckbox);
             this.Controls.Add(this.AmountToBuyAndCostLabelOutput);
             this.Controls.Add(this.StocksDataGrid);
@@ -410,5 +432,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.DataGridView StocksDataGrid;
         private System.Windows.Forms.Label AmountToBuyAndCostLabelOutput;
         private System.Windows.Forms.CheckBox UseableInScantleCheckbox;
+        private System.Windows.Forms.Label MeasurementLabel1;
+        private System.Windows.Forms.Label MeasurementLabel2;
     }
 }

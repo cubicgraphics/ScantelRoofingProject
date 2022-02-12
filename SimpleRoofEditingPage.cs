@@ -55,6 +55,7 @@ namespace ScantelRoofingPrototype
             WoodMaterialListBox.DataSource = WoodStocks;
             WoodMaterialListBox.DisplayMember = "Name";
 
+            
             NewTileMaterialListBox.DataSource = null;
             NewTileMaterialListBox.DataSource = TileStocks;
             NewTileMaterialListBox.DisplayMember = "Name";
@@ -62,6 +63,7 @@ namespace ScantelRoofingPrototype
             NewWoodMaterialListBox.DataSource = null;
             NewWoodMaterialListBox.DataSource = WoodStocks;
             NewWoodMaterialListBox.DisplayMember = "Name";
+            
         }
 
         private void UpdateMaterialLists()
@@ -136,6 +138,7 @@ namespace ScantelRoofingPrototype
             int TileID = TileStocks[TileMaterialListBox.SelectedIndex].ID;
             int WoodID = WoodStocks[WoodMaterialListBox.SelectedIndex].ID;
             FileReader.WriteToRoofFile(Roofs);
+            //TODO here
 
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
@@ -147,6 +150,20 @@ namespace ScantelRoofingPrototype
             FileReader.WriteToRoofFile(Roofs);
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
+        }
+
+        private void ScantleRoofCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ScantleRoofCheckBox.Checked == true)
+            {
+                ElevationTileMaterialLabel.Hide();
+                TileMaterialListBox.Hide();
+            }
+            else
+            {
+                ElevationTileMaterialLabel.Show();
+                TileMaterialListBox.Show();
+            }
         }
 
 

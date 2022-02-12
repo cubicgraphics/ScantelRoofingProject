@@ -61,15 +61,15 @@ namespace ScantelRoofingPrototype
             this.LengthIfRoofTIleLabel.AutoSize = true;
             this.LengthIfRoofTIleLabel.Location = new System.Drawing.Point(12, 221);
             this.LengthIfRoofTIleLabel.Name = "LengthIfRoofTIleLabel";
-            this.LengthIfRoofTIleLabel.Size = new System.Drawing.Size(98, 15);
+            this.LengthIfRoofTIleLabel.Size = new System.Drawing.Size(120, 15);
             this.LengthIfRoofTIleLabel.TabIndex = 35;
-            this.LengthIfRoofTIleLabel.Text = "Length if roof tile";
+            this.LengthIfRoofTIleLabel.Text = "Length if roof tile (M)";
             // 
             // TileLengthInputBox
             // 
-            this.TileLengthInputBox.Location = new System.Drawing.Point(111, 218);
+            this.TileLengthInputBox.Location = new System.Drawing.Point(133, 218);
             this.TileLengthInputBox.Name = "TileLengthInputBox";
-            this.TileLengthInputBox.Size = new System.Drawing.Size(131, 23);
+            this.TileLengthInputBox.Size = new System.Drawing.Size(109, 23);
             this.TileLengthInputBox.TabIndex = 29;
             // 
             // WidthIfRoofTileWidthlabel
@@ -77,15 +77,16 @@ namespace ScantelRoofingPrototype
             this.WidthIfRoofTileWidthlabel.AutoSize = true;
             this.WidthIfRoofTileWidthlabel.Location = new System.Drawing.Point(12, 197);
             this.WidthIfRoofTileWidthlabel.Name = "WidthIfRoofTileWidthlabel";
-            this.WidthIfRoofTileWidthlabel.Size = new System.Drawing.Size(93, 15);
+            this.WidthIfRoofTileWidthlabel.Size = new System.Drawing.Size(115, 15);
             this.WidthIfRoofTileWidthlabel.TabIndex = 34;
-            this.WidthIfRoofTileWidthlabel.Text = "Width if roof tile";
+            this.WidthIfRoofTileWidthlabel.Text = "Width if roof tile (M)";
+            this.WidthIfRoofTileWidthlabel.Click += new System.EventHandler(this.WidthIfRoofTileWidthlabel_Click);
             // 
             // TileWidthInputBox
             // 
-            this.TileWidthInputBox.Location = new System.Drawing.Point(111, 194);
+            this.TileWidthInputBox.Location = new System.Drawing.Point(133, 194);
             this.TileWidthInputBox.Name = "TileWidthInputBox";
-            this.TileWidthInputBox.Size = new System.Drawing.Size(131, 23);
+            this.TileWidthInputBox.Size = new System.Drawing.Size(109, 23);
             this.TileWidthInputBox.TabIndex = 28;
             // 
             // PricePerOneCheckBox

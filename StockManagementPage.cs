@@ -72,18 +72,26 @@ namespace ScantelRoofingPrototype
                 {
                     TileWidthInputBox.Show();
                     TileLengthInputBox.Show();
+                    MeasurementLabel1.Show();
+                    MeasurementLabel2.Show();
                     WidthIfRoofTileWidthlabel.Show();
                     LengthIfRoofTIleLabel.Show();
+                    UseableInScantleCheckbox.Show();
+                    UseableInScantleCheckbox.Checked = stocks[index].UseableInScantle;
                     TileWidthInputBox.Text = stocks[index].WidthIfSlate.ToString();
                     TileLengthInputBox.Text = stocks[index].LengthIfSlate.ToString();
                 }
                 else
                 {
                     TileWidthInputBox.Hide();
+                    MeasurementLabel1.Hide();
+                    MeasurementLabel2.Hide();
                     TileLengthInputBox.Hide();
                     WidthIfRoofTileWidthlabel.Hide();
                     LengthIfRoofTIleLabel.Hide();
-                    TileWidthInputBox.Text = "0";
+                    UseableInScantleCheckbox.Hide();
+                    UseableInScantleCheckbox.Checked = false;
+                    TileWidthInputBox.Text = "0"; //TODO would add conversions between inches and meters(evaluation or stuff that could make program better)
                     TileLengthInputBox.Text = "0";
                 }
 

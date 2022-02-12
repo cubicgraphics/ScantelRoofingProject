@@ -104,6 +104,7 @@ namespace ScantelRoofingPrototype
                 IsWoodCheckBox.Checked = false;
                 TileWidthInputBox.Show();
                 TileLengthInputBox.Show();
+                UseableInScantleCheckbox.Show();
                 WidthIfRoofTileWidthlabel.Show();
                 LengthIfRoofTIleLabel.Show();
             }
@@ -115,6 +116,7 @@ namespace ScantelRoofingPrototype
                 IsTileMaterialCheckBox.Checked = false;
                 TileWidthInputBox.Hide();
                 TileLengthInputBox.Hide();
+                UseableInScantleCheckbox.Hide();
                 WidthIfRoofTileWidthlabel.Hide();
                 LengthIfRoofTIleLabel.Hide();
                 TileWidthInputBox.Text = "0";
@@ -145,6 +147,11 @@ namespace ScantelRoofingPrototype
         {
             PricePerOneCheckBox.Checked = true;
             IsTileMaterialCheckBox.Checked = true;
+        }
+
+        private void WidthIfRoofTileWidthlabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
