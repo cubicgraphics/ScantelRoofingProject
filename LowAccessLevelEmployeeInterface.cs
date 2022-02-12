@@ -35,7 +35,12 @@ namespace ScantelRoofingPrototype
 
         private void ChangePasswordButton_Click(object sender, EventArgs e)
         {
-            //low level employee account management not being implemented into prototype
+            List<Employees> employees = Employees.ReadFromFile();
+            int index = Employees.GetListIndexFromID(employees, UserID);
+            Employees employee = new Employees(employees[index].ID, employees[ ].PersonID, employees[index].AccessLevel, employees[index].Wages, employees[index].Username, Hash.HashString(ChangePasswordTextBox.Text), employees[index].HashAccessCode);
+            employees[index] = employee;
+            FileReader.WriteToEmployeeFile(employees);
+            MessageBox.Show("Password changed");
         }
 
 

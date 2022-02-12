@@ -37,10 +37,6 @@ namespace ScantelRoofingPrototype
                 return HashedTotal.Substring(4, HashedTotal.Length - 6);
                 /**
                  * for the size of the program and the amunt of users who will be using it, this hashing algorithum will be enough to encrypt there passwords without clashes
-                 * 
-                 * 
-                 * 
-                 * 
                  */
             }
             else

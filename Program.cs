@@ -18,5 +18,7 @@ namespace ScantelRoofingPrototype
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeAccessPage());
         }
+
+        //TODO impliment search features for all list boxes
     }
 }
