@@ -21,7 +21,10 @@ namespace ScantelRoofingPrototype
         private void DoneButton_Click(object sender, EventArgs e)
         {
             List<ReclaimedSlates> workdone=  FileReader.ReadFromReclaimedSlatesFile();
-            workdone.Add(new ReclaimedSlates(workdone.Count, EmployeeID, int.Parse(ReclaimedSlatesInputBox.Value.ToString()), DateTime.Now, TimeSpan.FromHours(int.Parse(TimeWorkedInputBox.Value.ToString()))));
+            if(TimeWorkedInputBox.Value != 0 || ReclaimedSlatesInputBox.Value != 0)
+            {
+                workdone.Add(new ReclaimedSlates(workdone.Count, EmployeeID, int.Parse(ReclaimedSlatesInputBox.Value.ToString()), DateTime.Now, TimeSpan.FromHours(int.Parse(TimeWorkedInputBox.Value.ToString()))));
+            }
             FileReader.WriteToReclaimedSlatesFile(workdone);
             List<Stocks> stock = FileReader.ReadFromStocksFile();
             for (int i = 0; i < stock.Count; i++)

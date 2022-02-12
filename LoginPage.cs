@@ -27,6 +27,8 @@ namespace ScantelRoofingPrototype
         private void LoginPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
+            UsernameInput.Text = "";
+            PasswordInput.Text = "";
             AccessPage.Show();
             e.Cancel = true;
         }
@@ -43,12 +45,16 @@ namespace ScantelRoofingPrototype
                     {
                         lowAccessLevelEmployeeInterface.UserID = ID;
                         lowAccessLevelEmployeeInterface.Show();
+                        UsernameInput.Text = "";
+                        PasswordInput.Text = "";
                         this.Hide();
                     }
                     else
                     {
                         highLevelEmployeeInterface.UserID = ID;
                         highLevelEmployeeInterface.Show();
+                        UsernameInput.Text = "";
+                        PasswordInput.Text = "";
                         this.Hide();
                     }
                 }
@@ -57,6 +63,8 @@ namespace ScantelRoofingPrototype
             {
                 highLevelEmployeeInterface.UserID = 0;
                 highLevelEmployeeInterface.Show();
+                UsernameInput.Text = "";
+                PasswordInput.Text = "";
                 this.Hide();
             }
         }
@@ -64,6 +72,8 @@ namespace ScantelRoofingPrototype
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            UsernameInput.Text = "";
+            PasswordInput.Text = "";
             AccessPage.Show();
         }
     }

@@ -97,7 +97,7 @@ namespace ScantelRoofingPrototype
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 444);
+            this.ClientSize = new System.Drawing.Size(444, 154);
             this.Controls.Add(this.ChangePasswordButton);
             this.Controls.Add(this.ChangePasswordTextBox);
             this.Controls.Add(this.WorkInputButton);
