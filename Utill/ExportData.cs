@@ -10,6 +10,7 @@ namespace ScantelRoofingPrototype
         static string OutputPath = Directory.GetCurrentDirectory() + @"\Export";
         static string EmployeeWagesPath = OutputPath + @"\EmployeeWages";
         static string RoofExportPath = OutputPath + @"\RoofExports";
+        static float PayPerSlate = 0.25F;
 
         private const string Seperator = "\t";
 
@@ -19,7 +20,7 @@ namespace ScantelRoofingPrototype
             List<EmployeePeople> employeePeople = EmployeePeople.CombineEmployeePeopleList(Employees.ReadFromFile(), People.ReadFromFile());
             float[] HoursWorked = new float[employeePeople.Count];
             int[] reclaimedSlates = new int[employeePeople.Count];
-            string[] Exportstrings = new string[employeePeople.Count];
+            string[] Exportstrings = new string[employeePeople.Count + 1];
             List<ReclaimedSlates> EmployeeWork = ReclaimedSlates.ReadFromFile();
             for (int i = 0; i < EmployeeWork.Count; i++)
             {
@@ -30,9 +31,10 @@ namespace ScantelRoofingPrototype
                     reclaimedSlates[index] = reclaimedSlates[index] + EmployeeWork[i].Reclaimedslates;
                 }
             }
+            Exportstrings[0] = "Name" + Seperator + "Hours worked" + Seperator + "Reclaimed slates" + Seperator + "Hourly wage" + Seperator + "Pay total";
             for (int i = 0; i < employeePeople.Count; i++)
             {
-                Exportstrings[i] = employeePeople[i].Name + Seperator + HoursWorked[i] + Seperator + reclaimedSlates[i] + Seperator + employeePeople[i].Wages + Seperator + (HoursWorked[i] * employeePeople[i].Wages);
+                Exportstrings[i+1] = employeePeople[i].Name + Seperator + HoursWorked[i] + Seperator + reclaimedSlates[i] + Seperator + "£" + employeePeople[i].Wages + Seperator + "£" + (HoursWorked[i] * employeePeople[i].Wages + reclaimedSlates[i] * PayPerSlate);
             }
             File.WriteAllLines(EmployeeWagesPath + @"\Wages" + SelectedMonth.Month.ToString() + "_" + SelectedMonth.Year.ToString() + ".txt", Exportstrings);
             string openPath = EmployeeWagesPath;
