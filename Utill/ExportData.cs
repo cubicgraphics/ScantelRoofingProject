@@ -156,7 +156,7 @@ namespace ScantelRoofingPrototype
 
             //TODO for evaluation - would have been better to calculate costs and etc on the workplace page as then estimated time can be factored into the calculation, also becasue of this stock amounts needed is no longer saved in stocks.
         }
-        public static string[] CalculateScentleRoof(RoofElevation roof, List<Stocks> stocks)
+        public static string[] CalculateScantleRoof(RoofElevation roof, List<Stocks> stocks)
         {
             //like above but calculates using all scantle type of tiles, starting at the smallest then progressivly useses bigger tiles as it works its way down the roof
             return new string[] { "Not yet implimented" };
