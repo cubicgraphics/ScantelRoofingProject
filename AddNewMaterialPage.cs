@@ -39,7 +39,6 @@ namespace ScantelRoofingPrototype
                     MaterialNameInputBox.Text,
                     tom,
                     0,
-                    0,
                     float.Parse(MaterialPriceInputBox.Text),
                     IsTileMaterialCheckBox.Checked,
                     IsWoodCheckBox.Checked,

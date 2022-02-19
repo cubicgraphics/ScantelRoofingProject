@@ -75,7 +75,7 @@ namespace ScantelRoofingPrototype
         };
         static float[] SlateOverlaps =
         {
-            128,115,110,100,88,75,70,69
+            0.128f,0.115f,0.110f,0.100f,0.088f,0.075f,0.070f,0.069f
         };
 
 
@@ -86,7 +86,7 @@ namespace ScantelRoofingPrototype
             {
                 if (Pitches[i] <= roof.SlantAngle) {
                     Overlap = SlateOverlaps[i];
-                    break;
+                    
                 }
             }
             Stocks tilemat = Stocks.GetStockFromID(stocks, roof.TileMaterialID);
@@ -118,12 +118,12 @@ namespace ScantelRoofingPrototype
             {
                 "Roof: " + roof.Name,
                 "Dimensions ",
-                "Height: " + roof.Length*Math.Sin((Math.PI / 180) * roof.SlantAngle) + " M",
+                "Height: " + roof.Length * Math.Sin((Math.PI / 180) * roof.SlantAngle) + " M",
                 "Width:  " + roof.Width + " M",
                 "Hypotenuse(Length from top to bottom of the tiles): " + roof.Length + " M",
                 "Inclination: " + roof.SlantAngle + " degrees",
                 "",
-                "Tile Type: " + tilemat.Name,
+                "Tile Name: " + tilemat.Name,
                 "Estimated Courses: " + amountdown,
                 "Estimated Tiles per course: " + amountacross,
                 "Estimated tiles needed (plus 5%): " + EstimatedTilesOverflow,

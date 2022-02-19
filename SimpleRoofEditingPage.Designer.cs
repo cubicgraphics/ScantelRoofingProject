@@ -378,6 +378,7 @@ namespace ScantelRoofingPrototype
             this.RoofOutputMultiLineTextBox.Location = new System.Drawing.Point(417, 94);
             this.RoofOutputMultiLineTextBox.Multiline = true;
             this.RoofOutputMultiLineTextBox.Name = "RoofOutputMultiLineTextBox";
+            this.RoofOutputMultiLineTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.RoofOutputMultiLineTextBox.Size = new System.Drawing.Size(408, 198);
             this.RoofOutputMultiLineTextBox.TabIndex = 25;
             // 
