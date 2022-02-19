@@ -66,11 +66,11 @@ namespace ScantelRoofingPrototype
             this.RoofOutputMultiLineTextBox = new System.Windows.Forms.TextBox();
             this.CalculateRoofButton = new System.Windows.Forms.Button();
             this.SaveOutputButton = new System.Windows.Forms.Button();
-            this.OverallCostLabel = new System.Windows.Forms.Label();
             this.TileMaterialListBox = new System.Windows.Forms.ComboBox();
             this.WoodMaterialListBox = new System.Windows.Forms.ComboBox();
             this.NewWoodMaterialListBox = new System.Windows.Forms.ComboBox();
             this.NewTileMaterialListBox = new System.Windows.Forms.ComboBox();
+            this.OpenOnExportCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.RoofsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -398,18 +398,9 @@ namespace ScantelRoofingPrototype
             this.SaveOutputButton.Name = "SaveOutputButton";
             this.SaveOutputButton.Size = new System.Drawing.Size(191, 28);
             this.SaveOutputButton.TabIndex = 23;
-            this.SaveOutputButton.Text = "Save output";
+            this.SaveOutputButton.Text = "Export output";
             this.SaveOutputButton.UseVisualStyleBackColor = true;
             this.SaveOutputButton.Click += new System.EventHandler(this.SaveOutputButton_Click);
-            // 
-            // OverallCostLabel
-            // 
-            this.OverallCostLabel.AutoSize = true;
-            this.OverallCostLabel.Location = new System.Drawing.Point(756, 366);
-            this.OverallCostLabel.Name = "OverallCostLabel";
-            this.OverallCostLabel.Size = new System.Drawing.Size(69, 15);
-            this.OverallCostLabel.TabIndex = 24;
-            this.OverallCostLabel.Text = "Overall cost";
             // 
             // TileMaterialListBox
             // 
@@ -443,16 +434,30 @@ namespace ScantelRoofingPrototype
             this.NewTileMaterialListBox.Size = new System.Drawing.Size(112, 23);
             this.NewTileMaterialListBox.TabIndex = 64;
             // 
+            // OpenOnExportCheckBox
+            // 
+            this.OpenOnExportCheckBox.AutoSize = true;
+            this.OpenOnExportCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OpenOnExportCheckBox.Checked = true;
+            this.OpenOnExportCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OpenOnExportCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OpenOnExportCheckBox.Location = new System.Drawing.Point(679, 360);
+            this.OpenOnExportCheckBox.Name = "OpenOnExportCheckBox";
+            this.OpenOnExportCheckBox.Size = new System.Drawing.Size(109, 19);
+            this.OpenOnExportCheckBox.TabIndex = 65;
+            this.OpenOnExportCheckBox.Text = "Open on export";
+            this.OpenOnExportCheckBox.UseVisualStyleBackColor = true;
+            // 
             // SimpleRoofEditingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 536);
+            this.Controls.Add(this.OpenOnExportCheckBox);
             this.Controls.Add(this.NewTileMaterialListBox);
             this.Controls.Add(this.NewWoodMaterialListBox);
             this.Controls.Add(this.WoodMaterialListBox);
             this.Controls.Add(this.TileMaterialListBox);
-            this.Controls.Add(this.OverallCostLabel);
             this.Controls.Add(this.SaveOutputButton);
             this.Controls.Add(this.CalculateRoofButton);
             this.Controls.Add(this.RoofOutputMultiLineTextBox);
@@ -539,10 +544,10 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox RoofOutputMultiLineTextBox;
         private System.Windows.Forms.Button CalculateRoofButton;
         private System.Windows.Forms.Button SaveOutputButton;
-        private System.Windows.Forms.Label OverallCostLabel;
         private System.Windows.Forms.ComboBox TileMaterialListBox;
         private System.Windows.Forms.ComboBox WoodMaterialListBox;
         private System.Windows.Forms.ComboBox NewWoodMaterialListBox;
         private System.Windows.Forms.ComboBox NewTileMaterialListBox;
+        private System.Windows.Forms.CheckBox OpenOnExportCheckBox;
     }
 }

@@ -170,12 +170,11 @@ namespace ScantelRoofingPrototype
         private void CalculateRoofButton_Click(object sender, EventArgs e)
         {
             RoofOutputMultiLineTextBox.Lines = ExportData.CalculateRoof(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex], FileReader.ReadFromStocksFile());
-
         }
 
         private void SaveOutputButton_Click(object sender, EventArgs e)
         {
-            //takes what is in the test box and saves it to a file
+            ExportData.ExportRoof(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex], RoofOutputMultiLineTextBox.Lines, OpenOnExportCheckBox.Checked);
         }
     }
 }

@@ -45,10 +45,18 @@ namespace ScantelRoofingPrototype
             Process.Start("explorer.exe", openPath);
         }
 
-        public static void OutputRoof()
+        public static void ExportRoof(RoofElevation roof, string[] outputstring, bool OpenFile)
         {
-            //When calculating needed materials for scantel roofs, calculate by diminishing courses - calculate by using small slates first then upwards to bigger ones and calculate how many batons are needed.
-            //When the roof being calculated 
+            DateTime now = DateTime.Now;
+
+            File.WriteAllLines(RoofExportPath + @"\Roof" + "_" + roof.Name + "_" + now.Month.ToString() + "_" + now.Year.ToString() + ".txt", outputstring);
+
+            string openPath = RoofExportPath;
+            if (OpenFile)
+            {
+                openPath = openPath + @"\Roof" + "_" + roof.Name + "_" + now.Month.ToString() + "_" + now.Year.ToString() + ".txt";
+            }
+            Process.Start("explorer.exe", openPath);
         }
         public static string[] CalculateRoof(RoofElevation roof, List<Stocks> stocks)
         {
@@ -101,7 +109,7 @@ namespace ScantelRoofingPrototype
             int EstimatedTiles = amountdown * amountacross; //estimated amount of tiles
             int EstimatedTilesOverflow = (int)(EstimatedTiles * 1.05); //estimated amount of tiles + overflow
             float EstimatedTileCost = EstimatedTiles * tilemat.Cost; //estimated overall cost of tiles
-            float RaftersAmountEstimate = (amountdown * roof.Width) + (float)(roof.Width/0.5)*roof.Length; // estimated amount of rafter
+            float RaftersAmountEstimate = (amountdown * roof.Width) + (float)(roof.Width)*roof.Length; // estimated amount of rafter (a line per course + a line down per M of roof across)
             float RaftersAmountOverflow = (float)(RaftersAmountEstimate * 1.05); //estimated amout of rafter + overflow
             float RaftersCostEstimate = RaftersAmountOverflow * woodmat.Cost;//estimated overall cost of rafter
             int currentAmountOfTileMaterial = (int)tilemat.CurrentAmount;//Current amount of tiles in stock
@@ -127,18 +135,22 @@ namespace ScantelRoofingPrototype
                 "Estimated Courses: " + amountdown,
                 "Estimated Tiles per course: " + amountacross,
                 "Estimated tiles needed (plus 5%): " + EstimatedTilesOverflow,
-                "Estimated cost of all tiles: " + EstimatedTileCost + "£",
-                "Tiles currently in stock: " + currentAmountOfTileMaterial + " Amount needed to purchace: " + requiredAmountOfTileMaterialToBuy + " Cost: " + TileMaterialToBuyEstimatedCost + "£",
+                "Estimated cost of all tiles: £" + EstimatedTileCost,
+                "Tiles currently in stock: " + currentAmountOfTileMaterial ,
+                "Amount needed to purchace: " + requiredAmountOfTileMaterialToBuy,
+                "Cost: £" + TileMaterialToBuyEstimatedCost,
+
                 "",
                 "Rafter Type: " + woodmat.Name,
                 "Estimated length of rafter required (plus 5%): " + RaftersAmountOverflow,
-                "Estimated cost of rafters: " + RaftersCostEstimate + "£",
-                "rafter currently in stock: " + currentAmountOfWoodMaterial + " Amount needed to purchace: " + requiredAmountOfWoodMaterialToBuy + " Cost: " + WoodMaterialToBuyEstimatedCost + "£",
+                "Estimated cost of rafters: £" + RaftersCostEstimate,
+                "rafter currently in stock: " + currentAmountOfWoodMaterial,
+                "Amount needed to purchace: " + requiredAmountOfWoodMaterialToBuy,
+                "Cost: £" + WoodMaterialToBuyEstimatedCost,
                 "",
-                "Estimated material cost of roof: " + TotalMaterialCost + "£",
-                "Estimated cost of materials that need purchasing for roof: " + RequiredMaterialCost + "£"
+                "Estimated material cost of roof: £" + TotalMaterialCost,
+                "Estimated cost of materials that need purchasing for roof: £" + RequiredMaterialCost
             };
-
             return output;
 
 
@@ -146,8 +158,8 @@ namespace ScantelRoofingPrototype
         }
         public static string[] CalculateScentleRoof(RoofElevation roof, List<Stocks> stocks)
         {
-
-            return new string[] { "Not Yet implimented" };
+            //like above but calculates using all scantle type of tiles, starting at the smallest then progressivly useses bigger tiles as it works its way down the roof
+            return new string[] { "Not yet implimented" };
         }
     }
 }
