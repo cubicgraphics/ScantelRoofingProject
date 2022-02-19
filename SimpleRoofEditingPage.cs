@@ -93,6 +93,8 @@ namespace ScantelRoofingPrototype
                 ElevationLengthBox.Text = Roofs[index].Length.ToString();
                 ElevationSlantAngleBox.Text = Roofs[index].SlantAngle.ToString();
                 ScantleRoofCheckBox.Checked = Roofs[index].Scantle;
+                TileMaterialListBox.SelectedItem = Stocks.GetStockFromID(TileStocks, Roofs[index].TileMaterialID);
+                WoodMaterialListBox.SelectedItem = Stocks.GetStockFromID(WoodStocks, Roofs[index].WoodMaterialID);
             }
         }
 
@@ -167,7 +169,7 @@ namespace ScantelRoofingPrototype
 
         private void CalculateRoofButton_Click(object sender, EventArgs e)
         {
-            RoofOutputMultiLineTextBox.Lines = ExportData.CalculatePlainRoof(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex], FileReader.ReadFromStocksFile());
+            RoofOutputMultiLineTextBox.Lines = ExportData.CalculateRoof(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex], FileReader.ReadFromStocksFile());
 
         }
 
