@@ -106,7 +106,7 @@ namespace ScantelRoofingPrototype
             List<Stocks> stocks = new List<Stocks>();
             for (int i = 0; i < Data.Length; i++)
             {
-                stocks.Add(new Stocks(int.Parse(Data[i][0]), Data[i][1], int.Parse(Data[i][2]), float.Parse(Data[i][3]),float.Parse(Data[i][4]),float.Parse(Data[i][5]),bool.Parse(Data[i][6]),bool.Parse(Data[i][7]),float.Parse(Data[i][8]), float.Parse(Data[i][9]),bool.Parse(Data[i][10])));
+                stocks.Add(new Stocks(int.Parse(Data[i][0]), Data[i][1], int.Parse(Data[i][2]), float.Parse(Data[i][3]),float.Parse(Data[i][4]),bool.Parse(Data[i][5]),bool.Parse(Data[i][6]),float.Parse(Data[i][7]), float.Parse(Data[i][8]),bool.Parse(Data[i][9])));
             }
             return stocks;
         }
@@ -116,7 +116,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[stocks.Count()];
             for (int i = 0; i < stocks.Count; i++)
             {
-                texttowrite[i] = stocks[i].ID.ToString() + Seperator + SafeToSave(stocks[i].Name) + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].ReservedForWorkplaces.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle.ToString();
+                texttowrite[i] = stocks[i].ID.ToString() + Seperator + SafeToSave(stocks[i].Name) + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Stocks.txt", texttowrite);

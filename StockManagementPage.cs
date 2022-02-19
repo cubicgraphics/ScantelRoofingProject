@@ -43,15 +43,6 @@ namespace ScantelRoofingPrototype
             {
                 int index = StocksDataGrid.SelectedCells[0].RowIndex;
                 AmountCurrentlyStockedTextBox.Text = stocks[index].CurrentAmount.ToString();
-                AmountNeededForWorkplacesTextBox.Text = stocks[index].ReservedForWorkplaces.ToString();
-                if (stocks[index].ReservedForWorkplaces - stocks[index].CurrentAmount > 0)
-                {
-                    AmountToBuyAndCostLabelOutput.Text = (stocks[index].ReservedForWorkplaces - stocks[index].CurrentAmount).ToString() + " £" + ((stocks[index].ReservedForWorkplaces - stocks[index].CurrentAmount) * stocks[index].Cost).ToString();
-                }
-                else
-                {
-                    AmountToBuyAndCostLabelOutput.Text = "0";
-                }
                 MaterialNameTextBox.Text = stocks[index].Name;
                 MaterialCostTextBox.Text = stocks[index].Cost.ToString();
                 if (stocks[index].TOM == 0)
@@ -218,7 +209,7 @@ namespace ScantelRoofingPrototype
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            if (StocksDataGrid.Rows.Count > 0  && Utill.VerifyIntInput(AmountCurrentlyStockedTextBox.Text) && Utill.VerifyIntInput(AmountNeededForWorkplacesTextBox.Text) && Utill.VerifyIntInput(MaterialCostTextBox.Text) && Utill.VerifyIntInput(TileWidthInputBox.Text) && Utill.VerifyIntInput(TileLengthInputBox.Text))
+            if (StocksDataGrid.Rows.Count > 0  && Utill.VerifyIntInput(AmountCurrentlyStockedTextBox.Text)  && Utill.VerifyIntInput(MaterialCostTextBox.Text) && Utill.VerifyIntInput(TileWidthInputBox.Text) && Utill.VerifyIntInput(TileLengthInputBox.Text))
             {
             int index = StocksDataGrid.SelectedCells[0].RowIndex;
             int tom = 0;
@@ -230,7 +221,7 @@ namespace ScantelRoofingPrototype
             {
                 tom = 2;
             }
-            stocks[index] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(AmountNeededForWorkplacesTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileWidthInputBox.Text), float.Parse(TileLengthInputBox.Text), UseableInScantleCheckbox.Checked);
+            stocks[index] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileWidthInputBox.Text), float.Parse(TileLengthInputBox.Text), UseableInScantleCheckbox.Checked);
             FileReader.WriteToStockFile(stocks);
             UpdateStocksAndStocksDataGrid();
             }

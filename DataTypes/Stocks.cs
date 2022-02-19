@@ -11,7 +11,6 @@ namespace ScantelRoofingPrototype
         public string Name { get; }
         public int TOM { get; } //measure in tonnes, per one, or in meters
         public float CurrentAmount { get; set; }
-        public float ReservedForWorkplaces { get; set; }
         public float Cost { get; set; }
         public bool IsATypeOfSlate { get; }
         public bool IsATypeOfWood { get; }
@@ -19,13 +18,12 @@ namespace ScantelRoofingPrototype
         public float WidthIfSlate { get; }
         public bool UseableInScantle { get; }
 
-        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood, bool useableinscantle)
+        public Stocks(int id, string name, int tom, float currentamount, float cost, bool isatypeofslate, bool isatypeofwood, bool useableinscantle)
         {
             ID = id;
             Name = name;
             TOM = tom;
             CurrentAmount = currentamount;
-            ReservedForWorkplaces = reservedforworkplaces;
             Cost = cost;
             IsATypeOfSlate = isatypeofslate;
             IsATypeOfWood = isatypeofwood;
@@ -35,13 +33,12 @@ namespace ScantelRoofingPrototype
         }
 
 
-        public Stocks(int id, string name, int tom, float currentamount, float reservedforworkplaces, float cost, bool isatypeofslate, bool isatypeofwood, float length, float width, bool useableinscantle)
+        public Stocks(int id, string name, int tom, float currentamount, float cost, bool isatypeofslate, bool isatypeofwood, float length, float width, bool useableinscantle)
         {
             ID = id;
             Name = name;
             TOM = tom;
             CurrentAmount = currentamount;
-            ReservedForWorkplaces = reservedforworkplaces;
             Cost = cost;
             IsATypeOfSlate = isatypeofslate;
             IsATypeOfWood = isatypeofwood;
@@ -51,7 +48,7 @@ namespace ScantelRoofingPrototype
         }
 
 
-        static int GetStockIDFromName(string name, List<Stocks> stock)
+        public static int GetStockIDFromName(string name, List<Stocks> stock)
         {
             int ID = -1;
             for (int i = 0; i < stock.Count; i++)
@@ -62,6 +59,18 @@ namespace ScantelRoofingPrototype
                 }
             }
             return ID;
+        }
+
+        public static Stocks GetStockFromID(List<Stocks> stocks, int ID)
+        {
+            for (int i = 0; i < stocks.Count; i++)
+            {
+                if (ID == stocks[i].ID)
+                {
+                    return stocks[i];
+                }
+            }
+            return null;
         }
     }
 }

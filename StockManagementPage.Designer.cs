@@ -49,14 +49,10 @@ namespace ScantelRoofingPrototype
             this.TileLengthInputBox = new System.Windows.Forms.TextBox();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.AmountCurrentlyStockedTextBox = new System.Windows.Forms.TextBox();
-            this.AmountNeededForWorkplacesTextBox = new System.Windows.Forms.TextBox();
             this.MaterialAmountStockLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.AddNewMateriaButton = new System.Windows.Forms.Button();
             this.DeleteSelectedMaterialButton = new System.Windows.Forms.Button();
             this.StocksDataGrid = new System.Windows.Forms.DataGridView();
-            this.AmountToBuyAndCostLabelOutput = new System.Windows.Forms.Label();
             this.UseableInScantleCheckbox = new System.Windows.Forms.CheckBox();
             this.MeasurementLabel1 = new System.Windows.Forms.Label();
             this.MeasurementLabel2 = new System.Windows.Forms.Label();
@@ -247,44 +243,19 @@ namespace ScantelRoofingPrototype
             // 
             // AmountCurrentlyStockedTextBox
             // 
-            this.AmountCurrentlyStockedTextBox.Location = new System.Drawing.Point(1190, 70);
+            this.AmountCurrentlyStockedTextBox.Location = new System.Drawing.Point(1247, 97);
             this.AmountCurrentlyStockedTextBox.Name = "AmountCurrentlyStockedTextBox";
             this.AmountCurrentlyStockedTextBox.Size = new System.Drawing.Size(131, 23);
             this.AmountCurrentlyStockedTextBox.TabIndex = 3;
             // 
-            // AmountNeededForWorkplacesTextBox
-            // 
-            this.AmountNeededForWorkplacesTextBox.Location = new System.Drawing.Point(1190, 96);
-            this.AmountNeededForWorkplacesTextBox.Name = "AmountNeededForWorkplacesTextBox";
-            this.AmountNeededForWorkplacesTextBox.Size = new System.Drawing.Size(131, 23);
-            this.AmountNeededForWorkplacesTextBox.TabIndex = 4;
-            // 
             // MaterialAmountStockLabel
             // 
             this.MaterialAmountStockLabel.AutoSize = true;
-            this.MaterialAmountStockLabel.Location = new System.Drawing.Point(1011, 73);
+            this.MaterialAmountStockLabel.Location = new System.Drawing.Point(1068, 100);
             this.MaterialAmountStockLabel.Name = "MaterialAmountStockLabel";
             this.MaterialAmountStockLabel.Size = new System.Drawing.Size(145, 15);
             this.MaterialAmountStockLabel.TabIndex = 22;
             this.MaterialAmountStockLabel.Text = "Amount currently stocked";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1011, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 15);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Amount needed for workplaces";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1011, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 15);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Amount needed to buy";
             // 
             // AddNewMateriaButton
             // 
@@ -317,15 +288,6 @@ namespace ScantelRoofingPrototype
             this.StocksDataGrid.TabIndex = 2;
             this.StocksDataGrid.VisibleChanged += new System.EventHandler(this.StocksDataGrid_VisibleChanged);
             this.StocksDataGrid.Click += new System.EventHandler(this.StocksDataGrid_Click);
-            // 
-            // AmountToBuyAndCostLabelOutput
-            // 
-            this.AmountToBuyAndCostLabelOutput.AutoSize = true;
-            this.AmountToBuyAndCostLabelOutput.Location = new System.Drawing.Point(1190, 122);
-            this.AmountToBuyAndCostLabelOutput.Name = "AmountToBuyAndCostLabelOutput";
-            this.AmountToBuyAndCostLabelOutput.Size = new System.Drawing.Size(124, 15);
-            this.AmountToBuyAndCostLabelOutput.TabIndex = 5;
-            this.AmountToBuyAndCostLabelOutput.Text = "AmountNeeded+Cost";
             // 
             // UseableInScantleCheckbox
             // 
@@ -364,14 +326,10 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.MeasurementLabel2);
             this.Controls.Add(this.MeasurementLabel1);
             this.Controls.Add(this.UseableInScantleCheckbox);
-            this.Controls.Add(this.AmountToBuyAndCostLabelOutput);
             this.Controls.Add(this.StocksDataGrid);
             this.Controls.Add(this.DeleteSelectedMaterialButton);
             this.Controls.Add(this.AddNewMateriaButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.MaterialAmountStockLabel);
-            this.Controls.Add(this.AmountNeededForWorkplacesTextBox);
             this.Controls.Add(this.AmountCurrentlyStockedTextBox);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.LengthIfRoofTIleLabel);
@@ -423,14 +381,10 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox TileLengthInputBox;
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.TextBox AmountCurrentlyStockedTextBox;
-        private System.Windows.Forms.TextBox AmountNeededForWorkplacesTextBox;
         private System.Windows.Forms.Label MaterialAmountStockLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddNewMateriaButton;
         private System.Windows.Forms.Button DeleteSelectedMaterialButton;
         private System.Windows.Forms.DataGridView StocksDataGrid;
-        private System.Windows.Forms.Label AmountToBuyAndCostLabelOutput;
         private System.Windows.Forms.CheckBox UseableInScantleCheckbox;
         private System.Windows.Forms.Label MeasurementLabel1;
         private System.Windows.Forms.Label MeasurementLabel2;

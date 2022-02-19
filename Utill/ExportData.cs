@@ -50,10 +50,104 @@ namespace ScantelRoofingPrototype
             //When calculating needed materials for scantel roofs, calculate by diminishing courses - calculate by using small slates first then upwards to bigger ones and calculate how many batons are needed.
             //When the roof being calculated 
         }
-        public static string[] CalculateRoof()
+        public static string[] CalculateRoof(RoofElevation roof, List<Stocks> stocks)
+        {
+            if(roof.Scantle == true)
+            {
+                return CalculateScentleRoof(roof, stocks);
+            }
+            else
+            {
+                return CalculatePlainRoof(roof, stocks);
+            }
+        }
+
+        static float[] Pitches =
+{
+            22.5f,
+            25f,
+            27.5f,
+            30f,
+            35f,
+            40f,
+            45f,
+            75f,
+        };
+        static float[] SlateOverlaps =
+        {
+            128,115,110,100,88,75,70,69
+        };
+
+
+        public static string[] CalculatePlainRoof(RoofElevation roof, List<Stocks> stocks)
+        {
+            float Overlap = -1;
+            for (int i = 0; i < Pitches.Length; i++)
+            {
+                if (Pitches[i] <= roof.SlantAngle) {
+                    Overlap = SlateOverlaps[i];
+                    break;
+                }
+            }
+            Stocks tilemat = Stocks.GetStockFromID(stocks, roof.TileMaterialID);
+            Stocks woodmat = Stocks.GetStockFromID(stocks, roof.WoodMaterialID);
+            if (Overlap < 0)
+            {
+                return new string[] { "Not enough overlap"};
+            }
+            float layerlength = tilemat.LengthIfSlate - Overlap; //the overlap on tiles
+            int amountdown = (int)(roof.Length / layerlength); //the amount of tiles going down the roof
+            int amountacross = (int)(roof.Width / tilemat.WidthIfSlate); //the amount going across the roof
+            int EstimatedTiles = amountdown * amountacross; //estimated amount of tiles
+            int EstimatedTilesOverflow = (int)(EstimatedTiles * 1.05); //estimated amount of tiles + overflow
+            float EstimatedTileCost = EstimatedTiles * tilemat.Cost; //estimated overall cost of tiles
+            float RaftersAmountEstimate = (amountdown * roof.Width) + (float)(roof.Width/0.5)*roof.Length; // estimated amount of rafter
+            float RaftersAmountOverflow = (float)(RaftersAmountEstimate * 1.05); //estimated amout of rafter + overflow
+            float RaftersCostEstimate = RaftersAmountOverflow * woodmat.Cost;//estimated overall cost of rafter
+            int currentAmountOfTileMaterial = (int)tilemat.CurrentAmount;//Current amount of tiles in stock
+            int requiredAmountOfTileMaterialToBuy = (int)Math.Max(0, EstimatedTilesOverflow - tilemat.CurrentAmount); //Amount of tiles needed to be bought
+            float TileMaterialToBuyEstimatedCost = requiredAmountOfTileMaterialToBuy * tilemat.Cost; //cost of the tiles needed to be bought
+            float currentAmountOfWoodMaterial = (int)woodmat.CurrentAmount;//Current amount of rafter in stock
+            float requiredAmountOfWoodMaterialToBuy = (int)Math.Max(0, RaftersAmountOverflow - woodmat.CurrentAmount);//Amount of the rafter needed to be bought
+            float WoodMaterialToBuyEstimatedCost = requiredAmountOfWoodMaterialToBuy * woodmat.Cost; //cost of the rafter needed to be bought
+
+            float TotalMaterialCost = EstimatedTileCost + RaftersCostEstimate;
+            float RequiredMaterialCost = TileMaterialToBuyEstimatedCost + WoodMaterialToBuyEstimatedCost;
+
+            string[] output =
+            {
+                "Roof: " + roof.Name,
+                "Dimensions ",
+                "Height: " + roof.Length*Math.Sin((Math.PI / 180) * roof.SlantAngle) + " M",
+                "Width:  " + roof.Width + " M",
+                "Hypotenuse(Length from top to bottom of the tiles): " + roof.Length + " M",
+                "Inclination: " + roof.SlantAngle + " degrees",
+                "",
+                "Tile Type: " + tilemat.Name,
+                "Estimated Courses: " + amountdown,
+                "Estimated Tiles per course: " + amountacross,
+                "Estimated tiles needed (plus 5%): " + EstimatedTilesOverflow,
+                "Estimated cost of all tiles: " + EstimatedTileCost + "£",
+                "Tiles currently in stock: " + currentAmountOfTileMaterial + " Amount needed to purchace: " + requiredAmountOfTileMaterialToBuy + " Cost: " + TileMaterialToBuyEstimatedCost + "£",
+                "",
+                "Rafter Type: " + woodmat.Name,
+                "Estimated length of rafter required (plus 5%): " + RaftersAmountOverflow,
+                "Estimated cost of rafters: " + RaftersCostEstimate + "£",
+                "rafter currently in stock: " + currentAmountOfWoodMaterial + " Amount needed to purchace: " + requiredAmountOfWoodMaterialToBuy + " Cost: " + WoodMaterialToBuyEstimatedCost + "£",
+                "",
+                "Estimated material cost of roof: " + TotalMaterialCost + "£",
+                "Estimated cost of materials that need purchasing for roof: " + RequiredMaterialCost + "£"
+            };
+
+            return output;
+
+
+            //TODO for evaluation - would have been better to calculate costs and etc on the workplace page as then estimated time can be factored into the calculation, also becasue of this stock amounts needed is no longer saved in stocks.
+        }
+        public static string[] CalculateScentleRoof(RoofElevation roof, List<Stocks> stocks)
         {
 
-            return void;
+            return new string[] { "Not Yet implimented" };
         }
     }
 }
