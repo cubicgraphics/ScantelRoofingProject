@@ -116,7 +116,7 @@ namespace ScantelRoofingPrototype
             string[] texttowrite = new string[stocks.Count()];
             for (int i = 0; i < stocks.Count; i++)
             {
-                texttowrite[i] = stocks[i].ID.ToString() + Seperator + SafeToSave(stocks[i].Name) + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle.ToString();
+                texttowrite[i] = stocks[i].ID.ToString() + Seperator + SafeToSave(stocks[i].Name) + Seperator + stocks[i].TOM.ToString() + Seperator + stocks[i].CurrentAmount.ToString() + Seperator + stocks[i].Cost.ToString() + Seperator + stocks[i].IsATypeOfSlate.ToString() + Seperator + stocks[i].IsATypeOfWood.ToString() + Seperator + stocks[i].LengthIfSlate.ToString() + Seperator + stocks[i].WidthIfSlate.ToString() + Seperator + stocks[i].UseableInScantle.ToString();
             }
 
             File.WriteAllLines(Directory.GetCurrentDirectory() + @"\Data\Stocks.txt", texttowrite);

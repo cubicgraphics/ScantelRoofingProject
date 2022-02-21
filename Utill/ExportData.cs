@@ -273,7 +273,7 @@ namespace ScantelRoofingPrototype
             float RequiredSlatesCost = 0;
             for (int i = 0; i < SlateLayers.Length; i++)
             {
-                float SlateAmount = roof.Width / ScantleTiles[i].WidthIfSlate;
+                float SlateAmount = (roof.Width / ScantleTiles[i].WidthIfSlate) * SlateLayers[i];
                 SlateCost += SlateAmount * ScantleTiles[i].Cost;
                 TotalSlateAmount += SlateAmount;
                 int RequiredToBuy = (int)Math.Max(0, SlateAmount - ScantleTiles[i].CurrentAmount);
@@ -291,7 +291,7 @@ namespace ScantelRoofingPrototype
                 "Estimated cost of slate: £" + SlateCost,
                 "",
                 "Estimated material cost of roof: £" + (SlateCost+requiredAmountOfRafterCost),
-                "Estimated cost of materials that need purchasing for roof: £" + RequiredSlatesCost + requiredAmountOfRafterCost
+                "Estimated cost of materials that need purchasing for roof: £" + (RequiredSlatesCost + requiredAmountOfRafterCost)
             };
 
             RoofOutput.AddRange(endbit);
@@ -304,7 +304,10 @@ namespace ScantelRoofingPrototype
             float totalLength = 0;
             for (int i = 0; i < SlateLayers.Length; i++)
             {
-                totalLength += SlateLayers[i] * (slates[i].LengthIfSlate- Overlap);
+                if(slates[i].LengthIfSlate - Overlap > 0)
+                {
+                    totalLength = totalLength + SlateLayers[i] * (slates[i].LengthIfSlate - Overlap);
+                }
             }
             return totalLength;
         }
