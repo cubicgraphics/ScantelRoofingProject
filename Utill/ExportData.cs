@@ -62,7 +62,7 @@ namespace ScantelRoofingPrototype
         {
             if(roof.Scantle == true)
             {
-                return CalculateScentleRoof(roof, stocks);
+                return CalculateScantleRoof(roof, stocks);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace ScantelRoofingPrototype
         }
 
         static float[] Pitches =
-{
+        {
             22.5f,
             25f,
             27.5f,
@@ -158,8 +158,156 @@ namespace ScantelRoofingPrototype
         }
         public static string[] CalculateScantleRoof(RoofElevation roof, List<Stocks> stocks)
         {
-            //like above but calculates using all scantle type of tiles, starting at the smallest then progressivly useses bigger tiles as it works its way down the roof
-            return new string[] { "Not yet implimented" };
+            float Overlap = -1;
+            for (int i = 0; i < Pitches.Length; i++)
+            {
+                if (Pitches[i] <= roof.SlantAngle)
+                {
+                    Overlap = SlateOverlaps[i];
+                }
+            }
+            Stocks woodmat = Stocks.GetStockFromID(stocks, roof.WoodMaterialID);
+            if (Overlap < 0)
+            {
+                return new string[] { "Not enough overlap"};
+            }
+
+            List<Stocks> ScantleTiles = new List<Stocks>();
+
+            for (int i = 0; i < stocks.Count; i++)
+            {
+                if (stocks[i].UseableInScantle && stocks[i].IsATypeOfSlate)
+                {
+                    if (ScantleTiles.Count == 0)
+                    {
+                        ScantleTiles.Add(stocks[i]);
+                    }
+                    else
+                    {
+                        bool Sorted = true;
+                        int index = 0;
+                        while (Sorted)
+                        {
+                            if(index >= ScantleTiles.Count)
+                            {
+                                ScantleTiles.Add(stocks[i]);
+                                Sorted = false;
+                            }
+                            else if (stocks[i].LengthIfSlate < ScantleTiles[index].LengthIfSlate)
+                            {
+                                ScantleTiles.Insert(index, stocks[i]);
+                                Sorted = false;
+                            }
+                            else
+                            {
+                                index ++;
+                            }
+                        }
+                    }
+                }
+            }// ScantleTiles list is now a list of scantle roof slates in order of size
+
+            int[] SlateLayers = new int[ScantleTiles.Count];
+            int SlateTypeIndex = 0;
+            bool LastLayer = false;
+            bool loop = true;
+            while (loop)
+            {
+                SlateLayers[SlateTypeIndex]++;
+
+                if (CalculatetRoofLength(Overlap, SlateLayers, ScantleTiles) < roof.Length)
+                {
+                    SlateTypeIndex++;
+                    if (SlateTypeIndex >= SlateLayers.Length)
+                    {
+                        SlateTypeIndex = 0;
+                    }
+                }
+                else if (CalculatetRoofLength(Overlap, SlateLayers, ScantleTiles) > roof.Length && !LastLayer)
+                {
+                    SlateLayers[SlateTypeIndex]--;
+                    SlateTypeIndex = 0;
+                    LastLayer = true;
+                }
+                else
+                {
+                    loop = false;
+                }
+            }
+            //SlateLayers now contains a list of how many layers each size of tile should occupy, from the top(estimated of course)
+            
+            float RaftersAmount = roof.Width * roof.Length;
+            for (int i = 0; i < SlateLayers.Length; i++)
+            {
+                RaftersAmount += SlateLayers[i] * roof.Width;
+            }
+            float RaftersAmountOverflow = RaftersAmount * 1.05f;
+            float RaftersCostEstimate = RaftersAmountOverflow * woodmat.Cost;
+            float requiredAmountOfRafterToBuy = (int)Math.Max(0, RaftersAmountOverflow - woodmat.CurrentAmount);
+            float requiredAmountOfRafterCost = requiredAmountOfRafterToBuy * woodmat.Cost;
+
+            string[] startText =
+{
+                "Roof: " + roof.Name,
+                "Dimensions ",
+                "Height: " + roof.Length * Math.Sin((Math.PI / 180) * roof.SlantAngle) + " M",
+                "Width:  " + roof.Width + " M",
+                "Hypotenuse(Length from top to bottom of the tiles): " + roof.Length + " M",
+                "Inclination: " + roof.SlantAngle + " degrees",
+                "",
+                "Rafter Type: " + woodmat.Name,
+                "Estimated length of rafter required (plus 5%): " + RaftersAmountOverflow,
+                "Estimated cost of rafters: £" + RaftersCostEstimate,
+                "rafter currently in stock: " + woodmat.CurrentAmount,
+                "Amount needed to purchace: " + requiredAmountOfRafterToBuy,
+                "Cost: £" + requiredAmountOfRafterCost,
+                ""
+            };
+
+            List<string> RoofOutput = new List<string>();
+
+            RoofOutput.AddRange(startText);
+
+            float SlateCost = 0;
+            float TotalSlateAmount = 0;
+            float RequiredSlatesCost = 0;
+            for (int i = 0; i < SlateLayers.Length; i++)
+            {
+                float SlateAmount = roof.Width / ScantleTiles[i].WidthIfSlate;
+                SlateCost += SlateAmount * ScantleTiles[i].Cost;
+                TotalSlateAmount += SlateAmount;
+                int RequiredToBuy = (int)Math.Max(0, SlateAmount - ScantleTiles[i].CurrentAmount);
+                float CostOfRequired = RequiredToBuy * ScantleTiles[i].Cost;
+                RequiredSlatesCost += CostOfRequired;
+                RoofOutput.Add(SlateLayers[i].ToString() + " courses of " + ScantleTiles[i].Name);
+                RoofOutput.Add("At: " + SlateAmount + " estimated slates per course");
+                RoofOutput.Add(ScantleTiles[i].CurrentAmount + " In stock, " + RequiredToBuy + "Needed to buy. Cost: £" + CostOfRequired);
+                RoofOutput.Add("");
+            }
+
+            string[] endbit =
+            {
+                "Estimated number of slates: " + TotalSlateAmount,
+                "Estimated cost of slate: £" + SlateCost,
+                "",
+                "Estimated material cost of roof: £" + (SlateCost+requiredAmountOfRafterCost),
+                "Estimated cost of materials that need purchasing for roof: £" + RequiredSlatesCost + requiredAmountOfRafterCost
+            };
+
+            RoofOutput.AddRange(endbit);
+            string[] output = RoofOutput.ToArray();
+            return output;
         }
+
+        static float CalculatetRoofLength(float Overlap,  int[] SlateLayers, List<Stocks> slates)
+        {
+            float totalLength = 0;
+            for (int i = 0; i < SlateLayers.Length; i++)
+            {
+                totalLength += SlateLayers[i] * (slates[i].LengthIfSlate- Overlap);
+            }
+            return totalLength;
+        }
+
     }
 }
