@@ -40,7 +40,7 @@ namespace ScantelRoofingPrototype
             this.CustomerEmailLabel = new System.Windows.Forms.Label();
             this.CustomerPhoneNumberLabel = new System.Windows.Forms.Label();
             this.CustomerNameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ScantelRoofingLabel = new System.Windows.Forms.Label();
             this.EmployeeAccessLevelBox = new System.Windows.Forms.TextBox();
@@ -155,12 +155,13 @@ namespace ScantelRoofingPrototype
             this.CustomerNameLabel.TabIndex = 24;
             this.CustomerNameLabel.Text = "Employee name:";
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 17;
+            this.SearchBox.Location = new System.Drawing.Point(74, 57);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(171, 23);
+            this.SearchBox.TabIndex = 17;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
             // SearchLabel
             // 
@@ -344,7 +345,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.CustomerEmailLabel);
             this.Controls.Add(this.CustomerPhoneNumberLabel);
             this.Controls.Add(this.CustomerNameLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantelRoofingLabel);
             this.Name = "ManageEmployeesPage";
@@ -370,7 +371,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label CustomerEmailLabel;
         private System.Windows.Forms.Label CustomerPhoneNumberLabel;
         private System.Windows.Forms.Label CustomerNameLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Label ScantelRoofingLabel;
         private System.Windows.Forms.TextBox EmployeeAccessLevelBox;

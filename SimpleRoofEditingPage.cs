@@ -114,10 +114,12 @@ namespace ScantelRoofingPrototype
         {
             if ((TileStocks.Count != 0) || (WoodStocks.Count != 0))
             {
+                List<RoofElevation> newRoofs = FileReader.ReadFromRoofFile();
+
                 int TileID = TileStocks[NewTileMaterialListBox.SelectedIndex].ID;
                 int WoodID = WoodStocks[NewWoodMaterialListBox.SelectedIndex].ID;
-                Roofs.Add(new RoofElevation(RoofElevation.GetHighestID(Roofs) + 1, NewElevationNameTextBox.Text, float.Parse(NewLengthTextBox.Text), float.Parse(NewWidthTextBox.Text), float.Parse(NewSlantAngleTextBox.Text), TileID, WoodID, NewScantleRoofCheckBoxLabel.Checked));
-                FileReader.WriteToRoofFile(Roofs);
+                newRoofs.Add(new RoofElevation(RoofElevation.GetHighestID(newRoofs) + 1, NewElevationNameTextBox.Text, float.Parse(NewLengthTextBox.Text), float.Parse(NewWidthTextBox.Text), float.Parse(NewSlantAngleTextBox.Text), TileID, WoodID, NewScantleRoofCheckBoxLabel.Checked));
+                FileReader.WriteToRoofFile(newRoofs);
                 UpdateAndRefreshRoofListAndTable();
                 UpdateChangesTextBoxes();
             }
@@ -131,17 +133,32 @@ namespace ScantelRoofingPrototype
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
             int index = RoofsDataGridView.SelectedCells[0].RowIndex;
-            RoofElevation roof = new RoofElevation(Roofs[index].ID, ElevationNameBox.Text,float.Parse( ElevationLengthBox.Text),float.Parse(ElevationWidthBox.Text),float.Parse(ElevationSlantAngleBox.Text), TileStocks[TileMaterialListBox.SelectedIndex].ID, WoodStocks[WoodMaterialListBox.SelectedIndex].ID,ScantleRoofCheckBox.Checked);
-            Roofs[index] = roof;
-            FileReader.WriteToRoofFile(Roofs);
+            List<RoofElevation> newRoofs = FileReader.ReadFromRoofFile();
+            for (int i = 0; i < newRoofs.Count; i++)
+            {
+                if (newRoofs[i].ID == Roofs[index].ID)
+                {
+                    newRoofs[i] = new RoofElevation(Roofs[index].ID, ElevationNameBox.Text, float.Parse(ElevationLengthBox.Text), float.Parse(ElevationWidthBox.Text), float.Parse(ElevationSlantAngleBox.Text), TileStocks[TileMaterialListBox.SelectedIndex].ID, WoodStocks[WoodMaterialListBox.SelectedIndex].ID, ScantleRoofCheckBox.Checked);
+                    break;
+                }
+            }
+            FileReader.WriteToRoofFile(newRoofs);
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
         }
 
         private void RemoveElevationButton_Click(object sender, EventArgs e)
         {
-            Roofs.RemoveAt(RoofsDataGridView.SelectedCells[0].RowIndex);
-            FileReader.WriteToRoofFile(Roofs);
+            List<RoofElevation> newRoofs = FileReader.ReadFromRoofFile();
+            for (int i = 0; i < newRoofs.Count; i++)
+            {
+                if(newRoofs[i].ID == Roofs[RoofsDataGridView.SelectedCells[0].RowIndex].ID)
+                {
+                    newRoofs.RemoveAt(i);
+                    break;
+                }
+            }
+            FileReader.WriteToRoofFile(newRoofs);
             UpdateAndRefreshRoofListAndTable();
             UpdateChangesTextBoxes();
         }
@@ -175,6 +192,32 @@ namespace ScantelRoofingPrototype
         private void SaveOutputButton_Click(object sender, EventArgs e)
         {
             ExportData.ExportRoof(Roofs[RoofsDataGridView.SelectedCells[0].RowIndex], RoofOutputMultiLineTextBox.Lines, OpenOnExportCheckBox.Checked);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Roofs = OrderListBySearch(Roofs, SearchBox.Text);
+
+            UpdateChangesTextBoxes();
+            LoadAndUpdateRoofData();
+            RefreshRoofDataTable();
+        }
+
+        private List<RoofElevation> OrderListBySearch(List<RoofElevation> RoofList, string search)
+        {
+            List<RoofElevation> newList = new List<RoofElevation>();
+            for (int i = 0; i < RoofList.Count; i++)
+            {
+                if (RoofList[i].Name.Contains(search))
+                {
+                    newList.Insert(0, RoofList[i]);
+                }
+                else
+                {
+                    newList.Add(RoofList[i]);
+                }
+            }
+            return newList;
         }
     }
 }

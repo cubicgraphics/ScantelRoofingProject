@@ -44,8 +44,6 @@ namespace ScantelRoofingPrototype
         private void RefeshDataTable()
         {
             WorkplaceDataGrid.DataSource = workplaces;
-            //table editing here
-
         }
         private void UpdateWorkplaceList()
         {
@@ -76,16 +74,11 @@ namespace ScantelRoofingPrototype
                         {
                             if (employeetoworkplacelink[i].EmployeeID == employees[x].ID)
                             {
-                                employeesSetToWorkplace.Add(employees[x]);
-                                //add validation to fix duplicate employees in the list
-                            
+                                employeesSetToWorkplace.Add(employees[x]);                            
                             }
                         }
                     }
                 }
-
-
-                //also populate the roof lists in another function
                 EmployeesAtWorksitelistBox.DataSource = null;
                 EmployeesAtWorksitelistBox.DataSource = employeesSetToWorkplace;
                 EmployeesAtWorksitelistBox.DisplayMember = "Name";
@@ -111,8 +104,6 @@ namespace ScantelRoofingPrototype
                             if (customerToWorkplaceslink[i].CustomerID == customers[x].ID)
                             {
                                 CustomersSetToWorkplace.Add(customers[x]);
-                                //add validation to fix duplicate customers in the list from being created
-
                             }
                         }
                     }
@@ -143,8 +134,6 @@ namespace ScantelRoofingPrototype
                             if (workplaceToRoofs[i].RoofID == roofs[x].ID)
                             {
                                 roofsSetToWorkplace.Add(roofs[x]);
-                                //add validation to fix duplicate customers in the list from being created
-
                             }
                         }
                     }
@@ -288,7 +277,12 @@ namespace ScantelRoofingPrototype
 
         private void SaveWorkplaceChangesButton_Click(object sender, EventArgs e)
         {
-                workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex] = new Workplaces(
+            List<Workplaces> workplace = FileReader.ReadFromWorkplacesFile();
+            for (int i = 0; i < workplace.Count; i++)
+            {
+                if(workplace[i].ID == workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex].ID)
+                {
+                    workplace[i] = new Workplaces(
                     workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex].ID,
                     WorkplaceNameBox.Text,
                     WorkplaceAddressBox.Text,
@@ -296,26 +290,29 @@ namespace ScantelRoofingPrototype
                     StartDateTimePicker.Value,
                     PredictedEndDateTimePicker.Value,
                     EndDateTimePicker.Value
-                );
-                FileReader.WriteToWorkplaceFile(workplaces);
-                UpdateWorkplaceAndRefreshTable();
+                        );
+                    break;
+                }
+            }
+            FileReader.WriteToWorkplaceFile(workplace);
+            UpdateWorkplaceAndRefreshTable();
         }
 
         private void DeleteSelectedWorkplaceButton_Click(object sender, EventArgs e)
         {
-            if ((workplaces != null) && (workplaces.Count >= 1))
+            if (workplaces.Count > 0)
             {
-                int selectedworkplaceID = workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex].ID;
-                int removeat = -1;
+                List<Workplaces> workplace = FileReader.ReadFromWorkplacesFile();
+                int index = WorkplaceDataGrid.SelectedCells[0].RowIndex;
                 for (int i = 0; i < workplaces.Count; i++)
                 {
-                    if (selectedworkplaceID == workplaces[i].ID)
+                    if (workplace[i].ID == workplaces[index].ID)
                     {
-                        removeat = i;
+                        workplace.RemoveAt(index);
+                        break;
                     }
                 }
-                workplaces.RemoveAt(removeat);
-                FileReader.WriteToWorkplaceFile(workplaces);
+                FileReader.WriteToWorkplaceFile(workplace);
                 UpdateWorkplaceAndRefreshTable();
             }
         }
@@ -350,6 +347,35 @@ namespace ScantelRoofingPrototype
                 FileReader.WriteToWorkplaceToRoofFile(workplacetoroof);
                 UpdateRoofsAndRoofsAtWorksiteList();
             }
+        }
+
+
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            workplaces = OrderListBySearch(workplaces, SearchBox.Text);
+            WorkplaceDataGrid.DataSource = workplaces;
+            UpdateWorkplaceText();
+            UpdateEmployeeAndEmployeeAtWorksiteList();
+            UpdateRoofsAndRoofsAtWorksiteList();
+            UpdateCustomersAndCustomersAtWorksiteList();
+        }
+
+        private List<Workplaces> OrderListBySearch(List<Workplaces> workplaceList, string search)
+        {
+            List<Workplaces> newList = new List<Workplaces>();
+            for (int i = 0; i < workplaceList.Count; i++)
+            {
+                if (workplaceList[i].PlaceName.Contains(search))
+                {
+                    newList.Insert(0, workplaceList[i]);
+                }
+                else
+                {
+                    newList.Add(workplaceList[i]);
+                }
+            }
+            return newList;
         }
     }
 }

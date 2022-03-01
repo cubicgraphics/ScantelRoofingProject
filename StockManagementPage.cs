@@ -202,8 +202,16 @@ namespace ScantelRoofingPrototype
         private void DeleteSelectedMaterialButton_Click(object sender, EventArgs e)
         {
             int index = StocksDataGrid.SelectedCells[0].RowIndex;
-            stocks.RemoveAt(index);
-            FileReader.WriteToStockFile(stocks);
+            List<Stocks> newList = FileReader.ReadFromStocksFile();
+            for (int i = 0; i < newList.Count; i++)
+            {
+                if (newList[i].ID == stocks[index].ID)
+                {
+                    newList.RemoveAt(i);
+                    break;
+                }
+            }
+            FileReader.WriteToStockFile(newList);
             UpdateStocksAndStocksDataGrid();
         }
 
@@ -211,24 +219,57 @@ namespace ScantelRoofingPrototype
         {
             if (StocksDataGrid.Rows.Count > 0  && Utill.VerifyIntInput(AmountCurrentlyStockedTextBox.Text)  && Utill.VerifyIntInput(MaterialCostTextBox.Text) && Utill.VerifyIntInput(TileWidthInputBox.Text) && Utill.VerifyIntInput(TileLengthInputBox.Text))
             {
-            int index = StocksDataGrid.SelectedCells[0].RowIndex;
-            int tom = 0;
-            if (PricePerOneCheckBox.Checked == true)
-            {
-                tom = 1;
-            }
-            else if (PricePerMeterCheckBox.Checked == true)
-            {
-                tom = 2;
-            }
-            stocks[index] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileLengthInputBox.Text), float.Parse(TileWidthInputBox.Text), UseableInScantleCheckbox.Checked);
-            FileReader.WriteToStockFile(stocks);
-            UpdateStocksAndStocksDataGrid();
+                int index = StocksDataGrid.SelectedCells[0].RowIndex;
+                int tom = 0;
+                if (PricePerOneCheckBox.Checked == true)
+                {
+                    tom = 1;
+                }
+                else if (PricePerMeterCheckBox.Checked == true)
+                {
+                    tom = 2;
+                }
+
+                List<Stocks> newList = FileReader.ReadFromStocksFile();
+                for (int i = 0; i < newList.Count; i++)
+                {
+                    if(newList[i].ID == stocks[index].ID)
+                    {
+                        newList[i] = new Stocks(stocks[index].ID, MaterialNameTextBox.Text, tom, float.Parse(AmountCurrentlyStockedTextBox.Text), float.Parse(MaterialCostTextBox.Text), IsTileMaterialCheckBox.Checked, IsWoodCheckBox.Checked, float.Parse(TileLengthInputBox.Text), float.Parse(TileWidthInputBox.Text), UseableInScantleCheckbox.Checked);
+                        break;
+                    }
+                }
+                FileReader.WriteToStockFile(newList);
+                UpdateStocksAndStocksDataGrid();
             }
             else
             {
                 MessageBox.Show("incorrect data input");
             }
+        }
+
+        private void SeachBox_TextChanged(object sender, EventArgs e)
+        {
+            stocks = OrderListBySearch(stocks, SeachBox.Text);
+            UpdateStocksDataGrid();
+            RefreshStockSideInfo();
+        }
+
+        private List<Stocks> OrderListBySearch(List<Stocks> StocksList, string search)
+        {
+            List<Stocks> newList = new List<Stocks>();
+            for (int i = 0; i < StocksList.Count; i++)
+            {
+                if (StocksList[i].Name.Contains(search))
+                {
+                    newList.Insert(0, StocksList[i]);
+                }
+                else
+                {
+                    newList.Add(StocksList[i]);
+                }
+            }
+            return newList;
         }
     }
 }

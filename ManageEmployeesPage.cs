@@ -69,25 +69,30 @@ namespace ScantelRoofingPrototype
 
         public void RemoveEmployee(int index)
         {
-            if (employees.Count > index)
+            for (int i = 0; i < employees.Count; i++)
             {
-                employees.RemoveAt(index);
+                if (employees[i].ID == employeePeopleLinked[index].ID)
+                {
+                    employees.RemoveAt(index);
+                    break;
+                }
             }
             FileReader.WriteToEmployeeFile(employees);
-            FileReader.WriteToPeopleFile(people);
         }
 
         private void DeleteSelectedCustomerButton_Click(object sender, EventArgs e)
         {
-            int index = EmployeesDataBox.SelectedCells[0].RowIndex;
-            DialogResult dialog = MessageBox.Show("Are you sure", "", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
+            if(employees.Count > 0)
             {
-                RemoveEmployee(index);
-                LoadAndRefreshEmployeesPeople();
-            }
+                int index = EmployeesDataBox.SelectedCells[0].RowIndex;
+                DialogResult dialog = MessageBox.Show("Are you sure", "", MessageBoxButtons.YesNo);
 
+                if (dialog == DialogResult.Yes)
+                {
+                    RemoveEmployee(index);
+                    LoadAndRefreshEmployeesPeople();
+                }
+            }
         }
 
         private void EmployeesDataBox_Click(object sender, EventArgs e)
@@ -112,8 +117,9 @@ namespace ScantelRoofingPrototype
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            if ((EmployeeAccessLevelBox.Text != "") && (EmployeeWagesBox.Text != "") && (EmployeeUsernameTextBox.Text != "") && (EmployeeAccessCodeBox.Text != "")&& (Utill.VerifyIntInput(EmployeePhoneBox.Text)) && (Utill.VerifyIntInput(EmployeeAccessLevelBox.Text)) && (Utill.VerifyIntInput(EmployeeWagesBox.Text)))
+            if ((EmployeeAccessLevelBox.Text != "") && (EmployeeWagesBox.Text != "") && (EmployeeUsernameTextBox.Text != "")&& (Utill.VerifyIntInput(EmployeePhoneBox.Text)) && (Utill.VerifyIntInput(EmployeeAccessLevelBox.Text)) && (Utill.VerifyIntInput(EmployeeWagesBox.Text)))
             {
+                LoadEmployeesPeopleFromFile();
                 int index = EmployeesDataBox.SelectedCells[0].RowIndex;
                 People editperson = new People(employeePeopleLinked[index].PersonID, EmployeeNameBox.Text, EmployeePhoneBox.Text, EmployeeEmailBox.Text, EmployeeAddressBox.Text);
                 string Hashpassword = employeePeopleLinked[index].HashPassword;
@@ -130,14 +136,21 @@ namespace ScantelRoofingPrototype
                 for (int i = 0; i < people.Count; i++)
                 {
                     if(people[i].ID == employeePeopleLinked[index].PersonID)
-                    people[i] = editperson;
+                    {
+                        people[i] = editperson;
+                    }
                 }
-                employees[index] = editemployee;
+
+                for (int i = 0; i < employees.Count; i++)
+                {
+                    if (employees[i].ID == employeePeopleLinked[index].ID)
+                    {
+                        employees[i] = editemployee;
+                    }
+                }
 
                 FileReader.WriteToEmployeeFile(employees);
                 FileReader.WriteToPeopleFile(people);
-
-                
                 refreshEmployeesPeopleList();
 
             }
@@ -155,6 +168,31 @@ namespace ScantelRoofingPrototype
         private void EmployeeOutputButton_Click(object sender, EventArgs e)
         {
             ExportData.OutputEmployeeWages(EmployeeWorkDateTimePicker.Value,OpenFileCheckBox.Checked);
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            employeePeopleLinked = OrderListBySearch(employeePeopleLinked, SearchBox.Text);
+            EmployeesDataBox.DataSource = employeePeopleLinked;
+            RefreshEditPanel();
+            EmployeesDataBox.Columns.RemoveAt(5);
+        }
+
+        private List<EmployeePeople> OrderListBySearch(List<EmployeePeople> people, string search)
+        {
+            List<EmployeePeople> newList = new List<EmployeePeople>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Name.Contains(search))
+                {
+                    newList.Insert(0, people[i]);
+                }
+                else
+                {
+                    newList.Add(people[i]);
+                }
+            }
+            return newList;
         }
     }
 }

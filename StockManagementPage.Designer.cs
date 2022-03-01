@@ -82,6 +82,7 @@ namespace ScantelRoofingPrototype
             this.SeachBox.Name = "SeachBox";
             this.SeachBox.Size = new System.Drawing.Size(131, 23);
             this.SeachBox.TabIndex = 1;
+            this.SeachBox.TextChanged += new System.EventHandler(this.SeachBox_TextChanged);
             // 
             // SearchLabel
             // 

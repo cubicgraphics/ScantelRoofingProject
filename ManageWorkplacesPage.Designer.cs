@@ -31,8 +31,7 @@ namespace ScantelRoofingPrototype
         {
             this.ScantleRoofingLabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ShowOldWorkplaces = new System.Windows.Forms.CheckBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.EmployeesAtWorksitelistBox = new System.Windows.Forms.ListBox();
             this.EmployeesListBox = new System.Windows.Forms.ListBox();
             this.RoofsAtWorksiteListBox = new System.Windows.Forms.ListBox();
@@ -68,7 +67,6 @@ namespace ScantelRoofingPrototype
             this.AddCustomerToWorkplace = new System.Windows.Forms.Button();
             this.CustomerListBox = new System.Windows.Forms.ListBox();
             this.CustomerAtWorkplaceListBox = new System.Windows.Forms.ListBox();
-            this.CustomerListSearchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,22 +88,13 @@ namespace ScantelRoofingPrototype
             this.SearchLabel.TabIndex = 1;
             this.SearchLabel.Text = "Search";
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 23);
-            this.textBox1.TabIndex = 23;
-            // 
-            // ShowOldWorkplaces
-            // 
-            this.ShowOldWorkplaces.AutoSize = true;
-            this.ShowOldWorkplaces.Location = new System.Drawing.Point(12, 86);
-            this.ShowOldWorkplaces.Name = "ShowOldWorkplaces";
-            this.ShowOldWorkplaces.Size = new System.Drawing.Size(137, 19);
-            this.ShowOldWorkplaces.TabIndex = 3;
-            this.ShowOldWorkplaces.Text = "Show old workplaces";
-            this.ShowOldWorkplaces.UseVisualStyleBackColor = true;
+            this.SearchBox.Location = new System.Drawing.Point(60, 57);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(161, 23);
+            this.SearchBox.TabIndex = 23;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
             // EmployeesAtWorksitelistBox
             // 
@@ -342,11 +331,11 @@ namespace ScantelRoofingPrototype
             // WorkplaceDataGrid
             // 
             this.WorkplaceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.WorkplaceDataGrid.Location = new System.Drawing.Point(13, 111);
+            this.WorkplaceDataGrid.Location = new System.Drawing.Point(13, 86);
             this.WorkplaceDataGrid.Name = "WorkplaceDataGrid";
             this.WorkplaceDataGrid.ReadOnly = true;
             this.WorkplaceDataGrid.RowTemplate.Height = 25;
-            this.WorkplaceDataGrid.Size = new System.Drawing.Size(745, 319);
+            this.WorkplaceDataGrid.Size = new System.Drawing.Size(745, 344);
             this.WorkplaceDataGrid.TabIndex = 24;
             this.WorkplaceDataGrid.Click += new System.EventHandler(this.WorkplaceDataTable_Click);
             // 
@@ -413,9 +402,9 @@ namespace ScantelRoofingPrototype
             // 
             this.CustomerListBox.FormattingEnabled = true;
             this.CustomerListBox.ItemHeight = 15;
-            this.CustomerListBox.Location = new System.Drawing.Point(917, 206);
+            this.CustomerListBox.Location = new System.Drawing.Point(917, 191);
             this.CustomerListBox.Name = "CustomerListBox";
-            this.CustomerListBox.Size = new System.Drawing.Size(108, 64);
+            this.CustomerListBox.Size = new System.Drawing.Size(108, 79);
             this.CustomerListBox.TabIndex = 17;
             // 
             // CustomerAtWorkplaceListBox
@@ -427,19 +416,11 @@ namespace ScantelRoofingPrototype
             this.CustomerAtWorkplaceListBox.Size = new System.Drawing.Size(108, 79);
             this.CustomerAtWorkplaceListBox.TabIndex = 14;
             // 
-            // CustomerListSearchBox
-            // 
-            this.CustomerListSearchBox.Location = new System.Drawing.Point(917, 182);
-            this.CustomerListSearchBox.Name = "CustomerListSearchBox";
-            this.CustomerListSearchBox.Size = new System.Drawing.Size(108, 23);
-            this.CustomerListSearchBox.TabIndex = 16;
-            // 
             // ManageWorkplacesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 450);
-            this.Controls.Add(this.CustomerListSearchBox);
             this.Controls.Add(this.CustomerList);
             this.Controls.Add(this.CustomersAtWorkplaceLabel);
             this.Controls.Add(this.RemoveCustomerFromWorkplace);
@@ -475,8 +456,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.RoofsAtWorksiteListBox);
             this.Controls.Add(this.EmployeesListBox);
             this.Controls.Add(this.EmployeesAtWorksitelistBox);
-            this.Controls.Add(this.ShowOldWorkplaces);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantleRoofingLabel);
             this.Name = "ManageWorkplacesPage";
@@ -493,8 +473,7 @@ namespace ScantelRoofingPrototype
 
         private System.Windows.Forms.Label ScantleRoofingLabel;
         private System.Windows.Forms.Label SearchLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox ShowOldWorkplaces;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.ListBox EmployeesAtWorksitelistBox;
         private System.Windows.Forms.ListBox EmployeesListBox;
         private System.Windows.Forms.ListBox RoofsAtWorksiteListBox;
@@ -530,6 +509,5 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Button AddCustomerToWorkplace;
         private System.Windows.Forms.ListBox CustomerListBox;
         private System.Windows.Forms.ListBox CustomerAtWorkplaceListBox;
-        private System.Windows.Forms.TextBox CustomerListSearchBox;
     }
 }

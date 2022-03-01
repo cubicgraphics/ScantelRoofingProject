@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
@@ -100,18 +94,46 @@ namespace ScantelRoofingPrototype
 
         private void DeleteSelectedCustomerButton_Click(object sender, EventArgs e)
         {
-            int index = CustomerDataGrid.SelectedCells[0].RowIndex;
             List<Customers> customersList = FileReader.ReadFromCustomerFile();
-            for (int i = 0; i < customersList.Count; i++)
+
+            if (customersList.Count > 0)
             {
-                if (customers[index].ID == customersList[i].PersonID)
+                int index = CustomerDataGrid.SelectedCells[0].RowIndex;
+                for (int i = 0; i < customersList.Count; i++)
                 {
-                    customersList.RemoveAt(i);
+                    if (customers[index].ID == customersList[i].PersonID)
+                    {
+                        customersList.RemoveAt(i);
+                    }
+                }
+                FileReader.WriteToCustomerFile(customersList);
+                updateCustomerDataBox();
+                refreshcustomerinfoboxes();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            customers = OrderListBySearch(customers, SearchBox.Text);
+            CustomerDataGrid.DataSource = customers;
+            refreshcustomerinfoboxes();
+        }
+
+        private List<People> OrderListBySearch(List<People> people, string search)
+        {
+            List<People> newList = new List<People>();
+            for (int i = 0; i < people.Count; i++)
+            {
+                if (people[i].Name.Contains(search))
+                {
+                    newList.Insert(0, people[i]);
+                }
+                else
+                {
+                    newList.Add(people[i]);
                 }
             }
-            FileReader.WriteToCustomerFile(customersList);
-            updateCustomerDataBox();
-            refreshcustomerinfoboxes();
+            return newList;
         }
     }
 }

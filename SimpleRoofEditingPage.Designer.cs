@@ -32,7 +32,7 @@ namespace ScantelRoofingPrototype
             this.ScantleRoofingLabel = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.RoofListLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.CreateNewElevationButton = new System.Windows.Forms.Button();
             this.ElevationWoodMaterialLabel = new System.Windows.Forms.Label();
@@ -47,8 +47,6 @@ namespace ScantelRoofingPrototype
             this.ElevationNameBox = new System.Windows.Forms.TextBox();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.RemoveElevationButton = new System.Windows.Forms.Button();
-            this.SearchByWorkplaceTextBox = new System.Windows.Forms.TextBox();
-            this.SearchByWorkplaceLabel = new System.Windows.Forms.Label();
             this.RoofsDataGridView = new System.Windows.Forms.DataGridView();
             this.ScantleRoofCheckBox = new System.Windows.Forms.CheckBox();
             this.NewScantleRoofCheckBoxLabel = new System.Windows.Forms.CheckBox();
@@ -101,12 +99,13 @@ namespace ScantelRoofingPrototype
             this.RoofListLabel.TabIndex = 4;
             this.RoofListLabel.Text = "Roof list";
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 23);
-            this.textBox1.TabIndex = 10;
+            this.SearchBox.Location = new System.Drawing.Point(60, 65);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(112, 23);
+            this.SearchBox.TabIndex = 10;
+            this.SearchBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SearchLabel
             // 
@@ -228,22 +227,6 @@ namespace ScantelRoofingPrototype
             this.RemoveElevationButton.Text = "Remove selected elevation";
             this.RemoveElevationButton.UseVisualStyleBackColor = true;
             this.RemoveElevationButton.Click += new System.EventHandler(this.RemoveElevationButton_Click);
-            // 
-            // SearchByWorkplaceTextBox
-            // 
-            this.SearchByWorkplaceTextBox.Location = new System.Drawing.Point(304, 65);
-            this.SearchByWorkplaceTextBox.Name = "SearchByWorkplaceTextBox";
-            this.SearchByWorkplaceTextBox.Size = new System.Drawing.Size(103, 23);
-            this.SearchByWorkplaceTextBox.TabIndex = 11;
-            // 
-            // SearchByWorkplaceLabel
-            // 
-            this.SearchByWorkplaceLabel.AutoSize = true;
-            this.SearchByWorkplaceLabel.Location = new System.Drawing.Point(183, 68);
-            this.SearchByWorkplaceLabel.Name = "SearchByWorkplaceLabel";
-            this.SearchByWorkplaceLabel.Size = new System.Drawing.Size(115, 15);
-            this.SearchByWorkplaceLabel.TabIndex = 45;
-            this.SearchByWorkplaceLabel.Text = "Search by workplace";
             // 
             // RoofsDataGridView
             // 
@@ -464,8 +447,6 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.NewElevationNameTextBox);
             this.Controls.Add(this.ScantleRoofCheckBox);
             this.Controls.Add(this.RoofsDataGridView);
-            this.Controls.Add(this.SearchByWorkplaceLabel);
-            this.Controls.Add(this.SearchByWorkplaceTextBox);
             this.Controls.Add(this.RemoveElevationButton);
             this.Controls.Add(this.ElevationWoodMaterialLabel);
             this.Controls.Add(this.ElevationTileMaterialLabel);
@@ -480,7 +461,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.CreateNewElevationButton);
             this.Controls.Add(this.SearchLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.RoofListLabel);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ScantleRoofingLabel);
@@ -499,7 +480,7 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.Label ScantleRoofingLabel;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Label RoofListLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Button CreateNewElevationButton;
         private System.Windows.Forms.Label ElevationWoodMaterialLabel;
@@ -514,8 +495,6 @@ namespace ScantelRoofingPrototype
         private System.Windows.Forms.TextBox ElevationNameBox;
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Button RemoveElevationButton;
-        private System.Windows.Forms.TextBox SearchByWorkplaceTextBox;
-        private System.Windows.Forms.Label SearchByWorkplaceLabel;
         private System.Windows.Forms.DataGridView RoofsDataGridView;
         private System.Windows.Forms.CheckBox ScantleRoofCheckBox;
         private System.Windows.Forms.CheckBox NewScantleRoofCheckBoxLabel;

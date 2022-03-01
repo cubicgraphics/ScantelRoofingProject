@@ -31,7 +31,7 @@ namespace ScantelRoofingPrototype
         {
             this.ScantelRoofingLabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.CustomerAddressInputBox = new System.Windows.Forms.TextBox();
             this.CustomerEmailInputBox = new System.Windows.Forms.TextBox();
@@ -66,12 +66,13 @@ namespace ScantelRoofingPrototype
             this.SearchLabel.TabIndex = 1;
             this.SearchLabel.Text = "Search";
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 8;
+            this.SearchBox.Location = new System.Drawing.Point(60, 50);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(171, 23);
+            this.SearchBox.TabIndex = 8;
+            this.SearchBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SaveChangesButton
             // 
@@ -206,7 +207,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.CustomerEmailLabel);
             this.Controls.Add(this.CustomerPhoneNumberLabel);
             this.Controls.Add(this.CustomerNameLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantelRoofingLabel);
             this.Name = "ManageCustomersPage";
@@ -223,7 +224,7 @@ namespace ScantelRoofingPrototype
 
         private System.Windows.Forms.Label ScantelRoofingLabel;
         private System.Windows.Forms.Label SearchLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.TextBox CustomerAddressInputBox;
         private System.Windows.Forms.TextBox CustomerEmailInputBox;
