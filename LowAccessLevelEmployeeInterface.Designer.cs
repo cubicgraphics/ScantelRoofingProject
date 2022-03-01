@@ -29,22 +29,24 @@ namespace ScantelRoofingPrototype
         /// </summary>
         private void InitializeComponent()
         {
-            this.ScantelRoofingICO = new System.Windows.Forms.Label();
+            this.ScantelRoofing = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.WorkInputButton = new System.Windows.Forms.Button();
             this.ChangePasswordTextBox = new System.Windows.Forms.TextBox();
             this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.ChangePasswordTextBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ScantelRoofingICO
+            // ScantelRoofing
             // 
-            this.ScantelRoofingICO.AutoSize = true;
-            this.ScantelRoofingICO.Location = new System.Drawing.Point(13, 13);
-            this.ScantelRoofingICO.Name = "ScantelRoofingICO";
-            this.ScantelRoofingICO.Size = new System.Drawing.Size(166, 15);
-            this.ScantelRoofingICO.TabIndex = 0;
-            this.ScantelRoofingICO.Text = "Scantel Roofing - Logo/image";
+            this.ScantelRoofing.AutoSize = true;
+            this.ScantelRoofing.Location = new System.Drawing.Point(13, 13);
+            this.ScantelRoofing.Name = "ScantelRoofing";
+            this.ScantelRoofing.Size = new System.Drawing.Size(90, 15);
+            this.ScantelRoofing.TabIndex = 0;
+            this.ScantelRoofing.Text = "Scantel Roofing";
             // 
             // UsernameLabel
             // 
@@ -85,7 +87,7 @@ namespace ScantelRoofingPrototype
             // 
             // ChangePasswordButton
             // 
-            this.ChangePasswordButton.Location = new System.Drawing.Point(237, 106);
+            this.ChangePasswordButton.Location = new System.Drawing.Point(238, 135);
             this.ChangePasswordButton.Name = "ChangePasswordButton";
             this.ChangePasswordButton.Size = new System.Drawing.Size(195, 23);
             this.ChangePasswordButton.TabIndex = 6;
@@ -93,17 +95,35 @@ namespace ScantelRoofingPrototype
             this.ChangePasswordButton.UseVisualStyleBackColor = true;
             this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
             // 
+            // ChangePasswordTextBox2
+            // 
+            this.ChangePasswordTextBox2.Location = new System.Drawing.Point(12, 135);
+            this.ChangePasswordTextBox2.Name = "ChangePasswordTextBox2";
+            this.ChangePasswordTextBox2.Size = new System.Drawing.Size(194, 23);
+            this.ChangePasswordTextBox2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(264, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Enter new password twice";
+            // 
             // LowAccessLevelEmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 154);
+            this.ClientSize = new System.Drawing.Size(444, 202);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ChangePasswordTextBox2);
             this.Controls.Add(this.ChangePasswordButton);
             this.Controls.Add(this.ChangePasswordTextBox);
             this.Controls.Add(this.WorkInputButton);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.ScantelRoofingICO);
+            this.Controls.Add(this.ScantelRoofing);
             this.Name = "LowAccessLevelEmployeeInterface";
             this.Text = "LowAccessLevelEmployeeInterface";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LowAccessLevelEmployeeInterface_FormClosing);
@@ -114,11 +134,13 @@ namespace ScantelRoofingPrototype
 
         #endregion
 
-        private System.Windows.Forms.Label ScantelRoofingICO;
+        private System.Windows.Forms.Label ScantelRoofing;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.Button WorkInputButton;
         private System.Windows.Forms.TextBox ChangePasswordTextBox;
         private System.Windows.Forms.Button ChangePasswordButton;
+        private System.Windows.Forms.TextBox ChangePasswordTextBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
