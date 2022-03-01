@@ -30,7 +30,6 @@ namespace ScantelRoofingPrototype
         private void InitializeComponent()
         {
             this.ScantleRoofingLabel = new System.Windows.Forms.Label();
-            this.SimpleRoofEditorLabel = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.RoofListLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -82,15 +81,6 @@ namespace ScantelRoofingPrototype
             this.ScantleRoofingLabel.Size = new System.Drawing.Size(87, 15);
             this.ScantleRoofingLabel.TabIndex = 0;
             this.ScantleRoofingLabel.Text = "Scantle roofing";
-            // 
-            // SimpleRoofEditorLabel
-            // 
-            this.SimpleRoofEditorLabel.AutoSize = true;
-            this.SimpleRoofEditorLabel.Location = new System.Drawing.Point(196, 9);
-            this.SimpleRoofEditorLabel.Name = "SimpleRoofEditorLabel";
-            this.SimpleRoofEditorLabel.Size = new System.Drawing.Size(102, 15);
-            this.SimpleRoofEditorLabel.TabIndex = 1;
-            this.SimpleRoofEditorLabel.Text = "Simple roof editor";
             // 
             // BackButton
             // 
@@ -493,7 +483,6 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.RoofListLabel);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.SimpleRoofEditorLabel);
             this.Controls.Add(this.ScantleRoofingLabel);
             this.Name = "SimpleRoofEditingPage";
             this.Text = "SimpleRoofEditingPage";
@@ -508,7 +497,6 @@ namespace ScantelRoofingPrototype
         #endregion
 
         private System.Windows.Forms.Label ScantleRoofingLabel;
-        private System.Windows.Forms.Label SimpleRoofEditorLabel;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Label RoofListLabel;
         private System.Windows.Forms.TextBox textBox1;

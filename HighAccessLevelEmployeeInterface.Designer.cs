@@ -84,9 +84,9 @@ namespace ScantelRoofingPrototype
             this.ScantelRoofingICO.AutoSize = true;
             this.ScantelRoofingICO.Location = new System.Drawing.Point(12, 10);
             this.ScantelRoofingICO.Name = "ScantelRoofingICO";
-            this.ScantelRoofingICO.Size = new System.Drawing.Size(166, 15);
+            this.ScantelRoofingICO.Size = new System.Drawing.Size(90, 15);
             this.ScantelRoofingICO.TabIndex = 5;
-            this.ScantelRoofingICO.Text = "Scantel Roofing - Logo/image";
+            this.ScantelRoofingICO.Text = "Scantel Roofing";
             // 
             // StockButton
             // 

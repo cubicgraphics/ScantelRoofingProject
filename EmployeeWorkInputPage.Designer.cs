@@ -83,6 +83,11 @@ namespace ScantelRoofingPrototype
             // 
             // TimeWorkedInputBox
             // 
+            this.TimeWorkedInputBox.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            65536});
             this.TimeWorkedInputBox.Location = new System.Drawing.Point(136, 76);
             this.TimeWorkedInputBox.Maximum = new decimal(new int[] {
             20,
@@ -115,11 +120,11 @@ namespace ScantelRoofingPrototype
             // UserNameLabel
             // 
             this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Location = new System.Drawing.Point(176, 9);
+            this.UserNameLabel.Location = new System.Drawing.Point(157, 9);
             this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(38, 15);
+            this.UserNameLabel.Size = new System.Drawing.Size(79, 15);
             this.UserNameLabel.TabIndex = 8;
-            this.UserNameLabel.Text = "label1";
+            this.UserNameLabel.Text = "%username%";
             this.UserNameLabel.VisibleChanged += new System.EventHandler(this.UserNameLabel_VisibleChanged);
             // 
             // EmployeeWorkInputPage

@@ -77,9 +77,9 @@ namespace ScantelRoofingPrototype
             this.ScantleRoofingLabel.AutoSize = true;
             this.ScantleRoofingLabel.Location = new System.Drawing.Point(12, 9);
             this.ScantleRoofingLabel.Name = "ScantleRoofingLabel";
-            this.ScantleRoofingLabel.Size = new System.Drawing.Size(160, 15);
+            this.ScantleRoofingLabel.Size = new System.Drawing.Size(87, 15);
             this.ScantleRoofingLabel.TabIndex = 0;
-            this.ScantleRoofingLabel.Text = "Scantle roofing - logo/image";
+            this.ScantleRoofingLabel.Text = "Scantle roofing";
             // 
             // SearchLabel
             // 

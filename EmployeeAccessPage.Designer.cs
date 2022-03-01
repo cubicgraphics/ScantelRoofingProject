@@ -39,11 +39,11 @@ namespace ScantelRoofingPrototype
             // LoginTitleLabel
             // 
             this.LoginTitleLabel.AutoSize = true;
-            this.LoginTitleLabel.Location = new System.Drawing.Point(19, 25);
+            this.LoginTitleLabel.Location = new System.Drawing.Point(12, 12);
             this.LoginTitleLabel.Name = "LoginTitleLabel";
-            this.LoginTitleLabel.Size = new System.Drawing.Size(201, 15);
+            this.LoginTitleLabel.Size = new System.Drawing.Size(90, 15);
             this.LoginTitleLabel.TabIndex = 0;
-            this.LoginTitleLabel.Text = "Scantel Roofing - logo or image here";
+            this.LoginTitleLabel.Text = "Scantel Roofing";
             // 
             // LoginPageButton
             // 
