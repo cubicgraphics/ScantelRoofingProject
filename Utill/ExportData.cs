@@ -137,7 +137,7 @@ namespace ScantelRoofingPrototype
                 "Estimated tiles needed (plus 5%): " + EstimatedTilesOverflow,
                 "Estimated cost of all tiles: £" + EstimatedTileCost,
                 "Tiles currently in stock: " + currentAmountOfTileMaterial ,
-                "Amount needed to purchace: " + requiredAmountOfTileMaterialToBuy,
+                "Amount needed to purchase: " + requiredAmountOfTileMaterialToBuy,
                 "Cost: £" + TileMaterialToBuyEstimatedCost,
 
                 "",
@@ -145,7 +145,7 @@ namespace ScantelRoofingPrototype
                 "Estimated length of rafter required (plus 5%): " + RaftersAmountOverflow,
                 "Estimated cost of rafters: £" + RaftersCostEstimate,
                 "rafter currently in stock: " + currentAmountOfWoodMaterial,
-                "Amount needed to purchace: " + requiredAmountOfWoodMaterialToBuy,
+                "Amount needed to purchase: " + requiredAmountOfWoodMaterialToBuy,
                 "Cost: £" + WoodMaterialToBuyEstimatedCost,
                 "",
                 "Estimated material cost of roof: £" + TotalMaterialCost,
@@ -259,7 +259,7 @@ namespace ScantelRoofingPrototype
                 "Estimated length of rafter required (plus 5%): " + RaftersAmountOverflow,
                 "Estimated cost of rafters: £" + RaftersCostEstimate,
                 "rafter currently in stock: " + woodmat.CurrentAmount,
-                "Amount needed to purchace: " + requiredAmountOfRafterToBuy,
+                "Amount needed to purchase: " + requiredAmountOfRafterToBuy,
                 "Cost: £" + requiredAmountOfRafterCost,
                 ""
             };
@@ -281,7 +281,7 @@ namespace ScantelRoofingPrototype
                 RequiredSlatesCost += CostOfRequired;
                 RoofOutput.Add(SlateLayers[i].ToString() + " courses of " + ScantleTiles[i].Name);
                 RoofOutput.Add("At: " + SlateAmount + " estimated slates per course");
-                RoofOutput.Add(ScantleTiles[i].CurrentAmount + " In stock, " + RequiredToBuy + "Needed to buy. Cost: £" + CostOfRequired);
+                RoofOutput.Add(ScantleTiles[i].CurrentAmount + " In stock, " + RequiredToBuy + " Needed to buy. Cost: £" + CostOfRequired);
                 RoofOutput.Add("");
             }
 
