@@ -63,6 +63,7 @@ namespace ScantelRoofingPrototype
 
         private void NewCustomerButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             newEmployeePage.Show();
         }
 
