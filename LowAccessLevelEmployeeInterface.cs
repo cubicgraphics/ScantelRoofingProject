@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
@@ -32,21 +26,29 @@ namespace ScantelRoofingPrototype
 
 
 
+        private bool ValidateNewPassword(string pass1, string pass2)
+        {
+            if(pass1 == pass2)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Passwords must match to change");
+                return false;
+            }
+        }
 
         private void ChangePasswordButton_Click(object sender, EventArgs e)
         {
             List<Employees> employees = Employees.ReadFromFile();
             int index = Employees.GetListIndexFromID(employees, UserID);
-            if (ChangePasswordTextBox.Text == ChangePasswordTextBox2.Text)
+            if (ValidateNewPassword(ChangePasswordTextBox.Text, ChangePasswordTextBox2.Text))
             {
                 Employees employee = new Employees(employees[index].ID, employees[index].PersonID, employees[index].AccessLevel, employees[index].Wages, employees[index].Username, Hash.HashString(ChangePasswordTextBox.Text), employees[index].HashAccessCode);
                 employees[index] = employee;
                 FileReader.WriteToEmployeeFile(employees);
                 MessageBox.Show("Password changed");
-            }
-            else
-            {
-                MessageBox.Show("password boxes do not match");
             }
         }
 

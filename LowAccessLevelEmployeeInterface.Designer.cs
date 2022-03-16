@@ -72,7 +72,7 @@ namespace ScantelRoofingPrototype
             // 
             this.WorkInputButton.Location = new System.Drawing.Point(12, 52);
             this.WorkInputButton.Name = "WorkInputButton";
-            this.WorkInputButton.Size = new System.Drawing.Size(195, 31);
+            this.WorkInputButton.Size = new System.Drawing.Size(421, 44);
             this.WorkInputButton.TabIndex = 3;
             this.WorkInputButton.Text = "Work Input ";
             this.WorkInputButton.UseVisualStyleBackColor = true;
@@ -80,14 +80,14 @@ namespace ScantelRoofingPrototype
             // 
             // ChangePasswordTextBox
             // 
-            this.ChangePasswordTextBox.Location = new System.Drawing.Point(13, 106);
+            this.ChangePasswordTextBox.Location = new System.Drawing.Point(13, 135);
             this.ChangePasswordTextBox.Name = "ChangePasswordTextBox";
             this.ChangePasswordTextBox.Size = new System.Drawing.Size(194, 23);
             this.ChangePasswordTextBox.TabIndex = 5;
             // 
             // ChangePasswordButton
             // 
-            this.ChangePasswordButton.Location = new System.Drawing.Point(238, 135);
+            this.ChangePasswordButton.Location = new System.Drawing.Point(237, 149);
             this.ChangePasswordButton.Name = "ChangePasswordButton";
             this.ChangePasswordButton.Size = new System.Drawing.Size(195, 23);
             this.ChangePasswordButton.TabIndex = 6;
@@ -97,7 +97,7 @@ namespace ScantelRoofingPrototype
             // 
             // ChangePasswordTextBox2
             // 
-            this.ChangePasswordTextBox2.Location = new System.Drawing.Point(12, 135);
+            this.ChangePasswordTextBox2.Location = new System.Drawing.Point(12, 164);
             this.ChangePasswordTextBox2.Name = "ChangePasswordTextBox2";
             this.ChangePasswordTextBox2.Size = new System.Drawing.Size(194, 23);
             this.ChangePasswordTextBox2.TabIndex = 7;
@@ -105,7 +105,7 @@ namespace ScantelRoofingPrototype
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(264, 109);
+            this.label1.Location = new System.Drawing.Point(37, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 15);
             this.label1.TabIndex = 8;
