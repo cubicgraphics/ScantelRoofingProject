@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ScantelRoofingPrototype
+﻿namespace ScantelRoofingPrototype
 {
     class Utill
     {
-        public static bool VerifyIntInput(string text)
+        public static bool VerifyIntInput(string text) //checks that all the char's are numbers and that there is only up to 1 full stop(decimal place)
         {
             bool verif = true;
             char[] c = text.ToCharArray();
+            int DecimalCheck = 0;
             for (int i = 0; i < c.Length; i++)
             {
-                //MessageBox.Show("char is " + c[i]);
                 if (!char.IsDigit(c[i]) && c[i] != '.')
                 {
                     verif = false;
-                    i = c.Length;
+                    break;
+                }
+                if (DecimalCheck < 1 && c[i] == '.')
+                {
+                    DecimalCheck++;
+                }
+                else
+                {
+                    verif = false;
+                    break;
                 }
             }
             return verif;
