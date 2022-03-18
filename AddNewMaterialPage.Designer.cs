@@ -212,7 +212,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.MaterialNameLabel);
             this.Controls.Add(this.MaterialNameInputBox);
             this.Name = "AddNewMaterialPage";
-            this.Text = "AddNewMaterialPage";
+            this.Text = "New material";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddNewMaterialPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.AddNewMaterialPage_VisibleChanged);
             this.ResumeLayout(false);

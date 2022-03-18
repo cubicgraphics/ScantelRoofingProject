@@ -59,7 +59,7 @@ namespace ScantelRoofingPrototype
                     }
                 }
             }
-            else //TODO this is here for testing purposes - it bypasses the need for a password. remove it eventually
+            else //TODO this is here for testing purposes - it bypasses the need for a password. remove it before compiling final project
             {
                 highLevelEmployeeInterface.UserID = 0;
                 highLevelEmployeeInterface.Show();

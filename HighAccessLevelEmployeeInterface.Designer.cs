@@ -143,7 +143,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.ScantelRoofingICO);
             this.Name = "HighAccessLevelEmployeeInterface";
-            this.Text = "HighAccessLevelEmployeeInterface";
+            this.Text = "High access level employee page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HighAccessLevelEmployeeInterface_FormClosing);
             this.Load += new System.EventHandler(this.HighAccessLevelEmployeeInterface_Load);
             this.VisibleChanged += new System.EventHandler(this.HighAccessLevelEmployeeInterface_VisibleChanged);

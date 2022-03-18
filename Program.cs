@@ -18,7 +18,5 @@ namespace ScantelRoofingPrototype
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeAccessPage());
         }
-
-        //TODO impliment search features for all list boxes by setting the index of the datagridview / listbox to the name closest to the search term. this will preserve list indexes so a big re-write is not needed
     }
 }

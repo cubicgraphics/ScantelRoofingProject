@@ -290,7 +290,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ScantelRoofingLabel);
             this.Name = "CreateNewWorkplacePage";
-            this.Text = "CreateNewWorkplacePage";
+            this.Text = "New workplace";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateNewWorkplacePage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.CreateNewWorkplacePage_VisibleChanged);
             this.ResumeLayout(false);

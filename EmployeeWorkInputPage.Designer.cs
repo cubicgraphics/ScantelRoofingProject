@@ -141,7 +141,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.ReclaimedSlatesLabel2);
             this.Controls.Add(this.SlateReclaimedLabel);
             this.Name = "EmployeeWorkInputPage";
-            this.Text = "EmployeeWorkInputPage";
+            this.Text = "Work input page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeeWorkInputPage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ReclaimedSlatesInputBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeWorkedInputBox)).EndInit();
