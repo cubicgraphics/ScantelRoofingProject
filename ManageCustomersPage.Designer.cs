@@ -211,7 +211,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantelRoofingLabel);
             this.Name = "ManageCustomersPage";
-            this.Text = "ManageCustomersPage";
+            this.Text = "Customer management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageCustomersPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.ManageCustomersPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).EndInit();

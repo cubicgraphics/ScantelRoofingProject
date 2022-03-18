@@ -349,7 +349,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantelRoofingLabel);
             this.Name = "ManageEmployeesPage";
-            this.Text = "ManageEmployeesPage";
+            this.Text = "Employee management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageEmployeesPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.ManageEmployeesPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataBox)).EndInit();

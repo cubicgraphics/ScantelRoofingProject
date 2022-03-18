@@ -466,7 +466,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ScantleRoofingLabel);
             this.Name = "SimpleRoofEditingPage";
-            this.Text = "SimpleRoofEditingPage";
+            this.Text = "Roof management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SimpleRoofEditingPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.SimpleRoofEditingPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.RoofsDataGridView)).EndInit();

@@ -229,7 +229,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.CustomerPhoneNumberLabel);
             this.Controls.Add(this.CustomerNameLabel);
             this.Name = "NewEmployeePage";
-            this.Text = "NewEmployeePage";
+            this.Text = "New employee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewEmployeePage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

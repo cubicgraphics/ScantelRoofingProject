@@ -125,7 +125,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.ScantelRoofing);
             this.Name = "LowAccessLevelEmployeeInterface";
-            this.Text = "LowAccessLevelEmployeeInterface";
+            this.Text = "Low level employee access";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LowAccessLevelEmployeeInterface_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

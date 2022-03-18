@@ -101,7 +101,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Name = "LoginPage";
-            this.Text = "LoginPage";
+            this.Text = "Login ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

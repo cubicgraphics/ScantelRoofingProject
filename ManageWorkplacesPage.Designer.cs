@@ -460,7 +460,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ScantleRoofingLabel);
             this.Name = "ManageWorkplacesPage";
-            this.Text = "ManageWorkplacesPage";
+            this.Text = "Workplace management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageWorkplacesPage_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.ManageWorkplacesPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.WorkplaceDataGrid)).EndInit();

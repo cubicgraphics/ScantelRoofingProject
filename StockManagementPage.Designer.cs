@@ -352,7 +352,7 @@ namespace ScantelRoofingPrototype
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ScantleRoofingLabel);
             this.Name = "StockManagementPage";
-            this.Text = "StockManagementPage";
+            this.Text = "Stock management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StockManagementPage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.StocksDataGrid)).EndInit();
             this.ResumeLayout(false);
