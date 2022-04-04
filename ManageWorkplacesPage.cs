@@ -256,7 +256,7 @@ namespace ScantelRoofingPrototype
                 List<CustomerToWorkplace> customerToWorkplaces = FileReader.ReadFromCustomerToWorkplaceFile();
                 for (int i = 0; i < customerToWorkplaces.Count; i++)
                 {
-                    if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerAtWorkplaceListBox.SelectedIndex].ID))
+                    if ((customerToWorkplaces[i].WorkplaceID == workplaces[WorkplaceDataGrid.SelectedCells[0].RowIndex].ID) && (customerToWorkplaces[i].CustomerID == customers[CustomerListBox.SelectedIndex].ID)) // this deletes the value from the customers at workplace list from the currently selected one in the overall customers list
                     {
                         customerToWorkplaces.RemoveAt(i);
                     }

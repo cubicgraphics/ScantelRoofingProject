@@ -82,7 +82,7 @@ namespace ScantelRoofingPrototype
                     LengthIfRoofTIleLabel.Hide();
                     UseableInScantleCheckbox.Hide();
                     UseableInScantleCheckbox.Checked = false;
-                    TileWidthInputBox.Text = "0"; //TODO would add conversions between inches and meters(evaluation or stuff that could make program better)
+                    TileWidthInputBox.Text = "0"; 
                     TileLengthInputBox.Text = "0";
                 }
 

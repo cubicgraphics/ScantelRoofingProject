@@ -152,9 +152,6 @@ namespace ScantelRoofingPrototype
                 "Estimated cost of materials that need purchasing for roof: £" + RequiredMaterialCost
             };
             return output;
-
-
-            //TODO for evaluation - would have been better to calculate costs and etc on the workplace page as then estimated time can be factored into the calculation, also becasue of this stock amounts needed is no longer saved in stocks.
         }
         public static string[] CalculateScantleRoof(RoofElevation roof, List<Stocks> stocks)
         {
