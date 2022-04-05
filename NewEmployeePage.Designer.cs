@@ -57,16 +57,16 @@ namespace ScantelRoofingPrototype
             this.EmployeeWagesLabel.Name = "EmployeeWagesLabel";
             this.EmployeeWagesLabel.Size = new System.Drawing.Size(119, 15);
             this.EmployeeWagesLabel.TabIndex = 51;
-            this.EmployeeWagesLabel.Text = "Employee wages      £";
+            this.EmployeeWagesLabel.Text = "Employee wages:     £";
             // 
             // EmployeeAccessLevelLabel
             // 
             this.EmployeeAccessLevelLabel.AutoSize = true;
             this.EmployeeAccessLevelLabel.Location = new System.Drawing.Point(2, 139);
             this.EmployeeAccessLevelLabel.Name = "EmployeeAccessLevelLabel";
-            this.EmployeeAccessLevelLabel.Size = new System.Drawing.Size(123, 15);
+            this.EmployeeAccessLevelLabel.Size = new System.Drawing.Size(126, 15);
             this.EmployeeAccessLevelLabel.TabIndex = 50;
-            this.EmployeeAccessLevelLabel.Text = "Employee access level";
+            this.EmployeeAccessLevelLabel.Text = "Employee access level:";
             // 
             // EmployeeWagesBox
             // 
@@ -161,9 +161,9 @@ namespace ScantelRoofingPrototype
             this.EmployeeUsernameLabel.AutoSize = true;
             this.EmployeeUsernameLabel.Location = new System.Drawing.Point(11, 197);
             this.EmployeeUsernameLabel.Name = "EmployeeUsernameLabel";
-            this.EmployeeUsernameLabel.Size = new System.Drawing.Size(114, 15);
+            this.EmployeeUsernameLabel.Size = new System.Drawing.Size(117, 15);
             this.EmployeeUsernameLabel.TabIndex = 53;
-            this.EmployeeUsernameLabel.Text = "Employee username";
+            this.EmployeeUsernameLabel.Text = "Employee username:";
             // 
             // EmployeeUsernameInputBox
             // 
@@ -177,9 +177,9 @@ namespace ScantelRoofingPrototype
             this.EmployeePasswordLabel.AutoSize = true;
             this.EmployeePasswordLabel.Location = new System.Drawing.Point(11, 226);
             this.EmployeePasswordLabel.Name = "EmployeePasswordLabel";
-            this.EmployeePasswordLabel.Size = new System.Drawing.Size(112, 15);
+            this.EmployeePasswordLabel.Size = new System.Drawing.Size(115, 15);
             this.EmployeePasswordLabel.TabIndex = 55;
-            this.EmployeePasswordLabel.Text = "Employee password";
+            this.EmployeePasswordLabel.Text = "Employee password:";
             // 
             // EmployeePasswordInputBox
             // 
@@ -193,9 +193,9 @@ namespace ScantelRoofingPrototype
             this.AccessCodeLabel.AutoSize = true;
             this.AccessCodeLabel.Location = new System.Drawing.Point(33, 255);
             this.AccessCodeLabel.Name = "AccessCodeLabel";
-            this.AccessCodeLabel.Size = new System.Drawing.Size(72, 15);
+            this.AccessCodeLabel.Size = new System.Drawing.Size(75, 15);
             this.AccessCodeLabel.TabIndex = 57;
-            this.AccessCodeLabel.Text = "Access code";
+            this.AccessCodeLabel.Text = "Access code:";
             // 
             // AccessCodeTextInput
             // 
