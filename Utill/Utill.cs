@@ -9,16 +9,11 @@
             int DecimalCheck = 0;
             for (int i = 0; i < c.Length; i++)
             {
-                if (!char.IsDigit(c[i]) && c[i] != '.')
-                {
-                    verif = false;
-                    break;
-                }
                 if (DecimalCheck < 1 && c[i] == '.')
                 {
                     DecimalCheck++;
                 }
-                else
+                else if (!char.IsDigit(c[i]))
                 {
                     verif = false;
                     break;
