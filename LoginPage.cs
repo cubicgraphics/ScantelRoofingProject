@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScantelRoofingPrototype
@@ -35,11 +28,11 @@ namespace ScantelRoofingPrototype
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            
+
             if (UsernameInput.Text != "")
             {
                 int ID = Employees.GetIDFromUserPassword(FileReader.ReadFromEmployeeFile(), UsernameInput.Text, PasswordInput.Text);
-                if(ID != -1)
+                if (ID != -1)
                 {
                     if (Employees.IsEmployeeAccessLevel(FileReader.ReadFromEmployeeFile(), 0, ID) == true)
                     {
@@ -59,7 +52,8 @@ namespace ScantelRoofingPrototype
                     }
                 }
             }
-            else //TODO this is here for testing purposes - it bypasses the need for a password. remove it before compiling final project
+            /*
+            else
             {
                 highLevelEmployeeInterface.UserID = 0;
                 highLevelEmployeeInterface.Show();
@@ -67,6 +61,7 @@ namespace ScantelRoofingPrototype
                 PasswordInput.Text = "";
                 this.Hide();
             }
+            */
         }
 
         private void BackButton_Click(object sender, EventArgs e)
